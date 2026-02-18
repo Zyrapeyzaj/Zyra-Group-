@@ -7,7 +7,36 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
-<style>
+<head>
+  <title>Zyra Peyzaj</title>
+  <style>
+    .hero {
+      text-align: center;
+      padding: 100px 20px;
+      background: linear-gradient(120deg, #e8f5e9, #ffffff);
+    }
+
+    .logo {
+      width: 250px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      0% {opacity: 0; transform: translateY(-20px);}
+      100% {opacity: 1; transform: translateY(0);}
+    }
+
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 28px;
+      color: #2e7d32;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in-out 0.5s;
+      animation-fill-mode: forwards;
+    }
+  </style>
+</head>y>
 
 *{
 margin:0;
