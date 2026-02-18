@@ -3,185 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zyra Peyzaj</title>
+  <title>Site Bakımda</title>
   <style>
     body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background-color: #ffffff;
-      color: #333;
-    }
-
-    /* Hero alanı */
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(120deg, #e8f5e9, #ffffff);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero img.logo {
-      width: 200px;
-      animation: fadeIn 2s ease-in-out;
-    }
-
-    .hero h1 {
-      font-size: 36px;
-      color: #2e7d32;
-      margin: 20px 0 10px;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out 0.5s forwards;
-    }
-
-    .hero p {
-      font-size: 20px;
-      color: #4caf50;
-      opacity: 0;
-      animation: fadeIn 2s ease-in-out 1s forwards;
-    }
-
-    @keyframes fadeIn {
-      0% {opacity: 0; transform: translateY(-20px);}
-      100% {opacity: 1; transform: translateY(0);}
-    }
-
-    /* Projeler */
-    .projects {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin: 50px 0;
-    }
-
-    .project {
-      width: 300px;
-      height: 200px;
-      border-radius: 8px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .project:hover img {
-      transform: scale(1.05);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    /* Hakkımızda */
-    .about {
-      padding: 50px 20px;
-      text-align: center;
       background-color: #f1f8e9;
-    }
-
-    .about h2 {
-      font-size: 28px;
       color: #2e7d32;
-    }
-
-    .about p {
-      max-width: 700px;
-      margin: 20px auto 0;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    /* Referanslar */
-    .testimonials {
-      background-color: #e8f5e9;
-      padding: 50px 20px;
       text-align: center;
     }
-
-    .testimonial {
-      max-width: 500px;
-      margin: 20px auto;
-      font-style: italic;
-      color: #2e7d32;
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
     }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      background-color: #2e7d32;
-      color: white;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .projects {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .project {
-        width: 80%;
-      }
+    p {
+      font-size: 20px;
     }
   </style>
 </head>
 <body>
-  <!-- Hero -->
-  <header class="hero">
-    <img src="images/logo.png" class="logo" alt="Zyra Peyzaj Logo">
-    <h1>Zyra Peyzaj</h1>
-    <p>Peyzaj & İç Mimarlık Hizmetleri</p>
-  </header>
-
-  <!-- Projeler -->
-  <section class="projects">
-    <div class="project">
-      <img src="images/1761356716505.jpg" alt="Proje 1">
-    </div>
-    <div class="project">
-      <img src="images/1761356719775.jpg" alt="Proje 2">
-    </div>
-    <div class="project">
-      <img src="images/1769466753897.png" alt="Proje 3">
-    </div>
-    <div class="project">
-      <img src="images/1769466788289.png" alt="Proje 4">
-    </div>
-    <div class="project">
-      <img src="images/1769466937815.png" alt="Proje 5">
-    </div>
-    <div class="project">
-      <img src="images/1769466962645.png" alt="Proje 6">
-    </div>
-    <div class="project">
-      <img src="images/1769466995948.png" alt="Proje 7">
-    </div>
-    <div class="project">
-      <img src="images/1771426838111.png" alt="Proje 8">
-    </div>
-  </section>
-
-  <!-- Hakkımızda -->
-  <section class="about">
-    <h2>Hakkımızda</h2>
-    <p>Zyra Peyzaj, modern ve lüks peyzaj tasarımında öncü bir firma olarak hayallerinizi gerçeğe dönüştürür. Her proje, estetik ve fonksiyonelliği bir arada sunar.</p>
-  </section>
-
-  <!-- Referanslar -->
-  <section class="testimonials">
-    <h2>Müşteri Yorumları</h2>
-    <div class="testimonial">"Zyra Peyzaj ile çalışmak muhteşemdi, bahçem hayallerimin ötesinde!"</div>
-    <div class="testimonial">"Profesyonel ve güvenilir bir ekip, tavsiye ederim."</div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    © 2026 Zyra Peyzaj. Tüm hakları saklıdır. | İletişim: info@zyrapeyzaj.com
-  </footer>
+  <div>
+    <h1>Site Bakımda</h1>
+    <p>Bir süreliğine güncellemeler yapıyoruz. Lütfen daha sonra tekrar ziyaret edin.</p>
+  </div>
 </body>
 </html>
