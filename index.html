@@ -12,8 +12,8 @@ img{max-width:100%;display:block;border-radius:8px;}
 
 /* Navbar */
 nav{
-  background:#1b5e20;
-  padding:10px 5%;
+  background:#145214;
+  padding:12px 5%;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -24,18 +24,23 @@ nav{
   box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
 nav .logo img{height:60px;}
-nav ul{list-style:none;display:flex;gap:25px;}
-nav ul li{position:relative;color:white;font-weight:600;}
-nav ul li::after{
-  content:"";position:absolute;left:0;bottom:-4px;width:0;height:3px;background:#81c784;transition:0.3s;
+.nav-links{list-style:none;display:flex;gap:35px;}
+.nav-links li{position:relative;font-weight:600;}
+.nav-links li a{color:white;padding:8px 0;display:block;transition:0.3s;}
+.nav-links li::after{
+  content:"";position:absolute;bottom:-6px;left:0;width:0;height:3px;background:#81c784;transition:0.3s;border-radius:2px;
 }
-nav ul li:hover::after{width:100%;}
-nav ul li a{padding:5px 0;display:block;}
+.nav-links li:hover::after{width:100%;}
+@media(max-width:768px){
+  nav{flex-direction:column;align-items:flex-start;}
+  .nav-links{flex-direction:column;width:100%;gap:10px;margin-top:10px;}
+  .nav-links li::after{bottom:0;}
+}
 
 /* Hero */
 .hero{
   min-height:70vh;
-  background:linear-gradient(135deg,#1b5e20,#2e7d32);
+  background:linear-gradient(135deg,#145214,#2e7d32);
   color:white;display:flex;justify-content:center;align-items:center;text-align:center;
   padding:60px 20px;margin-top:70px;
 }
@@ -46,21 +51,21 @@ nav ul li a{padding:5px 0;display:block;}
 
 /* Section Titles */
 .section{padding:80px 5%;}
-.section-title{text-align:center;font-size:36px;margin-bottom:40px;color:#1b5e20;font-weight:700;}
+.section-title{text-align:center;font-size:36px;margin-bottom:40px;color:#145214;font-weight:700;}
 .section-title::before,
 .section-title::after{content:"";display:inline-block;width:50px;height:4px;background:#81c784;margin:0 10px;vertical-align:middle;}
 
 /* Hizmetler */
 .services{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
 .service{background:#fff;padding:20px;border-radius:12px;width:220px;border:1px solid #ddd;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.service h3{color:#1b5e20;font-weight:600;margin-bottom:12px;}
+.service h3{color:#145214;font-weight:600;margin-bottom:12px;}
 .service h3::after{content:"";width:40px;height:3px;background:#2e7d32;display:block;margin:6px auto 0 auto;border-radius:2px;}
 .service p{font-size:14px;color:#555;}
 
 /* Projeler */
 .project-section{display:flex;flex-direction:column;gap:40px;}
 .project{padding:20px;border-radius:12px;background:#fff;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.project h2{color:#1b5e20;margin-bottom:20px;text-align:center;}
+.project h2{color:#145214;margin-bottom:20px;text-align:center;}
 .gallery{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;}
 .gallery img{width:250px;cursor:pointer;transition:0.3s;}
 .gallery img:hover{transform:scale(1.05);}
@@ -70,7 +75,7 @@ nav ul li a{padding:5px 0;display:block;}
 #lightbox img{max-width:90%;max-height:80%;border-radius:8px;}
 
 /* Footer */
-footer{background:#1b5e20;color:white;text-align:center;padding:30px;border-radius:12px;}
+footer{background:#145214;color:white;text-align:center;padding:30px;border-radius:12px;}
 footer p{margin:5px 0;}
 
 /* Responsive */
@@ -80,7 +85,6 @@ footer p{margin:5px 0;}
   .hero .btn{padding:10px 20px;font-size:14px;}
   .service{width:90%;max-width:300px;}
   .gallery img{width:90%;max-width:300px;}
-  nav ul{gap:10px;flex-wrap:wrap;}
 }
 </style>
 </head>
@@ -88,8 +92,10 @@ footer p{margin:5px 0;}
 
 <!-- Navbar -->
 <nav>
-  <div class="logo"><img src="1771426838111.png" alt="Zyra Peyzaj Logo"></div>
-  <ul>
+  <div class="logo">
+    <img src="1771426838111.png" alt="Zyra Peyzaj Logo">
+  </div>
+  <ul class="nav-links">
     <li><a href="#hero">Ana Sayfa</a></li>
     <li><a href="#services">Hizmetler</a></li>
     <li><a href="#projects">Projeler</a></li>
