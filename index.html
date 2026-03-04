@@ -42,26 +42,47 @@ nav .logo img{height:60px;}
 
 /* Hero */
 .hero{
-  min-height:70vh;
-  max-height:80vh;
-  background:url("1761357535350.jpg") center center / cover no-repeat;
+  position:relative;
+  width:100%;
+  height:75vh;
+  max-height:800px;
+  background:url("1761357128621.jpg") center center / cover no-repeat;
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
-  padding:60px 20px;
+  overflow:hidden;
   margin-top:70px;
-  overflow:hidden; /* taşma önleme */
 }
-.hero div{position:relative; z-index:2;}
-.hero h1{font-size:48px;margin-bottom:20px;}
-.hero p{font-size:20px;margin-bottom:25px;}
+.hero::after{
+  content:"";
+  position:absolute;
+  top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.35); /* Görsel üzerine hafif karartma */
+  z-index:1;
+}
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:white;
+}
+.hero h1{
+  font-size:48px;
+  margin-bottom:20px;
+  font-weight:700;
+  line-height:1.2;
+}
+.hero p{
+  font-size:20px;
+  margin-bottom:25px;
+}
 .hero .btn{
   padding:12px 30px;
   background:#81c784;
   border-radius:30px;
   color:white;
   font-weight:600;
+  transition:0.3s;
 }
 .hero .btn:hover{background:#4caf50;}
 
@@ -73,6 +94,7 @@ nav .logo img{height:60px;}
   margin-bottom:40px;
   color:#145214;
   font-weight:700;
+  position:relative;
 }
 .section-title::before,
 .section-title::after{
@@ -178,6 +200,7 @@ footer p{margin:5px 0;}
   .nav-links{flex-direction:column;width:100%;gap:15px;margin-top:10px;align-items:center;}
   .nav-links li::after{bottom:-4px;}
   .logo img{height:50px;margin-bottom:8px;}
+  .hero{height:55vh; margin-top:60px; padding:20px;}
   .hero h1{font-size:28px;}
   .hero p{font-size:16px;}
   .hero .btn{padding:10px 20px;font-size:14px;}
@@ -204,7 +227,7 @@ footer p{margin:5px 0;}
 
 <!-- Hero -->
 <section class="hero" id="hero">
-  <div>
+  <div class="hero-content">
     <h1>Modern & Prestijli Peyzaj Tasarımları</h1>
     <p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
     <a href="#projects" class="btn">Projeleri İncele</a>
