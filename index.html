@@ -3,99 +3,124 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zyra Peyzaj – Profesyonel Peyzaj & Tasarım</title>
-
+<title>Zyra Peyzaj</title>
 <style>
-*{ margin:0; padding:0; box-sizing:border-box; }
-body{font-family:Arial,sans-serif; background:#fff; color:#333;}
-header{background:#2e7d32; padding:20px; text-align:center; color:white;}
-header h1{font-size:28px; font-weight:700;}
-main{padding:60px 10%;}
-.section-title{font-size:32px; text-align:center; margin-bottom:40px; color:#2e7d32;}
-.services, .projects{display:grid; gap:20px;}
-.services{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
-.projects{grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
-.service, .project{background:#f9f9f9; padding:20px; border-radius:8px; border:1px solid #ddd;}
-.service h3, .project h3{margin-bottom:12px; color:#2e7d32;}
-.project p{text-align:center;}
-.cta{background:#2e7d32; color:white; text-align:center; padding:40px 20px; margin:60px 0;}
-.cta button{padding:12px 30px; background:#4caf50; border:none; color:white; font-size:18px; cursor:pointer;}
-footer{background:#111; color:white; text-align:center; padding:30px;}
+/* Temel reset */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:Arial,sans-serif;color:#333;background:#fff;scroll-behavior:smooth;}
+a{text-decoration:none;color:inherit;}
+
+/* NAVBAR */
+nav{background:#2e7d32;padding:10px 10%;display:flex;justify-content:space-between;align-items:center;position:fixed;width:100%;top:0;z-index:1000;}
+nav .logo img{height:50px;}
+nav ul{list-style:none;display:flex;gap:20px;}
+nav ul li{color:white;font-weight:600;cursor:pointer;}
+nav ul li:hover{color:#81c784;}
+
+/* HERO */
+.hero{height:90vh;background:#0b0c0a;color:white;display:flex;justify-content:center;align-items:center;text-align:center;padding:0 20px;margin-top:70px;}
+.hero h1{font-size:48px;margin-bottom:20px;}
+.hero p{font-size:20px;margin-bottom:25px;}
+.hero .btn{padding:12px 30px;background:#4caf50;border-radius:30px;color:white;display:inline-block;transition:0.3s;}
+.hero .btn:hover{background:#388E3C;}
+
+/* SECTION */
+.section{padding:80px 10%;}
+.section-title{text-align:center;font-size:32px;margin-bottom:40px;color:#2e7d32;}
+
+/* SERVICES */
+.services{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.service{background:#f9f9f9;padding:20px;border-radius:8px;width:220px;border:1px solid #ddd;text-align:center;}
+.service h3{margin-bottom:12px;color:#2e7d32;}
+.service p{font-size:14px;color:#555;}
+
+/* PROJECTS */
+.projects{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
+.project{background:#f4f4f4;padding:15px;border-radius:8px;width:280px;border:1px solid #ddd;text-align:center;}
+.project h3{color:#2e7d32;margin-bottom:8px;}
+.project p{font-size:14px;color:#555;}
+
+/* CTA */
+.cta{text-align:center;background:#2e7d32;color:white;padding:40px 20px;margin:60px 0;}
+.cta button{padding:12px 30px;background:#4caf50;border:none;color:white;font-size:18px;cursor:pointer;border-radius:8px;}
+.cta button:hover{background:#388E3C;}
+
+/* FOOTER */
+footer{background:#111;color:white;text-align:center;padding:30px;}
 footer p{margin:5px 0;}
-@media(max-width:768px){main{padding:40px 5%;}}
+
+/* Responsive */
+@media(max-width:768px){.hero h1{font-size:32px;}.hero p{font-size:16px;}}
 </style>
 </head>
 <body>
 
-<header>
-  <h1>Zyra Peyzaj – Estetik & Profesyonel Peyzaj Tasarım</h1>
-</header>
+<!-- NAVBAR -->
+<nav>
+  <div class="logo"><img src="https://via.placeholder.com/150x50?text=ZYRA+LOGO" alt="Zyra Peyzaj Logo"></div>
+  <ul>
+    <li><a href="#hero">Ana Sayfa</a></li>
+    <li><a href="#services">Hizmetler</a></li>
+    <li><a href="#projects">Projeler</a></li>
+    <li><a href="#about">Hakkımızda</a></li>
+    <li><a href="#contact">İletişim</a></li>
+  </ul>
+</nav>
 
-<main>
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div>
+    <h1>Modern & Prestijli Peyzaj Tasarımları</h1>
+    <p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
+    <a href="#projects" class="btn">Projeleri İncele</a>
+  </div>
+</section>
 
-  <!-- Hizmetler -->
-  <section class="services">
-    <div class="section-title">Hizmetlerimiz</div>
-    <div class="service">
-      <h3>Peyzaj Tasarım</h3>
-      <p>Doğayla uyumlu, estetik ve fonksiyonel peyzaj tasarım çözümleri.</p>
-    </div>
-    <div class="service">
-      <h3>Peyzaj Uygulama</h3>
-      <p>Proje uygulama sürecini profesyonel ekiplerle yönetiyoruz.</p>
-    </div>
-    <div class="service">
-      <h3>Bakım & Sürdürülebilirlik</h3>
-      <p>Yeşil alanların korunması ve sürdürülebilir bakım hizmetleri.</p>
-    </div>
-    <div class="service">
-      <h3>Konut & Ticari Projeler</h3>
-      <p>Konutta, villada ve ticari projelerde peyzaj çözümleri.</p>
-    </div>
-  </section>
+<!-- HİZMETLER -->
+<section class="section" id="services">
+  <div class="section-title">Hizmetlerimiz</div>
+  <div class="services">
+    <div class="service"><h3>Peyzaj Tasarım</h3><p>Doğayla uyumlu, estetik ve fonksiyonel peyzaj tasarım çözümleri.</p></div>
+    <div class="service"><h3>Peyzaj Uygulama</h3><p>Proje uygulama sürecini profesyonel ekiplerle yönetiyoruz.</p></div>
+    <div class="service"><h3>Bakım & Sürdürülebilirlik</h3><p>Yeşil alanların korunması ve sürdürülebilir bakım hizmetleri.</p></div>
+    <div class="service"><h3>Konut & Ticari Projeler</h3><p>Konutta, villada ve ticari projelerde peyzaj çözümleri.</p></div>
+  </div>
+</section>
 
-  <!-- CTA Teklif -->
-  <section class="cta">
-    <p>Hayalinizdeki dış mekân tasarımına bir adım daha yaklaşın.</p>
-    <button onclick="location.href='#'">Teklif Al</button>
-  </section>
+<!-- CTA -->
+<section class="cta">
+  <p>Hayalinizdeki dış mekân tasarımına bir adım daha yaklaşın.</p>
+  <button onclick="location.href='#contact'">Teklif Al</button>
+</section>
 
-  <!-- Projeler -->
-  <section class="projects">
-    <div class="section-title">Projelerimiz</div>
-    <div class="project">
-      <h3>Proje 1</h3>
-      <p>Modern bahçe tasarımı ve dış mekân düzenleme.</p>
-    </div>
-    <div class="project">
-      <h3>Proje 2</h3>
-      <p>Profesyonel uygulama örnekleri ve zemin peyzajı.</p>
-    </div>
-    <div class="project">
-      <h3>Proje 3</h3>
-      <p>Özel villa çevresi peyzaj çalışması.</p>
-    </div>
-    <div class="project">
-      <h3>Proje 4</h3>
-      <p>Konut alanı yeşil peyzaj uygulaması.</p>
-    </div>
-  </section>
+<!-- PROJELER -->
+<section class="section" id="projects">
+  <div class="section-title">Projelerimiz</div>
+  <div class="projects">
+    <div class="project"><h3>Proje 1</h3><p>Modern bahçe tasarımı ve dış mekân düzenleme.</p></div>
+    <div class="project"><h3>Proje 2</h3><p>Profesyonel uygulama örnekleri ve zemin peyzajı.</p></div>
+    <div class="project"><h3>Proje 3</h3><p>Özel villa çevresi peyzaj çalışması.</p></div>
+    <div class="project"><h3>Proje 4</h3><p>Konut alanı yeşil peyzaj uygulaması.</p></div>
+  </div>
+</section>
 
-  <!-- Hakkımızda -->
-  <section>
-    <div class="section-title">Hakkımızda</div>
-    <p style="max-width:800px;margin:auto;text-align:center;">
-      Zyra Peyzaj, estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri üreten
-      profesyonel bir tasarım firmasıdır. Hizmetlerimizle yaşam alanlarınızdaki değeri
-      artırmayı hedefliyoruz ve her projeyi kaliteyle tamamlıyoruz.
-    </p>
-  </section>
+<!-- HAKKIMIZDA -->
+<section class="section" id="about">
+  <div class="section-title">Hakkımızda</div>
+  <p style="max-width:800px;margin:auto;text-align:center;">
+    Zyra Peyzaj, estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri üreten profesyonel bir tasarım firmasıdır.
+  </p>
+</section>
 
-</main>
+<!-- İLETİŞİM -->
+<section class="section" id="contact">
+  <div class="section-title">İletişim</div>
+  <p style="text-align:center; color:#555;">📞 +90 555 000 00 00 • ✉ info@zyrapeyzaj.com</p>
+</section>
 
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Zyra Peyzaj</p>
-  <p>📞 +90 555 000 00 00 • ✉ info@zyrapeyzaj.com</p>
+  <p>© 2026 Zyra Peyzaj | Tüm Hakları Saklıdır</p>
 </footer>
 
 </body>
