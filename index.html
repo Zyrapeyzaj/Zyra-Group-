@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zyra Group</title>
+<title>Zyra Peyzaj</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
@@ -16,10 +16,20 @@
 }
 
 body{
-  font-family: 'Montserrat', sans-serif;
-  background:#0f0f0f;
+  font-family:'Montserrat',sans-serif;
+  background:#ffffff;
+  color:#333;
+}
+
+/* ÜST BAR */
+
+.topbar{
+  background:#2e7d32;
   color:white;
-  overflow-x:hidden;
+  padding:10px 8%;
+  font-size:14px;
+  display:flex;
+  justify-content:space-between;
 }
 
 /* NAVBAR */
@@ -28,79 +38,124 @@ nav{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:25px 8%;
-  position:fixed;
-  width:100%;
-  background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(10px);
-  z-index:1000;
+  padding:20px 8%;
+  background:white;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav h2{
+  color:#2e7d32;
   font-weight:700;
-  letter-spacing:2px;
 }
 
 nav ul{
-  display:flex;
-  gap:40px;
   list-style:none;
+  display:flex;
+  gap:30px;
 }
 
 nav ul li{
   cursor:pointer;
-  font-weight:300;
+  font-weight:500;
   transition:0.3s;
 }
 
 nav ul li:hover{
-  color:#4CAF50;
+  color:#2e7d32;
 }
 
 /* HERO */
 
 .hero{
-  height:100vh;
+  height:80vh;
+  background:url("images/1761356716505.jpg") center/cover no-repeat;
   display:flex;
-  justify-content:center;
   align-items:center;
-  flex-direction:column;
+  justify-content:center;
+  position:relative;
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.5);
+}
+
+.hero-content{
+  position:relative;
+  color:white;
   text-align:center;
-  padding:0 20px;
-  background:linear-gradient(135deg,#0f0f0f,#1b1b1b);
 }
 
 .hero h1{
-  font-size:64px;
-  font-weight:700;
-  letter-spacing:3px;
+  font-size:48px;
   margin-bottom:20px;
-  animation:fadeIn 1.5s ease;
 }
 
 .hero p{
   font-size:20px;
-  font-weight:300;
-  color:#bbbbbb;
-  animation:fadeIn 2s ease;
 }
 
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(20px);}
-  to{opacity:1; transform:translateY(0);}
+.hero button{
+  margin-top:30px;
+  padding:12px 30px;
+  border:none;
+  background:#2e7d32;
+  color:white;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.3s;
 }
 
-/* PROJECTS */
+.hero button:hover{
+  background:#1b5e20;
+}
+
+/* HİZMETLER */
+
+.services{
+  padding:100px 8%;
+  text-align:center;
+}
+
+.services h2{
+  margin-bottom:60px;
+  font-size:32px;
+}
+
+.service-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:40px;
+}
+
+.service{
+  padding:40px;
+  border:1px solid #eee;
+  border-radius:10px;
+  transition:0.3s;
+}
+
+.service:hover{
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.service h3{
+  margin-bottom:15px;
+  color:#2e7d32;
+}
+
+/* PROJELER */
 
 .projects{
-  padding:120px 8%;
-  background:#111;
+  background:#f5f5f5;
+  padding:100px 8%;
+  text-align:center;
 }
 
 .projects h2{
-  font-size:36px;
   margin-bottom:60px;
-  text-align:center;
 }
 
 .project-grid{
@@ -109,63 +164,44 @@ nav ul li:hover{
   gap:30px;
 }
 
-.project{
-  position:relative;
-  overflow:hidden;
-  border-radius:12px;
-  cursor:pointer;
-}
-
 .project img{
   width:100%;
-  height:350px;
+  height:250px;
   object-fit:cover;
-  transition:0.5s;
+  border-radius:10px;
+  transition:0.4s;
 }
 
-.project:hover img{
-  transform:scale(1.1);
+.project img:hover{
+  transform:scale(1.05);
 }
 
-.project::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
-}
-
-/* ABOUT */
+/* HAKKIMIZDA */
 
 .about{
-  padding:120px 8%;
+  padding:100px 8%;
   text-align:center;
-  background:#0f0f0f;
-}
-
-.about h2{
-  font-size:36px;
-  margin-bottom:30px;
 }
 
 .about p{
-  max-width:700px;
+  max-width:800px;
   margin:auto;
-  color:#bbbbbb;
   line-height:1.8;
+  color:#666;
 }
 
 /* FOOTER */
 
 footer{
-  padding:40px;
+  background:#2e7d32;
+  color:white;
+  padding:40px 8%;
   text-align:center;
-  background:#000;
-  color:#777;
 }
 
 @media(max-width:768px){
   .hero h1{
-    font-size:40px;
+    font-size:32px;
   }
 }
 
@@ -174,10 +210,16 @@ footer{
 
 <body>
 
+<div class="topbar">
+  <div>📞 0555 000 00 00</div>
+  <div>✉ info@zyrapeyzaj.com</div>
+</div>
+
 <nav>
-  <h2>ZYRA GROUP</h2>
+  <h2>ZYRA PEYZAJ</h2>
   <ul>
     <li>Ana Sayfa</li>
+    <li>Hizmetler</li>
     <li>Projeler</li>
     <li>Hakkımızda</li>
     <li>İletişim</li>
@@ -185,60 +227,52 @@ footer{
 </nav>
 
 <section class="hero">
-  <h1>Modern Peyzaj & Mimari Tasarım</h1>
-  <p>Estetik. Fonksiyon. Güçlü Kimlik.</p>
+  <div class="hero-content">
+    <h1>Profesyonel Peyzaj Çözümleri</h1>
+    <p>Doğayla uyumlu, estetik ve sürdürülebilir tasarımlar</p>
+    <button>Projelerimizi İnceleyin</button>
+  </div>
+</section>
+
+<section class="services">
+  <h2>Hizmetlerimiz</h2>
+  <div class="service-grid">
+    <div class="service">
+      <h3>Peyzaj Tasarım</h3>
+      <p>Modern ve fonksiyonel dış mekân tasarımları.</p>
+    </div>
+    <div class="service">
+      <h3>Uygulama</h3>
+      <p>Profesyonel saha uygulama ve proje yönetimi.</p>
+    </div>
+    <div class="service">
+      <h3>Bakım Hizmetleri</h3>
+      <p>Sürdürülebilir yeşil alan bakım çözümleri.</p>
+    </div>
+  </div>
 </section>
 
 <section class="projects">
   <h2>Projelerimiz</h2>
   <div class="project-grid">
-
-    <div class="project">
-      <img src="images/1761356716505.jpg">
-    </div>
-
-    <div class="project">
-      <img src="images/1761356719775.jpg">
-    </div>
-
-    <div class="project">
-      <img src="images/1769466753897.png">
-    </div>
-
-    <div class="project">
-      <img src="images/1769466788289.png">
-    </div>
-
-    <div class="project">
-      <img src="images/1769466937815.png">
-    </div>
-
-    <div class="project">
-      <img src="images/1769466962645.png">
-    </div>
-
-    <div class="project">
-      <img src="images/1769466995948.png">
-    </div>
-
-    <div class="project">
-      <img src="images/1771426838111.png">
-    </div>
-
+    <div class="project"><img src="images/1761356719775.jpg"></div>
+    <div class="project"><img src="images/1769466753897.png"></div>
+    <div class="project"><img src="images/1769466788289.png"></div>
+    <div class="project"><img src="images/1769466937815.png"></div>
   </div>
 </section>
 
 <section class="about">
   <h2>Hakkımızda</h2>
   <p>
-    Zyra Group, modern peyzaj ve mimari tasarım alanında güçlü estetik anlayışı ile projeler üretir.
-    Her tasarım; fonksiyon, sadelik ve prestiji bir arada sunar.
+    Zyra Peyzaj olarak estetik, fonksiyonel ve sürdürülebilir peyzaj projeleri üretiyoruz.
+    Modern tasarım anlayışı ile yaşam alanlarınıza değer katıyoruz.
   </p>
 </section>
 
 <footer>
-  © 2026 Zyra Group | Tüm Hakları Saklıdır
+  © 2026 Zyra Peyzaj | Tüm Hakları Saklıdır
 </footer>
 
 </body>
-  </html>
+</html>
