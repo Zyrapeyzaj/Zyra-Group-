@@ -204,6 +204,7 @@ footer p{margin:5px 0;}
 </head>
 <body>
 
+<!-- Navbar -->
 <nav>
   <div class="logo">
     <img src="1771426838111.png" alt="Zyra Peyzaj Logo">
@@ -217,6 +218,7 @@ footer p{margin:5px 0;}
   </ul>
 </nav>
 
+<!-- Hero -->
 <section class="hero" id="hero">
   <div>
     <h1>Modern & Prestijli Peyzaj Tasarımları</h1>
@@ -225,7 +227,71 @@ footer p{margin:5px 0;}
   </div>
 </section>
 
-<!-- Kalan içerik senin kodundaki gibi devam eder -->
+<!-- Hizmetler -->
+<section class="section" id="services">
+  <div class="section-title">Hizmetlerimiz</div>
+  <div class="services">
+    <div class="service"><h3>Peyzaj Tasarım</h3><p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p></div>
+    <div class="service"><h3>Peyzaj Uygulama</h3><p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p></div>
+    <div class="service"><h3>Bakım & Sürdürülebilirlik</h3><p>Yeşil alanların korunması ve bakımı.</p></div>
+    <div class="service"><h3>Konut & Ticari Projeler</h3><p>Konut ve ticari alanlar için peyzaj çözümleri.</p></div>
+  </div>
+</section>
+
+<!-- Projeler -->
+<section class="section" id="projects">
+  <div class="section-title">Projelerimiz</div>
+  <div class="project-section">
+    <div class="project">
+      <h2>Göl Konakları</h2>
+      <div class="gallery">
+        <img src="1761356716505.jpg" alt="Göl Konakları">
+        <img src="1761356719775.jpg" alt="Göl Konakları">
+        <img src="1769466753897.png" alt="Göl Konakları">
+        <img src="1769466788289.png" alt="Göl Konakları">
+        <img src="1769466937815.png" alt="Göl Konakları">
+        <img src="1769466962645.png" alt="Göl Konakları">
+        <img src="1769466995948.png" alt="Göl Konakları">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Hakkımızda -->
+<section class="section" id="about">
+  <div class="section-title">Hakkımızda</div>
+  <p style="max-width:800px;margin:auto;text-align:center;">
+    Zyra Peyzaj, estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri üreten profesyonel bir tasarım firmasıdır.
+  </p>
+</section>
+
+<!-- İletişim -->
+<section class="section" id="contact">
+  <div class="section-title">İletişim</div>
+  <p style="text-align:center; color:#555;">
+    📞 0535 930 16 70<br>
+    ✉ zyrapeyzaj@gmail.com<br>
+    📍 İstanbul
+  </p>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Zyra Peyzaj | Tüm Hakları Saklıdır</p>
+</footer>
+
+<!-- Lightbox -->
+<div id="lightbox"><img src="" alt="Proje"></div>
+<script>
+document.querySelectorAll('.gallery img').forEach(img=>{
+  img.addEventListener('click',()=>{
+    const lightbox=document.getElementById('lightbox');
+    lightbox.querySelector('img').src=img.src;
+    lightbox.style.display='flex';
+  });
+});
+document.getElementById('lightbox').addEventListener('click',()=>{document.getElementById('lightbox').style.display='none';});
+</script>
 
 </body>
 </html>
