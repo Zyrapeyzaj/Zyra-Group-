@@ -12,7 +12,7 @@ img{max-width:100%;display:block;border-radius:8px;}
 
 /* Navbar */
 nav{
-  background:#145214;
+  background:#0f3b0f; /* Daha koyu yeşil */
   padding:12px 5%;
   display:flex;
   justify-content:space-between;
@@ -24,57 +24,58 @@ nav{
   box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
 nav .logo img{height:60px;}
-.nav-links{list-style:none;display:flex;gap:35px;}
-.nav-links li{position:relative;font-weight:600;}
+.nav-links{list-style:none;display:flex;gap:25px;align-items:center;}
+.nav-links li{position:relative;font-weight:600;display:flex;align-items:center;}
 .nav-links li a{color:white;padding:8px 0;display:block;transition:0.3s;}
-.nav-links li::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:3px;
-  background:#81c784;
-  transition:0.3s;
-  border-radius:2px;
-}
+.nav-links li::after{content:"";position:absolute;bottom:-6px;left:0;width:0;height:3px;background:#81c784;transition:0.3s;border-radius:2px;}
 .nav-links li:hover::after{width:100%;}
+/* Başlıklar arasına çizgi */
+.nav-links li + li::before{
+  content:"";
+  width:2px;
+  height:20px;
+  background:#81c784;
+  margin:0 10px;
+}
 
 /* Hero */
 .hero{
-  position:relative;
-  width:100%;
-  height:75vh;
-  max-height:800px;
-  background:url("1761357128621.jpg") center center / cover no-repeat;
+  min-height:60vh;
+  max-height:80vh;
+  background:url("1761357128621.jpg") center 20% / cover no-repeat; /* Gemini amblemini kırpmak için top konumunu 20% yaptık */
   display:flex;
-  justify-content:center;
+  justify-content:flex-start;
   align-items:center;
-  text-align:center;
-  overflow:hidden;
+  text-align:left;
+  padding:60px 10%;
   margin-top:70px;
+  position:relative;
+  overflow:hidden;
 }
-.hero::after{
+.hero::before{
   content:"";
   position:absolute;
-  top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.35); /* Görsel üzerine hafif karartma */
+  top:0; left:0;
+  width:100%; height:100%;
+  background:rgba(15,59,15,0.6); /* Daha koyu yeşil transparan */
   z-index:1;
 }
-.hero-content{
+.hero div{
   position:relative;
   z-index:2;
   color:white;
 }
 .hero h1{
   font-size:48px;
-  margin-bottom:20px;
-  font-weight:700;
-  line-height:1.2;
+  margin-bottom:10px;
+  border-left:5px solid #81c784;
+  padding-left:10px;
 }
 .hero p{
   font-size:20px;
   margin-bottom:25px;
+  border-left:5px solid #81c784;
+  padding-left:10px;
 }
 .hero .btn{
   padding:12px 30px;
@@ -82,7 +83,6 @@ nav .logo img{height:60px;}
   border-radius:30px;
   color:white;
   font-weight:600;
-  transition:0.3s;
 }
 .hero .btn:hover{background:#4caf50;}
 
@@ -94,7 +94,6 @@ nav .logo img{height:60px;}
   margin-bottom:40px;
   color:#145214;
   font-weight:700;
-  position:relative;
 }
 .section-title::before,
 .section-title::after{
@@ -168,10 +167,8 @@ nav .logo img{height:60px;}
 /* Lightbox */
 #lightbox{
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  top:0; left:0;
+  width:100%; height:100%;
   background:rgba(0,0,0,0.8);
   display:none;
   justify-content:center;
@@ -196,13 +193,13 @@ footer p{margin:5px 0;}
 
 /* Responsive */
 @media(max-width:768px){
-  nav{flex-direction:column;align-items:center;padding:12px 3%;}
-  .nav-links{flex-direction:column;width:100%;gap:15px;margin-top:10px;align-items:center;}
-  .nav-links li::after{bottom:-4px;}
-  .logo img{height:50px;margin-bottom:8px;}
-  .hero{height:55vh; margin-top:60px; padding:20px;}
-  .hero h1{font-size:28px;}
-  .hero p{font-size:16px;}
+  nav{flex-direction:row;justify-content:space-between;align-items:center;padding:12px 5%;}
+  .nav-links{flex-direction:row;flex-wrap:wrap;justify-content:flex-end;gap:10px;margin-top:0;}
+  .nav-links li::before{display:none;}
+  .logo img{height:50px;margin-bottom:0;}
+  .hero{padding:40px 10%; min-height:50vh; margin-top:60px; background-position:center 20%;}
+  .hero h1{font-size:28px; border-left:4px solid #81c784; padding-left:8px;}
+  .hero p{font-size:16px; margin-bottom:20px; border-left:4px solid #81c784; padding-left:8px;}
   .hero .btn{padding:10px 20px;font-size:14px;}
   .service{width:90%;max-width:300px;}
   .gallery img{width:90%;max-width:300px;}
@@ -227,7 +224,7 @@ footer p{margin:5px 0;}
 
 <!-- Hero -->
 <section class="hero" id="hero">
-  <div class="hero-content">
+  <div>
     <h1>Modern & Prestijli Peyzaj Tasarımları</h1>
     <p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
     <a href="#projects" class="btn">Projeleri İncele</a>
@@ -301,4 +298,4 @@ document.getElementById('lightbox').addEventListener('click',()=>{document.getEl
 </script>
 
 </body>
-</html>
+  </html>
