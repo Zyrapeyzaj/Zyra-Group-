@@ -12,7 +12,7 @@ img{max-width:100%;display:block;border-radius:8px;}
 
 /* Navbar */
 nav{
-  background:#0f3b0f; /* Koyu yeşil */
+  background:#145214;
   padding:12px 5%;
   display:flex;
   justify-content:space-between;
@@ -24,58 +24,61 @@ nav{
   box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
 nav .logo img{height:60px;}
-.nav-links{list-style:none;display:flex;gap:25px;align-items:center;}
-.nav-links li{position:relative;font-weight:600;display:flex;align-items:center;}
+.nav-links{list-style:none;display:flex;gap:35px;}
+.nav-links li{position:relative;font-weight:600;}
 .nav-links li a{color:white;padding:8px 0;display:block;transition:0.3s;}
-.nav-links li::after{content:"";position:absolute;bottom:-6px;left:0;width:0;height:3px;background:#81c784;transition:0.3s;border-radius:2px;}
+.nav-links li::after{
+  content:"";
+  position:absolute;
+  bottom:-6px;
+  left:0;
+  width:0;
+  height:3px;
+  background:#81c784;
+  transition:0.3s;
+  border-radius:2px;
+}
 .nav-links li:hover::after{width:100%;}
-.nav-links li + li::before{content:"";width:2px;height:20px;background:#81c784;margin:0 10px;}
 
 /* Hero */
 .hero{
   min-height:60vh;
-  max-height:70vh;
-  background:url("1761357128621.jpg") center center / cover no-repeat;
+  max-height:80vh;
+  background:url("1761356719775.jpg") center top / cover no-repeat;
   display:flex;
-  justify-content:flex-start;
+  justify-content:center;
   align-items:center;
-  text-align:left;
-  padding:60px 10%;
+  text-align:center;
+  padding:60px 20px;
   margin-top:70px;
-  position:relative;
   overflow:hidden;
 }
 .hero div{
   position:relative;
   z-index:2;
   color:white;
-  text-shadow:0 2px 6px rgba(0,0,0,0.5);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
-.hero h1{
-  font-size:48px;
-  margin-bottom:10px;
-}
-.hero p{
-  font-size:20px;
-  margin-bottom:25px;
-}
+.hero h1{font-size:48px;margin-bottom:20px;}
+.hero p{font-size:20px;margin-bottom:25px;}
 .hero .btn{
   padding:12px 30px;
-  background:#81c784;
+  background:#2e7d32; /* daha koyu yeşil */
   border-radius:30px;
   color:white;
   font-weight:600;
 }
-.hero .btn:hover{background:#4caf50;}
+.hero .btn:hover{background:#145214;}
 
 /* Section Titles */
 .section{padding:80px 5%;}
 .section-title{
-  text-align:center;
+  text-align:left;
   font-size:36px;
   margin-bottom:40px;
   color:#145214;
   font-weight:700;
+  position:relative;
 }
 .section-title::before,
 .section-title::after{
@@ -146,26 +149,6 @@ nav .logo img{height:60px;}
 }
 .gallery img:hover{transform:scale(1.05);}
 
-/* Hakkımızda */
-#about{margin-top:60px;}
-
-/* Lightbox */
-#lightbox{
-  position:fixed;
-  top:0; left:0;
-  width:100%; height:100%;
-  background:rgba(0,0,0,0.8);
-  display:none;
-  justify-content:center;
-  align-items:center;
-  z-index:2000;
-}
-#lightbox img{
-  max-width:90%;
-  max-height:80%;
-  border-radius:8px;
-}
-
 /* Footer */
 footer{
   background:#145214;
@@ -178,16 +161,30 @@ footer p{margin:5px 0;}
 
 /* Responsive */
 @media(max-width:768px){
-  nav{flex-direction:row;justify-content:space-between;align-items:center;padding:12px 5%;}
-  .nav-links{flex-direction:row;flex-wrap:wrap;justify-content:flex-end;gap:10px;margin-top:0;}
-  .nav-links li::before{display:none;}
-  .logo img{height:50px;margin-bottom:0;}
-  .hero{padding:40px 10%; min-height:50vh; margin-top:60px; background-position:center;}
-  .hero h1{font-size:28px;}
-  .hero p{font-size:16px;margin-bottom:20px;}
+  nav{flex-direction:column;align-items:center;padding:12px 3%;}
+  .nav-links{
+    flex-direction:row; /* başlıkları yan yana */
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:10px;
+  }
+  .nav-links li::after{bottom:-4px;}
+  .logo img{height:50px;margin-bottom:8px;}
+  .hero h1{font-size:28px;text-align:left;}
+  .hero p{font-size:16px;text-align:left;}
+  .hero div{width:100%;padding:0 15px;}
+  .hero{
+    padding:40px 15px;
+    min-height:50vh;
+    margin-top:60px;
+    background-position: center -60px; /* Gemini logosu görünmesin */
+  }
   .hero .btn{padding:10px 20px;font-size:14px;}
   .service{width:90%;max-width:300px;}
   .gallery img{width:90%;max-width:300px;}
+  /* Hakkımızda sola al */
+  #about p{text-align:left; margin-left:15px;}
 }
 </style>
 </head>
@@ -249,7 +246,7 @@ footer p{margin:5px 0;}
 <!-- Hakkımızda -->
 <section class="section" id="about">
   <div class="section-title">Hakkımızda</div>
-  <p style="max-width:800px;margin:auto;text-align:center;">
+  <p>
     Zyra Peyzaj, estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri üreten profesyonel bir tasarım firmasıdır.
   </p>
 </section>
