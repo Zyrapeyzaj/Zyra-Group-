@@ -23,7 +23,7 @@ nav{
   z-index:1000;
   box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
-nav .logo img{height:60px;}
+nav .logo img{height:80px;} /* Logo büyüklüğü artırıldı */
 .nav-links{list-style:none;display:flex;gap:35px;}
 .nav-links li{position:relative;font-weight:600;}
 .nav-links li a{color:white;padding:8px 0;display:block;transition:0.3s;}
@@ -44,7 +44,7 @@ nav .logo img{height:60px;}
 .hero{
   min-height:60vh;
   max-height:80vh;
-  background:url("1761357128621.jpg") center top / cover no-repeat;
+  background:url("1761357128621.jpg") center top / cover no-repeat; /* Eski foto geri geldi */
   display:flex;
   justify-content:flex-start;
   align-items:center;
@@ -59,7 +59,7 @@ nav .logo img{height:60px;}
   color:white;
   text-shadow:0 2px 6px rgba(0,0,0,0.5);
   max-width:600px;
-  margin-left:120px; /* başlıkları logodan uzaklaştır */
+  margin-left:140px; /* Başlıkları logodan uzaklaştırdık */
 }
 .hero h1{font-size:48px;margin-bottom:20px;}
 .hero p{font-size:20px;margin-bottom:25px;}
@@ -164,7 +164,7 @@ footer p{margin:5px 0;}
 /* Responsive */
 @media(max-width:768px){
   nav{flex-direction:row;align-items:center;padding:12px 3%;}
-  .logo img{height:50px;}
+  .logo img{height:70px;} /* Mobilde biraz daha büyük */
   .nav-links{
     flex-direction:row;
     gap:15px;
@@ -177,11 +177,11 @@ footer p{margin:5px 0;}
     padding:20px 15px;
     min-height:50vh;
     margin-top:60px;
-    background-position:center -80px; /* yukarı kırp Gemini logosu görünmesin */
+    background-position:center -80px; /* Gemini logosu görünmesin */
     justify-content:flex-start;
   }
   .hero-content{
-    margin-left:15px; /* mobilde başlıkları sola al logodan uzak */
+    margin-left:20px; /* Mobilde başlıklar logodan uzak */
   }
   .hero h1{font-size:28px;margin-bottom:10px;}
   .hero p{font-size:16px;margin-bottom:15px;}
@@ -285,4 +285,4 @@ document.getElementById('lightbox').addEventListener('click',()=>{document.getEl
 </script>
 
 </body>
-  </html>
+</html>
