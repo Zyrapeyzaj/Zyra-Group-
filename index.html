@@ -44,7 +44,7 @@ nav .logo img{height:60px;}
 .hero{
   min-height:60vh;
   max-height:80vh;
-  background:url("1761356719775.jpg") center top / cover no-repeat;
+  background:url("1761357128621.jpg") center top / cover no-repeat;
   display:flex;
   justify-content:flex-start;
   align-items:center;
@@ -53,12 +53,13 @@ nav .logo img{height:60px;}
   margin-top:70px;
   overflow:hidden;
 }
-.hero div{
+.hero-content{
   position:relative;
   z-index:2;
   color:white;
-  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+  text-shadow:0 2px 6px rgba(0,0,0,0.5);
   max-width:600px;
+  margin-left:120px; /* başlıkları logodan uzaklaştır */
 }
 .hero h1{font-size:48px;margin-bottom:20px;}
 .hero p{font-size:20px;margin-bottom:25px;}
@@ -171,22 +172,23 @@ footer p{margin:5px 0;}
     align-items:center;
   }
   .nav-links li::after{bottom:-4px;}
+  
   .hero{
-    padding:40px 15px;
+    padding:20px 15px;
     min-height:50vh;
     margin-top:60px;
-    background-position:center -60px;
+    background-position:center -80px; /* yukarı kırp Gemini logosu görünmesin */
     justify-content:flex-start;
   }
-  .hero div{
-    width:calc(100% - 80px);
-    margin-left:80px;
+  .hero-content{
+    margin-left:15px; /* mobilde başlıkları sola al logodan uzak */
   }
   .hero h1{font-size:28px;margin-bottom:10px;}
   .hero p{font-size:16px;margin-bottom:15px;}
   .hero .btn{padding:10px 20px;font-size:14px;}
   .service{width:90%;max-width:300px;}
   .gallery img{width:90%;max-width:300px;}
+  #about, #contact{margin-top:40px;}
   #about p{text-align:left;margin-left:15px;}
 }
 </style>
@@ -209,7 +211,7 @@ footer p{margin:5px 0;}
 
 <!-- Hero -->
 <section class="hero" id="hero">
-  <div>
+  <div class="hero-content">
     <h1>Modern & Prestijli Peyzaj Tasarımları</h1>
     <p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
     <a href="#projects" class="btn">Projeleri İncele</a>
@@ -283,4 +285,4 @@ document.getElementById('lightbox').addEventListener('click',()=>{document.getEl
 </script>
 
 </body>
-</html>
+  </html>
