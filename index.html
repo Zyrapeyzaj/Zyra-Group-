@@ -10,44 +10,42 @@ body{font-family:Arial,sans-serif;background:#f5f5f5;color:#333;scroll-behavior:
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;border-radius:8px;}
 
-/* Navbar */
+/* Navbar - tek beyaz panel */
 nav{
   display:flex;
   align-items:center;
   width:100%;
+  background:#fff; /* tüm navbar beyaz */
+  height:80px;
+  padding:0 5%;
   position:fixed;
   top:0;
   z-index:1000;
   box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
 
-/* Logo tarafı beyaz */
+/* Logo */
 .logo-section{
-  background:#fff;
-  flex:0 0 120px; 
+  flex:0 0 auto;
   display:flex;
   justify-content:center;
   align-items:center;
   height:80px;
-  border-right:2px solid #2e7d32; 
 }
 .logo-section img{height:60px;}
 
-/* Başlıklar tarafı beyaz */
-.nav-bg{
-  background:#fff;
-  flex:1;
+/* Başlıklar */
+.nav-links{
+  list-style:none;
   display:flex;
-  align-items:center;
-  padding-left:30px; 
+  gap:35px;
+  margin-left:50px; /* logo ile başlıklar arasında boşluk */
 }
-.nav-links{list-style:none;display:flex;gap:35px;}
 .nav-links li{position:relative;font-weight:600;}
 .nav-links li a{
   color:#145214; /* koyu yeşil yazı */
   padding:8px 0;
-  display:flex;
-  align-items:center;
+  display:block;
   transition:0.3s;
 }
 .nav-links li::after{
@@ -62,18 +60,6 @@ nav{
   border-radius:2px;
 }
 .nav-links li:hover::after{width:100%;}
-
-/* Başlık sol çizgi */
-.nav-links li a::before{
-  content:"";
-  display:inline-block;
-  width:4px;
-  height:24px;
-  background:#81c784;
-  margin-right:10px;
-  vertical-align:middle;
-  border-radius:2px;
-}
 
 /* Hero */
 .hero{
@@ -196,9 +182,8 @@ footer p{margin:5px 0;}
 
 /* Responsive */
 @media(max-width:768px){
-  .logo-section{flex:0 0 100px;}
-  .nav-bg{padding-left:15px;}
-  .nav-links{gap:10px;flex-wrap:wrap;}
+  nav{flex-direction:column;align-items:center;height:auto;padding:10px 3%;}
+  .nav-links{gap:10px;flex-wrap:wrap;margin-left:0;margin-top:10px;justify-content:center;}
   .hero h1{font-size:28px;text-align:left;}
   .hero p{font-size:16px;text-align:left;}
   .hero div{width:100%;padding:0 15px;}
@@ -217,15 +202,13 @@ footer p{margin:5px 0;}
   <div class="logo-section">
     <img src="1771426838111.png" alt="Zyra Peyzaj Logo">
   </div>
-  <div class="nav-bg">
-    <ul class="nav-links">
-      <li><a href="#hero">Ana Sayfa</a></li>
-      <li><a href="#services">Hizmetler</a></li>
-      <li><a href="#projects">Projeler</a></li>
-      <li><a href="#about">Hakkımızda</a></li>
-      <li><a href="#contact">İletişim</a></li>
-    </ul>
-  </div>
+  <ul class="nav-links">
+    <li><a href="#hero">Ana Sayfa</a></li>
+    <li><a href="#services">Hizmetler</a></li>
+    <li><a href="#projects">Projeler</a></li>
+    <li><a href="#about">Hakkımızda</a></li>
+    <li><a href="#contact">İletişim</a></li>
+  </ul>
 </nav>
 
 <!-- Hero -->
