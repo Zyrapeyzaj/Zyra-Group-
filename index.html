@@ -15,22 +15,20 @@ nav{
   display:flex;
   align-items:center;
   width:100%;
-  background:#fff; /* tüm navbar beyaz */
+  background:#fff;
   height:80px;
   padding:0 5%;
   position:fixed;
   top:0;
   z-index:1000;
   box-shadow:0 2px 8px rgba(0,0,0,0.2);
+  justify-content:space-between;
 }
 
 /* Logo */
 .logo-section{
-  flex:0 0 auto;
   display:flex;
-  justify-content:center;
   align-items:center;
-  height:80px;
 }
 .logo-section img{height:60px;}
 
@@ -39,27 +37,27 @@ nav{
   list-style:none;
   display:flex;
   gap:35px;
-  margin-left:50px; /* logo ile başlıklar arasında boşluk */
 }
 .nav-links li{position:relative;font-weight:600;}
 .nav-links li a{
-  color:#145214; /* koyu yeşil yazı */
+  color:#145214;
   padding:8px 0;
-  display:block;
+  display:flex;
+  align-items:center;
   transition:0.3s;
 }
-.nav-links li::after{
+.nav-links li a::before{
   content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:3px;
-  background:#81c784;
-  transition:0.3s;
+  display:inline-block;
+  width:4px;
+  height:20px;
+  background:#145214;
+  margin-right:8px;
   border-radius:2px;
 }
-.nav-links li:hover::after{width:100%;}
+.nav-links li:hover a::before{
+  background:#81c784;
+}
 
 /* Hero */
 .hero{
@@ -182,8 +180,18 @@ footer p{margin:5px 0;}
 
 /* Responsive */
 @media(max-width:768px){
-  nav{flex-direction:column;align-items:center;height:auto;padding:10px 3%;}
-  .nav-links{gap:10px;flex-wrap:wrap;margin-left:0;margin-top:10px;justify-content:center;}
+  nav{
+    flex-direction:column;
+    align-items:center;
+    height:auto;
+    padding:10px 3%;
+  }
+  .nav-links{
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:10px;
+    justify-content:center;
+  }
   .hero h1{font-size:28px;text-align:left;}
   .hero p{font-size:16px;text-align:left;}
   .hero div{width:100%;padding:0 15px;}
