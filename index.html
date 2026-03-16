@@ -14,7 +14,6 @@ img{max-width:100%;display:block;border-radius:8px;}
 nav{
 display:flex;
 align-items:center;
-justify-content:space-between;
 width:100%;
 background:#fff;
 height:80px;
@@ -23,34 +22,50 @@ position:fixed;
 top:0;
 z-index:1000;
 box-shadow:0 2px 8px rgba(0,0,0,0.2);
+justify-content:space-between;
 }
+
 .logo-section{
 display:flex;
 align-items:center;
 }
-.logo-section img{height:60px;}
-.menu-toggle{
-display:none;
-flex-direction:column;
-cursor:pointer;
-gap:5px;
+
+.logo-section img{
+height:60px;
 }
-.menu-toggle div{
-width:25px;
-height:3px;
-background:#145214;
-border-radius:2px;
-transition:0.3s;
-}
+
 .nav-links{
 list-style:none;
 display:flex;
 gap:35px;
 }
-.nav-links li{position:relative;font-weight:600;}
-.nav-links li a{color:#145214;padding:8px 0;display:flex;align-items:center;transition:0.3s;}
-.nav-links li a::before{content:"";display:inline-block;width:4px;height:20px;background:#145214;margin-right:8px;border-radius:2px;}
-.nav-links li:hover a::before{background:#81c784;}
+
+.nav-links li{
+position:relative;
+font-weight:600;
+}
+
+.nav-links li a{
+color:#145214;
+padding:8px 0;
+display:flex;
+align-items:center;
+transition:0.3s;
+}
+
+.nav-links li a::before{
+content:"";
+display:inline-block;
+width:4px;
+height:20px;
+background:#145214;
+margin-right:8px;
+border-radius:2px;
+}
+
+.nav-links li:hover a::before{
+background:#81c784;
+}
 
 /* Hero */
 .hero{
@@ -63,22 +78,19 @@ align-items:center;
 text-align:center;
 padding:60px 20px;
 margin-top:80px;
-position:relative;
+overflow:hidden;
 }
-.hero::after{
-content:"";
-position:absolute;
-inset:0;
-background:rgba(0,0,0,0.35);
-}
+
 .hero div{
 position:relative;
 z-index:2;
 color:white;
 text-shadow:0 2px 6px rgba(0,0,0,0.5);
 }
+
 .hero h1{font-size:48px;margin-bottom:20px;}
 .hero p{font-size:20px;margin-bottom:25px;}
+
 .hero .btn{
 padding:12px 30px;
 background:#2e7d32;
@@ -86,10 +98,12 @@ border-radius:30px;
 color:white;
 font-weight:600;
 }
+
 .hero .btn:hover{background:#145214;}
 
 /* Sections */
 .section{padding:80px 5%;}
+
 .section-title{
 text-align:left;
 font-size:36px;
@@ -98,6 +112,7 @@ color:#145214;
 font-weight:700;
 position:relative;
 }
+
 .section-title::before{
 content:"";
 display:inline-block;
@@ -116,6 +131,7 @@ flex-wrap:wrap;
 gap:20px;
 justify-content:center;
 }
+
 .service{
 background:#fff;
 padding:20px;
@@ -125,11 +141,13 @@ border:1px solid #ddd;
 text-align:center;
 box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
+
 .service h3{
 color:#145214;
 font-weight:600;
 margin-bottom:12px;
 }
+
 .service h3::after{
 content:"";
 width:40px;
@@ -139,6 +157,7 @@ display:block;
 margin:6px auto 0 auto;
 border-radius:2px;
 }
+
 .service p{
 font-size:14px;
 color:#555;
@@ -150,6 +169,7 @@ display:flex;
 flex-direction:column;
 gap:20px;
 }
+
 .project-buttons{
 display:flex;
 justify-content:center;
@@ -157,6 +177,7 @@ gap:15px;
 margin-bottom:20px;
 flex-wrap:wrap;
 }
+
 .project-buttons button{
 padding:10px 20px;
 border:none;
@@ -167,8 +188,12 @@ cursor:pointer;
 border-radius:8px;
 transition:0.3s;
 }
+
 .project-buttons button.active,
-.project-buttons button:hover{background:#2e7d32;}
+.project-buttons button:hover{
+background:#2e7d32;
+}
+
 .gallery{
 display:flex;
 flex-wrap:wrap;
@@ -177,33 +202,16 @@ justify-content:center;
 max-width:1200px;
 margin:auto;
 }
-.gallery img{width:250px;cursor:pointer;transition:0.3s;}
-.gallery img:hover{transform:scale(1.05);}
-.project-gallery{display:none;}
 
-/* Hakkımızda */
-#about p{font-size:16px;color:#555;line-height:1.7;}
-
-/* İletişim */
-#contact{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;}
-.contact-icons{
-display:flex;
-gap:20px;
-justify-content:center;
-margin-top:10px;
-}
-.contact-icons a{
-display:flex;
-align-items:center;
-justify-content:center;
-width:45px;height:45px;
-background:#145214;
-color:white;
-border-radius:50%;
+.gallery img{
+width:250px;
+cursor:pointer;
 transition:0.3s;
 }
-.contact-icons a:hover{background:#2e7d32;}
-.contact-icons img{width:24px;height:24px;}
+
+.gallery img:hover{transform:scale(1.05);}
+
+.project-gallery{display:none;}
 
 /* Footer */
 footer{
@@ -213,18 +221,23 @@ text-align:center;
 padding:30px;
 border-radius:12px;
 }
+
 footer p{margin:5px 0;}
 
 /* Lightbox */
 #lightbox{
 display:none;
 position:fixed;
-top:0;left:0;width:100%;height:100%;
+top:0;
+left:0;
+width:100%;
+height:100%;
 background:rgba(0,0,0,0.8);
 justify-content:center;
 align-items:center;
 z-index:2000;
 }
+
 #lightbox img{
 max-width:90%;
 max-height:90%;
@@ -233,48 +246,63 @@ border-radius:10px;
 
 /* Responsive */
 @media(max-width:768px){
+
 nav{
-flex-direction:row;
-justify-content:space-between;
-padding:0 3%;
-}
-.nav-links{
-position:fixed;
-top:0;left:-250px;
 flex-direction:column;
-background:#fff;
-width:250px;
-height:100%;
-padding-top:80px;
-transition:0.3s;
-gap:20px;
-z-index:1500;
+align-items:center;
+height:auto;
+padding:10px 3%;
 }
-.nav-links.show{left:0;}
-.menu-toggle{display:flex;}
+
+.nav-links{
+gap:10px;
+flex-wrap:wrap;
+margin-top:10px;
+justify-content:center;
+}
+
 .hero h1{font-size:28px;text-align:left;}
 .hero p{font-size:16px;text-align:left;}
-.hero div{width:100%;padding:0 15px;}
-.hero{padding:40px 15px; min-height:50vh; margin-top:60px;}
+
+.hero div{
+width:100%;
+padding:0 15px;
+}
+
+.hero{
+padding:40px 15px;
+min-height:50vh;
+margin-top:60px;
+}
+
 .hero .btn{padding:10px 20px;font-size:14px;}
-.service{width:90%;max-width:300px;}
-.gallery img{width:90%;max-width:300px;}
-#about p{text-align:left;margin-left:15px;}
-#contact{text-align:center;margin-left:0;}
+
+.service{
+width:90%;
+max-width:300px;
+}
+
+.gallery img{
+width:90%;
+max-width:300px;
+}
+
+#about p{
+text-align:left;
+margin-left:15px;
+}
+
 }
 </style>
 </head>
+
 <body>
 
 <nav>
 <div class="logo-section">
 <img src="1771426838111.png" alt="Zyra Peyzaj Logo">
 </div>
-<div class="menu-toggle" onclick="toggleMenu()">
-<div></div>
-<div></div>
-<div></div>
-</div>
+
 <ul class="nav-links">
 <li><a href="#hero">Ana Sayfa</a></li>
 <li><a href="#services">Hizmetler</a></li>
@@ -294,17 +322,38 @@ z-index:1500;
 
 <section class="section" id="services">
 <div class="section-title">Hizmetlerimiz</div>
+
 <div class="services">
-<div class="service"><h3>Peyzaj Tasarım</h3><p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p></div>
-<div class="service"><h3>Peyzaj Uygulama</h3><p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p></div>
-<div class="service"><h3>Bakım & Sürdürülebilirlik</h3><p>Yeşil alanların korunması ve bakımı.</p></div>
-<div class="service"><h3>Konut & Ticari Projeler</h3><p>Konut ve ticari alanlar için peyzaj çözümleri.</p></div>
+
+<div class="service">
+<h3>Peyzaj Tasarım</h3>
+<p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p>
+</div>
+
+<div class="service">
+<h3>Peyzaj Uygulama</h3>
+<p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p>
+</div>
+
+<div class="service">
+<h3>Bakım & Sürdürülebilirlik</h3>
+<p>Yeşil alanların korunması ve bakımı.</p>
+</div>
+
+<div class="service">
+<h3>Konut & Ticari Projeler</h3>
+<p>Konut ve ticari alanlar için peyzaj çözümleri.</p>
+</div>
+
 </div>
 </section>
 
 <section class="section" id="projects">
+
 <div class="section-title">Projelerimiz</div>
+
 <div class="project-section">
+
 <div class="project-buttons">
 <button class="active" onclick="showGallery('gol-konaklari')">Göl Konakları</button>
 <button onclick="showGallery('cesme-villa')">Çeşme-Villa Project</button>
@@ -353,37 +402,34 @@ z-index:1500;
 <img src="1761356782454.jpg">
 <img src="1761356778199.jpg">
 </div>
+
 </div>
 </section>
 
 <section class="section" id="about">
 <div class="section-title">Hakkımızda</div>
 <p>
-Zyra Peyzaj, 10 yıllık tecrübesi ve alanında uzman ekibiyle estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri sunan bir firmadır.  
-Kurucumuz <strong>Peyzaj Mimarı M. Aras Kan</strong> liderliğinde, her proje özenle tasarlanır ve uygulanır; modern peyzaj trendleri ile yenilikçi teknikler bir araya getirilir.  
-Konut veya ticari fark etmeksizin, mekânlara değer katan özgün ve fonksiyonel tasarımlar üretiriz.
+Zyra Peyzaj, 10 yıllık tecrübesi ve alanında uzman ekibiyle estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri sunan bir firmadır. Kurucumuz <strong>Peyzaj Mimarı M. Aras Kan</strong> liderliğinde, her proje özenle tasarlanır ve uygulanır; modern peyzaj trendleri ile yenilikçi teknikler bir araya getirilir. Konut veya ticari fark etmeksizin, mekânlara değer katan özgün ve fonksiyonel tasarımlar üretiriz.
 </p>
 <p>
-Her projemizde yaratıcılık, detaycılık ve müşteri memnuniyeti önceliğimizdir.  
-Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçların keyfini yaşar.  
-10 yıllık deneyimimizle, mekânlarınızı sadece güzelleştirmekle kalmayıp, yaşam kalitesini yükselten alanlar yaratıyoruz.
+Her projemizde yaratıcılık, detaycılık ve müşteri memnuniyeti önceliğimizdir. Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçların keyfini yaşar. 10 yıllık deneyimimizle, mekânlarınızı sadece güzelleştirmekle kalmayıp, yaşam kalitesini yükselten alanlar yaratıyoruz.
+</p>
+<p style="margin-bottom:10px;">
+<strong>Vizyonumuz:</strong> Türkiye’de peyzaj tasarımında sürdürülebilir, modern ve estetik çözümleriyle öncü firma olmak.
 </p>
 <p>
-<strong>Vizyonumuz:</strong> Türkiye’de peyzaj tasarımında sürdürülebilir, modern ve estetik çözümleriyle öncü firma olmak.  
-<br><strong>Misyonumuz:</strong> Müşteri odaklı, yenilikçi ve çevreye duyarlı projelerle yaşam alanlarını değerli ve işlevsel hâle getirmek.
+<strong>Misyonumuz:</strong> Müşteri odaklı, yenilikçi ve çevreye duyarlı projelerle yaşam alanlarını değerli ve işlevsel hâle getirmek.
 </p>
 </section>
 
 <section class="section" id="contact">
 <div class="section-title">İletişim</div>
 
-<a href="tel:+905359301670" class="btn" style="margin-bottom:15px;">📞 0535 930 16 70</a>
-
-<div class="contact-icons">
-<a href="https://zyrapeyzaj.com" target="_blank"><img src="web-icon.png" alt="Web"></a>
-<a href="https://www.instagram.com/zyragrup/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
-<a href="https://wa.me/905359301670" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
-</div>
+<p style="text-align:center;color:#555;">
+📞 0535 930 16 70<br>
+✉ zyrapeyzaj@gmail.com<br>
+📍 İstanbul
+</p>
 
 </section>
 
@@ -396,11 +442,7 @@ Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçlar�
 </div>
 
 <script>
-function toggleMenu(){
-document.querySelector('.nav-links').classList.toggle('show');
-}
 
-// Lightbox
 document.querySelectorAll('.gallery img').forEach(img=>{
 img.addEventListener('click',()=>{
 const lightbox=document.getElementById('lightbox');
@@ -413,18 +455,23 @@ document.getElementById('lightbox').addEventListener('click',()=>{
 document.getElementById('lightbox').style.display='none';
 });
 
-// Proje geçişleri
 function showGallery(id){
+
 document.querySelectorAll('.project-gallery').forEach(g=>{
 g.style.display='none';
 });
+
 document.getElementById(id).style.display='flex';
+
 document.querySelectorAll('.project-buttons button').forEach(b=>{
 b.classList.remove('active');
 });
+
 document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
+
 }
+
 </script>
 
 </body>
-  </html>
+</html>
