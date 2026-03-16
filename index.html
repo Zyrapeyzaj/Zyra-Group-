@@ -292,22 +292,13 @@ text-align:left;
 margin-left:15px;
 }
 
-#contact .contact-container{
-flex-direction:column;
-align-items:center;
-}
-
-#contact .contact-item{
-justify-content:center;
-}
-
-#contact .contact-social{
-justify-content:center;
+.contact-container{
+width:100%;
+padding:0 15px;
 }
 }
 </style>
 </head>
-
 <body>
 
 <nav>
@@ -334,35 +325,17 @@ justify-content:center;
 
 <section class="section" id="services">
 <div class="section-title">Hizmetlerimiz</div>
-
 <div class="services">
-<div class="service">
-<h3>Peyzaj Tasarım</h3>
-<p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p>
-</div>
-
-<div class="service">
-<h3>Peyzaj Uygulama</h3>
-<p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p>
-</div>
-
-<div class="service">
-<h3>Bakım & Sürdürülebilirlik</h3>
-<p>Yeşil alanların korunması ve bakımı.</p>
-</div>
-
-<div class="service">
-<h3>Konut & Ticari Projeler</h3>
-<p>Konut ve ticari alanlar için peyzaj çözümleri.</p>
-</div>
+<div class="service"><h3>Peyzaj Tasarım</h3><p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p></div>
+<div class="service"><h3>Peyzaj Uygulama</h3><p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p></div>
+<div class="service"><h3>Bakım & Sürdürülebilirlik</h3><p>Yeşil alanların korunması ve bakımı.</p></div>
+<div class="service"><h3>Konut & Ticari Projeler</h3><p>Konut ve ticari alanlar için peyzaj çözümleri.</p></div>
 </div>
 </section>
 
 <section class="section" id="projects">
 <div class="section-title">Projelerimiz</div>
-
 <div class="project-section">
-
 <div class="project-buttons">
 <button class="active" onclick="showGallery('gol-konaklari')">Göl Konakları</button>
 <button onclick="showGallery('cesme-villa')">Çeşme-Villa Project</button>
@@ -419,7 +392,6 @@ justify-content:center;
 <p>Zyra Peyzaj, estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri üreten profesyonel bir tasarım firmasıdır.</p>
 </section>
 
-<!-- İletişim kısmı güncellendi -->
 <section class="section" id="contact">
 <div class="section-title">İletişim</div>
 
@@ -447,9 +419,6 @@ justify-content:center;
 <a href="https://www.instagram.com/zyragrup" target="_blank" title="@zyragrup">
 <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:30px;">
 </a>
-<a href="https://www.instagram.com/mimararas" target="_blank" title="@mimararas">
-<img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" style="width:30px;">
-</a>
 <a href="https://wa.me/905359301670" target="_blank" title="WhatsApp">
 <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" style="width:30px;">
 </a>
@@ -467,6 +436,7 @@ justify-content:center;
 </div>
 
 <script>
+
 document.querySelectorAll('.gallery img').forEach(img=>{
 img.addEventListener('click',()=>{
 const lightbox=document.getElementById('lightbox');
@@ -480,16 +450,21 @@ document.getElementById('lightbox').style.display='none';
 });
 
 function showGallery(id){
+
 document.querySelectorAll('.project-gallery').forEach(g=>{
 g.style.display='none';
 });
+
 document.getElementById(id).style.display='flex';
+
 document.querySelectorAll('.project-buttons button').forEach(b=>{
 b.classList.remove('active');
 });
-document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
-}
-</script>
 
+document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
+
+}
+
+</script>
 </body>
-  </html>
+</html>
