@@ -8,24 +8,35 @@
 <style>
 
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:#f5f5f5;color:#333;overflow-x:hidden;}
 
-img{max-width:100%;border-radius:8px;}
+body{
+font-family:Arial,sans-serif;
+background:#f5f5f5;
+color:#333;
+scroll-behavior:smooth;
+overflow-x:hidden;
+}
+
+img{
+max-width:100%;
+display:block;
+border-radius:8px;
+}
 
 /* NAVBAR */
 
 nav{
 display:flex;
-justify-content:space-between;
 align-items:center;
-background:white;
+width:100%;
+background:#fff;
 height:80px;
 padding:0 5%;
 position:fixed;
 top:0;
-width:100%;
-box-shadow:0 2px 8px rgba(0,0,0,0.2);
 z-index:1000;
+box-shadow:0 2px 8px rgba(0,0,0,0.2);
+justify-content:space-between;
 }
 
 .logo-section img{
@@ -33,12 +44,12 @@ height:60px;
 }
 
 .nav-links{
+list-style:none;
 display:flex;
 gap:35px;
-list-style:none;
 }
 
-.nav-links a{
+.nav-links li a{
 color:#145214;
 font-weight:600;
 }
@@ -46,26 +57,26 @@ font-weight:600;
 /* HERO */
 
 .hero{
-margin-top:80px;
-height:60vh;
+min-height:60vh;
 background:url("1761356719775.jpg") center/cover no-repeat;
 display:flex;
-align-items:center;
 justify-content:center;
+align-items:center;
 text-align:center;
+margin-top:80px;
 color:white;
 }
 
 .hero h1{
 font-size:48px;
-margin-bottom:15px;
+margin-bottom:20px;
 }
 
 .hero p{
 font-size:20px;
 }
 
-/* SECTION */
+/* SECTIONS */
 
 .section{
 padding:80px 5%;
@@ -73,11 +84,12 @@ padding:80px 5%;
 
 .section-title{
 font-size:36px;
-color:#145214;
 margin-bottom:40px;
+color:#145214;
+font-weight:700;
 }
 
-/* HİZMETLER */
+/* SERVICES */
 
 .services{
 display:flex;
@@ -87,12 +99,13 @@ justify-content:center;
 }
 
 .service{
-background:white;
+background:#fff;
 padding:20px;
+border-radius:12px;
 width:220px;
-border-radius:10px;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);
+border:1px solid #ddd;
 text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* PROJELER */
@@ -102,6 +115,7 @@ display:flex;
 justify-content:center;
 gap:15px;
 margin-bottom:30px;
+flex-wrap:wrap;
 }
 
 .project-buttons button{
@@ -117,8 +131,6 @@ font-weight:600;
 .project-buttons button:hover{
 background:#2e7d32;
 }
-
-/* GALERİ */
 
 .project-gallery{
 display:none;
@@ -194,7 +206,7 @@ align-items:center;
 <section class="hero" id="hero">
 <div>
 <h1>Modern & Prestijli Peyzaj Tasarımları</h1>
-<p>Estetik ve sürdürülebilir dış mekân tasarımları</p>
+<p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
 </div>
 </section>
 
@@ -208,25 +220,26 @@ align-items:center;
 
 <div class="service">
 <h3>Peyzaj Tasarım</h3>
-<p>Estetik ve fonksiyonel bahçe tasarımları</p>
+<p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p>
 </div>
 
 <div class="service">
 <h3>Peyzaj Uygulama</h3>
-<p>Projelerin profesyonel uygulaması</p>
+<p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p>
 </div>
 
 <div class="service">
-<h3>Bahçe Bakımı</h3>
-<p>Sürdürülebilir peyzaj bakımı</p>
+<h3>Bakım & Sürdürülebilirlik</h3>
+<p>Yeşil alanların korunması ve bakımı.</p>
 </div>
 
 <div class="service">
-<h3>Villa Peyzajı</h3>
-<p>Özel villa bahçeleri tasarımı</p>
+<h3>Konut & Ticari Projeler</h3>
+<p>Konut ve ticari alanlar için peyzaj çözümleri.</p>
 </div>
 
 </div>
+
 </section>
 
 <!-- PROJELER -->
@@ -238,7 +251,6 @@ align-items:center;
 <div class="project-buttons">
 
 <button onclick="showProject('gol')">Göl Konakları</button>
-
 <button onclick="showProject('cesme')">Çeşme-Villa Project</button>
 
 </div>
@@ -282,12 +294,22 @@ align-items:center;
 
 </section>
 
-<!-- FOOTER -->
+<!-- İLETİŞİM -->
+
+<section class="section" id="contact">
+
+<div class="section-title">İletişim</div>
+
+<p style="text-align:center;">
+📞 0535 930 16 70<br>
+✉ zyrapeyzaj@gmail.com<br>
+📍 İstanbul
+</p>
+
+</section>
 
 <footer>
-
-<p>© 2026 Zyra Peyzaj</p>
-
+<p>© 2026 Zyra Peyzaj | Tüm Hakları Saklıdır</p>
 </footer>
 
 <script>
@@ -301,6 +323,8 @@ el.style.display="none";
 document.getElementById(id).style.display="block";
 
 }
+
+showProject("gol");
 
 </script>
 
