@@ -182,10 +182,18 @@ margin:auto;
 .project-gallery{display:none;}
 
 /* Hakkımızda */
-#about p{font-size:16px;color:#555;line-height:1.7; margin-bottom:15px;}
+#about p{font-size:16px;color:#555;line-height:1.7;margin-bottom:15px;}
 
 /* İletişim */
-#contact{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;}
+#contact{display:flex;flex-direction:column;align-items:center;text-align:center;gap:15px;}
+.contact-info{
+display:flex;
+align-items:center;
+gap:8px;
+margin-bottom:10px;
+color:#555;
+font-weight:500;
+}
 .contact-icons{
 display:flex;
 gap:20px;
@@ -196,11 +204,30 @@ margin-top:10px;
 display:flex;
 align-items:center;
 justify-content:center;
-width:55px;height:55px;
+width:45px;height:45px;
+background:#145214;
+color:white;
 border-radius:50%;
 transition:0.3s;
+font-size:20px;
+text-decoration:none;
 }
-.contact-icons a:hover{opacity:0.8;}
+.contact-icons a:hover{background:#2e7d32;}
+.contact-whatsapp{
+margin-top:15px;
+width:60px;
+height:60px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:#25D366;
+color:white;
+font-size:26px;
+text-decoration:none;
+transition:0.3s;
+}
+.contact-whatsapp:hover{background:#128C7E;}
 
 /* Footer */
 footer{
@@ -315,7 +342,7 @@ z-index:1500;
 <img src="1769466753897.png">
 <img src="1769466788289.png">
 <img src="1769466937815.png">
-<img src="1769466962645.jpg">
+<img src="1769466962645.png">
 <img src="1769466995948.png">
 </div>
 
@@ -365,38 +392,23 @@ Her projemizde yaratıcılık, detaycılık ve müşteri memnuniyeti önceliğim
 Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçların keyfini yaşar.  
 10 yıllık deneyimimizle, mekânlarınızı sadece güzelleştirmekle kalmayıp, yaşam kalitesini yükselten alanlar yaratıyoruz.
 </p>
-<p style="margin-top:15px;">
-<strong>Vizyonumuz:</strong> Türkiye’de peyzaj tasarımında sürdürülebilir, modern ve estetik çözümleriyle öncü firma olmak.
-</p>
-<p style="margin-top:15px;">
-<strong>Misyonumuz:</strong> Müşteri odaklı, yenilikçi ve çevreye duyarlı projelerle yaşam alanlarını değerli ve işlevsel hâle getirmek.
-</p>
+<p><strong>Vizyonumuz:</strong> Türkiye’de peyzaj tasarımında sürdürülebilir, modern ve estetik çözümleriyle öncü firma olmak.</p>
+<p><strong>Misyonumuz:</strong> Müşteri odaklı, yenilikçi ve çevreye duyarlı projelerle yaşam alanlarını değerli ve işlevsel hâle getirmek.</p>
 </section>
 
 <section class="section" id="contact">
 <div class="section-title">İletişim</div>
 
-<p style="display:flex; align-items:center; gap:8px; justify-content:center; font-size:16px; color:#555;">
-  📍 İstanbul, Türkiye
-</p>
+<div class="contact-info">📍 İstanbul</div>
+<a href="tel:+905359301670" class="btn" style="margin-bottom:15px;">📞 0535 930 16 70</a>
 
-<a href="tel:+905359301670" class="btn" style="margin-bottom:15px; background:#2e7d32; color:white; padding:12px 25px; border-radius:30px; display:inline-block;">
-  📞 0535 930 16 70
-</a>
-
-<div class="contact-icons" style="margin:20px 0; display:flex; gap:20px; justify-content:center;">
-  <a href="https://zyrapeyzaj.com" target="_blank" style="background:#145214; display:flex; align-items:center; justify-content:center; border-radius:50%; width:55px; height:55px; transition:0.3s;">
-    WWW
-  </a>
-  <a href="https://www.instagram.com/zyragrup/" target="_blank" style="background:#145214; display:flex; align-items:center; justify-content:center; border-radius:50%; width:55px; height:55px; transition:0.3s;">
-    IG
-  </a>
+<div class="contact-icons">
+<a href="https://zyrapeyzaj.com" target="_blank" title="Web">🌐</a>
+<a href="https://www.instagram.com/zyragrup/" target="_blank" title="Instagram">📷</a>
 </div>
 
-<a href="https://wa.me/905359301670" target="_blank" 
-   style="background:#25D366; color:white; text-decoration:none; font-weight:700; font-size:18px; padding:15px 30px; border-radius:50px; display:block; text-align:center; width:200px; margin:20px auto 0 auto;">
-  💬 WhatsApp ile Ulaşın
-</a>
+<a href="https://wa.me/905359301670" target="_blank" class="contact-whatsapp" title="WhatsApp">💬</a>
+
 </section>
 
 <footer>
@@ -409,34 +421,34 @@ Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçlar�
 
 <script>
 function toggleMenu(){
-  document.querySelector('.nav-links').classList.toggle('show');
+document.querySelector('.nav-links').classList.toggle('show');
 }
 
 // Lightbox
 document.querySelectorAll('.gallery img').forEach(img=>{
-  img.addEventListener('click',()=>{
-    const lightbox=document.getElementById('lightbox');
-    lightbox.querySelector('img').src=img.src;
-    lightbox.style.display='flex';
-  });
+img.addEventListener('click',()=>{
+const lightbox=document.getElementById('lightbox');
+lightbox.querySelector('img').src=img.src;
+lightbox.style.display='flex';
+});
 });
 
 document.getElementById('lightbox').addEventListener('click',()=>{
-  document.getElementById('lightbox').style.display='none';
+document.getElementById('lightbox').style.display='none';
 });
 
 // Proje geçişleri
 function showGallery(id){
-  document.querySelectorAll('.project-gallery').forEach(g=>{
-    g.style.display='none';
-  });
-  document.getElementById(id).style.display='flex';
-  document.querySelectorAll('.project-buttons button').forEach(b=>{
-    b.classList.remove('active');
-  });
-  document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
+document.querySelectorAll('.project-gallery').forEach(g=>{
+g.style.display='none';
+});
+document.getElementById(id).style.display='flex';
+document.querySelectorAll('.project-buttons button').forEach(b=>{
+b.classList.remove('active');
+});
+document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
 }
 </script>
 
 </body>
-</html>
+  </html>
