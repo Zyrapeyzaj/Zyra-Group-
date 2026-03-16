@@ -185,10 +185,30 @@ margin:auto;
 #about p{font-size:16px;color:#555;line-height:1.7;}
 
 /* İletişim */
-#contact{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;}
+#contact{
+display:flex;
+flex-direction:column;
+align-items:center;
+gap:20px;
+text-align:center;
+background:#145214;
+padding:40px 20px;
+border-radius:12px;
+color:white;
+}
+#contact .btn{
+background:#81c784;
+color:white;
+padding:12px 25px;
+border-radius:30px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
+}
+#contact .btn:hover{background:#2e7d32;}
 .contact-icons{
 display:flex;
-gap:20px;
+gap:25px;
 justify-content:center;
 margin-top:10px;
 }
@@ -196,13 +216,14 @@ margin-top:10px;
 display:flex;
 align-items:center;
 justify-content:center;
-width:45px;height:45px;
-background:#145214;
-color:white;
+width:50px;height:50px;
 border-radius:50%;
 transition:0.3s;
 }
-.contact-icons a:hover{background:#2e7d32;}
+.contact-icons a.web{background:#333;}
+.contact-icons a.instagram{background:#E1306C;}
+.contact-icons a.whatsapp{background:#25D366;}
+.contact-icons a:hover{opacity:0.8;}
 .contact-icons img{width:24px;height:24px;}
 
 /* Footer */
@@ -380,16 +401,15 @@ Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçlar�
 </section>
 
 <section class="section" id="contact">
-<div class="section-title">İletişim</div>
+<div class="section-title" style="color:white;">İletişim</div>
 
-<a href="tel:+905359301670" class="btn" style="margin-bottom:15px;">📞 0535 930 16 70</a>
+<a href="tel:+905359301670" class="btn">📞 0535 930 16 70</a>
 
 <div class="contact-icons">
-<a href="https://zyrapeyzaj.com" target="_blank"><img src="web-icon.png" alt="Web"></a>
-<a href="https://www.instagram.com/zyragrup/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
-<a href="https://wa.me/905359301670" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+<a href="https://zyrapeyzaj.com" target="_blank" class="web"><img src="web-icon.png" alt="Web"></a>
+<a href="https://www.instagram.com/zyragrup/" target="_blank" class="instagram"><img src="instagram-icon.png" alt="Instagram"></a>
+<a href="https://wa.me/905359301670" target="_blank" class="whatsapp"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
 </div>
-
 </section>
 
 <footer>
