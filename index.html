@@ -4,10 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Zyra Peyzaj</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Poppins', sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth;}
+body{font-family:Arial,sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth;}
 a{text-decoration:none;color:inherit;}
 img{max-width:100%;display:block;border-radius:8px;}
 
@@ -16,101 +15,168 @@ nav{
 display:flex;
 align-items:center;
 justify-content:space-between;
-background:#fff;
-height:70px;
-padding:0 20px;
-position:fixed;
 width:100%;
+background:#fff;
+height:80px;
+padding:0 5%;
+position:fixed;
 top:0;
 z-index:1000;
 box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
-nav .logo img{height:50px;}
-.hamburger{
-width:25px;height:2px;background:#145214;position:relative;cursor:pointer;
-}
-.hamburger::before,
-.hamburger::after{
-content:"";
-position:absolute;
-width:25px;height:2px;background:#145214;
-transition:0.3s;
-}
-.hamburger::before{top:-8px;}
-.hamburger::after{top:8px;}
-
-/* Side Panel */
-.side-panel{
-position:fixed;
-left:-250px;top:0;
-width:250px;height:100%;
-background:#145214;color:white;
-padding:80px 20px;
+.logo-section{
 display:flex;
-flex-direction:column;
-gap:20px;
-transition:0.3s;
-z-index:1100;
+align-items:center;
 }
-.side-panel a{
-color:white;font-size:18px;font-weight:600;transition:0.3s;
-}
-.side-panel a:hover{color:#81c784;}
-
-/* Overlay */
-.overlay{
+.logo-section img{height:60px;}
+.menu-toggle{
 display:none;
-position:fixed;top:0;left:0;width:100%;height:100%;
-background:rgba(0,0,0,0.5);
-z-index:1050;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
 }
+.menu-toggle div{
+width:25px;
+height:3px;
+background:#145214;
+border-radius:2px;
+transition:0.3s;
+}
+.nav-links{
+list-style:none;
+display:flex;
+gap:35px;
+}
+.nav-links li{position:relative;font-weight:600;}
+.nav-links li a{color:#145214;padding:8px 0;display:flex;align-items:center;transition:0.3s;}
+.nav-links li a::before{content:"";display:inline-block;width:4px;height:20px;background:#145214;margin-right:8px;border-radius:2px;}
+.nav-links li:hover a::before{background:#81c784;}
 
 /* Hero */
 .hero{
-min-height:70vh;
-background:url("1761356719775.jpg") center/cover no-repeat;
-display:flex;justify-content:center;align-items:center;text-align:center;
-padding:0 20px;margin-top:70px;
+min-height:60vh;
+max-height:80vh;
+background:url("1761356719775.jpg") center top / cover no-repeat;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:60px 20px;
+margin-top:80px;
+position:relative;
 }
-.hero h1{font-size:36px;color:white;text-shadow:0 2px 6px rgba(0,0,0,0.5);}
-.hero p{color:white;margin:15px 0;text-shadow:0 2px 6px rgba(0,0,0,0.5);}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.35);
+}
+.hero div{
+position:relative;
+z-index:2;
+color:white;
+text-shadow:0 2px 6px rgba(0,0,0,0.5);
+}
+.hero h1{font-size:48px;margin-bottom:20px;}
+.hero p{font-size:20px;margin-bottom:25px;}
 .hero .btn{
-padding:12px 30px;border-radius:30px;background:#2e7d32;color:white;font-weight:600;transition:0.3s;
+padding:12px 30px;
+background:#2e7d32;
+border-radius:30px;
+color:white;
+font-weight:600;
 }
 .hero .btn:hover{background:#145214;}
 
 /* Sections */
 .section{padding:80px 5%;}
 .section-title{
-text-align:left;font-size:36px;margin-bottom:40px;color:#145214;font-weight:700;position:relative;
+text-align:left;
+font-size:36px;
+margin-bottom:40px;
+color:#145214;
+font-weight:700;
+position:relative;
 }
 .section-title::before{
-content:"";display:inline-block;width:6px;height:36px;background:#81c784;margin-right:15px;vertical-align:middle;border-radius:3px;
+content:"";
+display:inline-block;
+width:6px;
+height:36px;
+background:#81c784;
+margin-right:15px;
+vertical-align:middle;
+border-radius:3px;
 }
 
 /* Hizmetler */
 .services{
-display:flex;flex-wrap:wrap;gap:20px;justify-content:center;
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
 }
 .service{
-background:#fff;padding:20px;border-radius:12px;width:220px;border:1px solid #ddd;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);
+background:#fff;
+padding:20px;
+border-radius:12px;
+width:220px;
+border:1px solid #ddd;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
 }
-.service h3{color:#145214;font-weight:600;margin-bottom:12px;}
+.service h3{
+color:#145214;
+font-weight:600;
+margin-bottom:12px;
+}
 .service h3::after{
-content:"";width:40px;height:3px;background:#2e7d32;display:block;margin:6px auto 0 auto;border-radius:2px;
+content:"";
+width:40px;
+height:3px;
+background:#2e7d32;
+display:block;
+margin:6px auto 0 auto;
+border-radius:2px;
 }
-.service p{font-size:14px;color:#555;}
+.service p{
+font-size:14px;
+color:#555;
+}
 
 /* Projeler */
-.project-section{display:flex;flex-direction:column;gap:20px;}
+.project-section{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
 .project-buttons{
-display:flex;justify-content:center;gap:15px;margin-bottom:20px;flex-wrap:wrap;
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
 }
 .project-buttons button{
-padding:10px 20px;border:none;background:#145214;color:white;font-weight:600;cursor:pointer;border-radius:8px;transition:0.3s;
+padding:10px 20px;
+border:none;
+background:#145214;
+color:white;
+font-weight:600;
+cursor:pointer;
+border-radius:8px;
+transition:0.3s;
 }
-.project-buttons button.active,.project-buttons button:hover{background:#2e7d32;}
-.gallery{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;max-width:1200px;margin:auto;}
+.project-buttons button.active,
+.project-buttons button:hover{background:#2e7d32;}
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+max-width:1200px;
+margin:auto;
+}
 .gallery img{width:250px;cursor:pointer;transition:0.3s;}
 .gallery img:hover{transform:scale(1.05);}
 .project-gallery{display:none;}
@@ -119,77 +185,113 @@ padding:10px 20px;border:none;background:#145214;color:white;font-weight:600;cur
 #about p{font-size:16px;color:#555;line-height:1.7;}
 
 /* İletişim */
-#contact{
-padding:50px 5%;position:relative;
+#contact{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;}
+.contact-icons{
+display:flex;
+gap:20px;
+justify-content:center;
+margin-top:10px;
 }
-.contact-container{
-display:flex;flex-direction:column;align-items:center;gap:20px;text-align:center;
+.contact-icons a{
+display:flex;
+align-items:center;
+justify-content:center;
+width:45px;height:45px;
+background:#145214;
+color:white;
+border-radius:50%;
+transition:0.3s;
 }
-.contact-item{
-display:flex;align-items:center;gap:10px;font-size:16px;color:#555;
-}
-.contact-item img{width:24px;height:24px;}
-.socials{
-display:flex;gap:15px;justify-content:center;margin-top:10px;
-}
-.socials a img{width:30px;height:30px;transition:0.3s;}
-.socials a img:hover{transform:scale(1.2);}
-
-/* WhatsApp Button */
-#contact .btn-whatsapp{
-margin-top:15px;padding:10px 20px;background:#25D366;color:white;font-weight:600;border:none;border-radius:8px;cursor:pointer;transition:0.3s;
-}
-#contact .btn-whatsapp:hover{background:#128C7E;}
+.contact-icons a:hover{background:#2e7d32;}
+.contact-icons img{width:24px;height:24px;}
 
 /* Footer */
-footer{background:#145214;color:white;text-align:center;padding:30px;border-radius:12px;}
+footer{
+background:#145214;
+color:white;
+text-align:center;
+padding:30px;
+border-radius:12px;
+}
 footer p{margin:5px 0;}
 
 /* Lightbox */
-#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:2000;}
-#lightbox img{max-width:90%;max-height:90%;border-radius:10px;}
+#lightbox{
+display:none;
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
 
 /* Responsive */
 @media(max-width:768px){
-.hamburger{display:block;}
-.side-panel{width:200px;}
-.side-panel a{font-size:16px;}
+nav{
+flex-direction:row;
+justify-content:space-between;
+padding:0 3%;
 }
-@media(min-width:768px){
-.hamburger{display:none;}
-.side-panel{left:0;top:70px;width:100%;height:auto;flex-direction:row;padding:0;gap:30px;background:none;color:#145214;}
-.overlay{display:none !important;}
+.nav-links{
+position:fixed;
+top:0;left:-250px;
+flex-direction:column;
+background:#fff;
+width:250px;
+height:100%;
+padding-top:80px;
+transition:0.3s;
+gap:20px;
+z-index:1500;
+}
+.nav-links.show{left:0;}
+.menu-toggle{display:flex;}
+.hero h1{font-size:28px;text-align:left;}
+.hero p{font-size:16px;text-align:left;}
+.hero div{width:100%;padding:0 15px;}
+.hero{padding:40px 15px; min-height:50vh; margin-top:60px;}
+.hero .btn{padding:10px 20px;font-size:14px;}
+.service{width:90%;max-width:300px;}
+.gallery img{width:90%;max-width:300px;}
+#about p{text-align:left;margin-left:15px;}
+#contact{text-align:center;margin-left:0;}
 }
 </style>
 </head>
 <body>
 
-<!-- Navbar -->
 <nav>
-<div class="logo"><img src="1771426838111.png" alt="Zyra Peyzaj Logo"></div>
-<div class="hamburger" id="hamburger"></div>
+<div class="logo-section">
+<img src="1771426838111.png" alt="Zyra Peyzaj Logo">
+</div>
+<div class="menu-toggle" onclick="toggleMenu()">
+<div></div>
+<div></div>
+<div></div>
+</div>
+<ul class="nav-links">
+<li><a href="#hero">Ana Sayfa</a></li>
+<li><a href="#services">Hizmetler</a></li>
+<li><a href="#projects">Projeler</a></li>
+<li><a href="#about">Hakkımızda</a></li>
+<li><a href="#contact">İletişim</a></li>
+</ul>
 </nav>
 
-<!-- Side Panel -->
-<div class="side-panel" id="sidePanel">
-<a href="#hero">Ana Sayfa</a>
-<a href="#services">Hizmetler</a>
-<a href="#projects">Projeler</a>
-<a href="#about">Hakkımızda</a>
-<a href="#contact">İletişim</a>
-</div>
-<div class="overlay" id="overlay"></div>
-
-<!-- Hero -->
 <section class="hero" id="hero">
 <div>
 <h1>Modern & Prestijli Peyzaj Tasarımları</h1>
 <p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
-<a href="tel:+905359301670" class="btn">Bizlere Ulaşın</a>
+<a href="#contact" class="btn">Bizlere Ulaşın</a>
 </div>
 </section>
 
-<!-- Hizmetler -->
 <section class="section" id="services">
 <div class="section-title">Hizmetlerimiz</div>
 <div class="services">
@@ -200,7 +302,6 @@ footer p{margin:5px 0;}
 </div>
 </section>
 
-<!-- Projeler -->
 <section class="section" id="projects">
 <div class="section-title">Projelerimiz</div>
 <div class="project-section">
@@ -255,55 +356,48 @@ footer p{margin:5px 0;}
 </div>
 </section>
 
-<!-- Hakkımızda -->
 <section class="section" id="about">
 <div class="section-title">Hakkımızda</div>
-<p>Zyra Peyzaj, estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri üreten profesyonel bir tasarım firmasıdır.</p>
+<p>
+Zyra Peyzaj, 10 yıllık tecrübesi ve alanında uzman ekibiyle estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri sunan bir firmadır.  
+Kurucumuz <strong>Peyzaj Mimarı M. Aras Kan</strong> liderliğinde, her proje özenle tasarlanır ve uygulanır; modern peyzaj trendleri ile yenilikçi teknikler bir araya getirilir.  
+Konut veya ticari fark etmeksizin, mekânlara değer katan özgün ve fonksiyonel tasarımlar üretiriz.
+</p>
+<p>
+Her projemizde yaratıcılık, detaycılık ve müşteri memnuniyeti önceliğimizdir.  
+Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçların keyfini yaşar.  
+10 yıllık deneyimimizle, mekânlarınızı sadece güzelleştirmekle kalmayıp, yaşam kalitesini yükselten alanlar yaratıyoruz.
+</p>
+<p>
+<strong>Vizyonumuz:</strong> Türkiye’de peyzaj tasarımında sürdürülebilir, modern ve estetik çözümleriyle öncü firma olmak.  
+<br><strong>Misyonumuz:</strong> Müşteri odaklı, yenilikçi ve çevreye duyarlı projelerle yaşam alanlarını değerli ve işlevsel hâle getirmek.
+</p>
 </section>
 
-<!-- İletişim -->
 <section class="section" id="contact">
 <div class="section-title">İletişim</div>
-<div class="contact-container">
-<div class="contact-item">📞 0535 930 16 70</div>
-<div class="contact-item">✉ zyrapeyzaj@gmail.com</div>
-<div class="contact-item">📍 İstanbul</div>
 
-<div class="socials">
-<a href="https://zyrapeyzaj.com" target="_blank"><img src="https://img.icons8.com/color/48/000000/domain.png" alt="Site"></a>
-<a href="https://www.instagram.com/zyragrup" target="_blank"><img src="https://img.icons8.com/color/48/000000/instagram-new--v1.png" alt="Instagram"></a>
+<a href="tel:+905359301670" class="btn" style="margin-bottom:15px;">📞 0535 930 16 70</a>
+
+<div class="contact-icons">
+<a href="https://zyrapeyzaj.com" target="_blank"><img src="web-icon.png" alt="Web"></a>
+<a href="https://www.instagram.com/zyragrup/" target="_blank"><img src="instagram-icon.png" alt="Instagram"></a>
+<a href="https://wa.me/905359301670" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
 </div>
 
-<button class="btn-whatsapp" onclick="window.open('https://wa.me/905359301670','_blank')">WhatsApp ile Ulaş</button>
-</div>
 </section>
 
 <footer>
 <p>© 2026 Zyra Peyzaj | Tüm Hakları Saklıdır</p>
 </footer>
 
-<div id="lightbox"><img src=""></div>
+<div id="lightbox">
+<img src="">
+</div>
 
 <script>
-// Hamburger panel
-const hamburger=document.getElementById('hamburger');
-const sidePanel=document.getElementById('sidePanel');
-const overlay=document.getElementById('overlay');
-hamburger.addEventListener('click',()=>{
-sidePanel.style.left='0';
-overlay.style.display='block';
-});
-overlay.addEventListener('click',()=>{
-sidePanel.style.left='-250px';
-overlay.style.display='none';
-});
-
-// Proje galerisi
-function showGallery(id){
-document.querySelectorAll('.project-gallery').forEach(g=>g.style.display='none');
-document.getElementById(id).style.display='flex';
-document.querySelectorAll('.project-buttons button').forEach(b=>b.classList.remove('active'));
-document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
+function toggleMenu(){
+document.querySelector('.nav-links').classList.toggle('show');
 }
 
 // Lightbox
@@ -314,9 +408,22 @@ lightbox.querySelector('img').src=img.src;
 lightbox.style.display='flex';
 });
 });
+
 document.getElementById('lightbox').addEventListener('click',()=>{
 document.getElementById('lightbox').style.display='none';
 });
+
+// Proje geçişleri
+function showGallery(id){
+document.querySelectorAll('.project-gallery').forEach(g=>{
+g.style.display='none';
+});
+document.getElementById(id).style.display='flex';
+document.querySelectorAll('.project-buttons button').forEach(b=>{
+b.classList.remove('active');
+});
+document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
+}
 </script>
 
 </body>
