@@ -24,11 +24,29 @@ top:0;
 z-index:1000;
 box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
-.logo-section{display:flex;align-items:center;}
+.logo-section{
+display:flex;
+align-items:center;
+}
 .logo-section img{height:60px;}
-.menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;}
-.menu-toggle div{width:25px;height:3px;background:#145214;border-radius:2px;transition:0.3s;}
-.nav-links{list-style:none;display:flex;gap:35px;}
+.menu-toggle{
+display:none;
+flex-direction:column;
+cursor:pointer;
+gap:5px;
+}
+.menu-toggle div{
+width:25px;
+height:3px;
+background:#145214;
+border-radius:2px;
+transition:0.3s;
+}
+.nav-links{
+list-style:none;
+display:flex;
+gap:35px;
+}
 .nav-links li{position:relative;font-weight:600;}
 .nav-links li a{color:#145214;padding:8px 0;display:flex;align-items:center;transition:0.3s;}
 .nav-links li a::before{content:"";display:inline-block;width:4px;height:20px;background:#145214;margin-right:8px;border-radius:2px;}
@@ -47,59 +65,188 @@ padding:60px 20px;
 margin-top:80px;
 position:relative;
 }
-.hero::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,0.35);}
-.hero div{position:relative;z-index:2;color:white;text-shadow:0 2px 6px rgba(0,0,0,0.5);}
+.hero::after{
+content:"";
+position:absolute;
+inset:0;
+background:rgba(0,0,0,0.35);
+}
+.hero div{
+position:relative;
+z-index:2;
+color:white;
+text-shadow:0 2px 6px rgba(0,0,0,0.5);
+}
 .hero h1{font-size:48px;margin-bottom:20px;}
 .hero p{font-size:20px;margin-bottom:25px;}
-.hero .btn{padding:12px 30px;background:#2e7d32;border-radius:30px;color:white;font-weight:600;}
+.hero .btn{
+padding:12px 30px;
+background:#2e7d32;
+border-radius:30px;
+color:white;
+font-weight:600;
+}
 .hero .btn:hover{background:#145214;}
 
 /* Sections */
 .section{padding:80px 5%;}
-.section-title{ text-align:left; font-size:36px; margin-bottom:40px; color:#145214; font-weight:700; position:relative;}
-.section-title::before{content:"";display:inline-block;width:6px;height:36px;background:#81c784;margin-right:15px;vertical-align:middle;border-radius:3px;}
+.section-title{
+text-align:left;
+font-size:36px;
+margin-bottom:40px;
+color:#145214;
+font-weight:700;
+position:relative;
+}
+.section-title::before{
+content:"";
+display:inline-block;
+width:6px;
+height:36px;
+background:#81c784;
+margin-right:15px;
+vertical-align:middle;
+border-radius:3px;
+}
 
 /* Hizmetler */
-.services{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
-.service{background:#fff;padding:20px;border-radius:12px;width:220px;border:1px solid #ddd;text-align:center;box-shadow:0 4px 12px rgba(0,0,0,0.1);}
-.service h3{color:#145214;font-weight:600;margin-bottom:12px;}
-.service h3::after{content:"";width:40px;height:3px;background:#2e7d32;display:block;margin:6px auto 0 auto;border-radius:2px;}
-.service p{font-size:14px;color:#555;}
+.services{
+display:flex;
+flex-wrap:wrap;
+gap:20px;
+justify-content:center;
+}
+.service{
+background:#fff;
+padding:20px;
+border-radius:12px;
+width:220px;
+border:1px solid #ddd;
+text-align:center;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+.service h3{
+color:#145214;
+font-weight:600;
+margin-bottom:12px;
+}
+.service h3::after{
+content:"";
+width:40px;
+height:3px;
+background:#2e7d32;
+display:block;
+margin:6px auto 0 auto;
+border-radius:2px;
+}
+.service p{
+font-size:14px;
+color:#555;
+}
 
 /* Projeler */
-.project-section{display:flex;flex-direction:column;gap:20px;}
-.project-buttons{display:flex;justify-content:center;gap:15px;margin-bottom:20px;flex-wrap:wrap;}
-.project-buttons button{padding:10px 20px;border:none;background:#145214;color:white;font-weight:600;cursor:pointer;border-radius:8px;transition:0.3s;}
+.project-section{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+.project-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-bottom:20px;
+flex-wrap:wrap;
+}
+.project-buttons button{
+padding:10px 20px;
+border:none;
+background:#145214;
+color:white;
+font-weight:600;
+cursor:pointer;
+border-radius:8px;
+transition:0.3s;
+}
 .project-buttons button.active,
 .project-buttons button:hover{background:#2e7d32;}
-.gallery{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;max-width:1200px;margin:auto;}
+.gallery{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+justify-content:center;
+max-width:1200px;
+margin:auto;
+}
 .gallery img{width:250px;cursor:pointer;transition:0.3s;}
 .gallery img:hover{transform:scale(1.05);}
 .project-gallery{display:none;}
 
 /* Hakkımızda */
-#about p{font-size:16px;color:#555;line-height:1.7;margin-bottom:15px;}
+#about p{font-size:16px;color:#555;line-height:1.7; margin-bottom:15px;}
 
 /* İletişim */
-#contact{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-bottom:40px;}
-#contact p{font-size:16px; color:#555; margin-bottom:10px;}
-.contact-icons{display:flex;gap:20px;justify-content:center;margin-top:10px;}
-.contact-icons a{display:flex;align-items:center;justify-content:center;width:55px;height:55px;border-radius:50%;transition:0.3s;}
-.contact-icons a:hover{transform:scale(1.1);}
-.contact-icons img{width:28px;height:28px;}
+#contact{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;}
+.contact-icons{
+display:flex;
+gap:20px;
+justify-content:center;
+margin-top:10px;
+}
+.contact-icons a{
+display:flex;
+align-items:center;
+justify-content:center;
+width:55px;height:55px;
+border-radius:50%;
+transition:0.3s;
+}
+.contact-icons a:hover{opacity:0.8;}
 
 /* Footer */
-footer{background:#145214;color:white;text-align:center;padding:30px;border-radius:12px;}
+footer{
+background:#145214;
+color:white;
+text-align:center;
+padding:30px;
+border-radius:12px;
+}
 footer p{margin:5px 0;}
 
 /* Lightbox */
-#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:2000;}
-#lightbox img{max-width:90%;max-height:90%;border-radius:10px;}
+#lightbox{
+display:none;
+position:fixed;
+top:0;left:0;width:100%;height:100%;
+background:rgba(0,0,0,0.8);
+justify-content:center;
+align-items:center;
+z-index:2000;
+}
+#lightbox img{
+max-width:90%;
+max-height:90%;
+border-radius:10px;
+}
 
 /* Responsive */
 @media(max-width:768px){
-nav{flex-direction:row;justify-content:space-between;padding:0 3%;}
-.nav-links{position:fixed;top:0;left:-250px;flex-direction:column;background:#fff;width:250px;height:100%;padding-top:80px;transition:0.3s;gap:20px;z-index:1500;}
+nav{
+flex-direction:row;
+justify-content:space-between;
+padding:0 3%;
+}
+.nav-links{
+position:fixed;
+top:0;left:-250px;
+flex-direction:column;
+background:#fff;
+width:250px;
+height:100%;
+padding-top:80px;
+transition:0.3s;
+gap:20px;
+z-index:1500;
+}
 .nav-links.show{left:0;}
 .menu-toggle{display:flex;}
 .hero h1{font-size:28px;text-align:left;}
@@ -112,7 +259,6 @@ nav{flex-direction:row;justify-content:space-between;padding:0 3%;}
 #about p{text-align:left;margin-left:15px;}
 #contact{text-align:center;margin-left:0;}
 }
-
 </style>
 </head>
 <body>
@@ -122,7 +268,9 @@ nav{flex-direction:row;justify-content:space-between;padding:0 3%;}
 <img src="1771426838111.png" alt="Zyra Peyzaj Logo">
 </div>
 <div class="menu-toggle" onclick="toggleMenu()">
-<div></div><div></div><div></div>
+<div></div>
+<div></div>
+<div></div>
 </div>
 <ul class="nav-links">
 <li><a href="#hero">Ana Sayfa</a></li>
@@ -167,7 +315,7 @@ nav{flex-direction:row;justify-content:space-between;padding:0 3%;}
 <img src="1769466753897.png">
 <img src="1769466788289.png">
 <img src="1769466937815.png">
-<img src="1769466962645.png">
+<img src="1769466962645.jpg">
 <img src="1769466995948.png">
 </div>
 
@@ -228,20 +376,26 @@ Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçlar�
 <section class="section" id="contact">
 <div class="section-title">İletişim</div>
 
-<p>İstanbul, Türkiye</p>
+<p style="display:flex; align-items:center; gap:8px; justify-content:center; font-size:16px; color:#555;">
+  📍 İstanbul, Türkiye
+</p>
 
 <a href="tel:+905359301670" class="btn" style="margin-bottom:15px; background:#2e7d32; color:white; padding:12px 25px; border-radius:30px; display:inline-block;">
-📞 0535 930 16 70
+  📞 0535 930 16 70
 </a>
 
-<div class="contact-icons" style="margin:20px 0;">
-<a href="https://zyrapeyzaj.com" target="_blank" style="background:#145214;"><img src="web-icon.png" alt="Web"></a>
-<a href="https://www.instagram.com/zyragrup/" target="_blank" style="background:#145214;"><img src="instagram-icon.png" alt="Instagram"></a>
+<div class="contact-icons" style="margin:20px 0; display:flex; gap:20px; justify-content:center;">
+  <a href="https://zyrapeyzaj.com" target="_blank" style="background:#145214; display:flex; align-items:center; justify-content:center; border-radius:50%; width:55px; height:55px; transition:0.3s;">
+    WWW
+  </a>
+  <a href="https://www.instagram.com/zyragrup/" target="_blank" style="background:#145214; display:flex; align-items:center; justify-content:center; border-radius:50%; width:55px; height:55px; transition:0.3s;">
+    IG
+  </a>
 </div>
 
 <a href="https://wa.me/905359301670" target="_blank" 
    style="background:#25D366; color:white; text-decoration:none; font-weight:700; font-size:18px; padding:15px 30px; border-radius:50px; display:block; text-align:center; width:200px; margin:20px auto 0 auto;">
-💬 WhatsApp ile Ulaşın
+  💬 WhatsApp ile Ulaşın
 </a>
 </section>
 
@@ -249,31 +403,40 @@ Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçlar�
 <p>© 2026 Zyra Peyzaj | Tüm Hakları Saklıdır</p>
 </footer>
 
-<div id="lightbox"><img src=""></div>
+<div id="lightbox">
+<img src="">
+</div>
 
 <script>
-function toggleMenu(){document.querySelector('.nav-links').classList.toggle('show');}
+function toggleMenu(){
+  document.querySelector('.nav-links').classList.toggle('show');
+}
 
 // Lightbox
 document.querySelectorAll('.gallery img').forEach(img=>{
-img.addEventListener('click',()=>{
-const lightbox=document.getElementById('lightbox');
-lightbox.querySelector('img').src=img.src;
-lightbox.style.display='flex';
+  img.addEventListener('click',()=>{
+    const lightbox=document.getElementById('lightbox');
+    lightbox.querySelector('img').src=img.src;
+    lightbox.style.display='flex';
+  });
 });
-});
+
 document.getElementById('lightbox').addEventListener('click',()=>{
-document.getElementById('lightbox').style.display='none';
+  document.getElementById('lightbox').style.display='none';
 });
 
 // Proje geçişleri
 function showGallery(id){
-document.querySelectorAll('.project-gallery').forEach(g=>{g.style.display='none';});
-document.getElementById(id).style.display='flex';
-document.querySelectorAll('.project-buttons button').forEach(b=>{b.classList.remove('active');});
-document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
+  document.querySelectorAll('.project-gallery').forEach(g=>{
+    g.style.display='none';
+  });
+  document.getElementById(id).style.display='flex';
+  document.querySelectorAll('.project-buttons button').forEach(b=>{
+    b.classList.remove('active');
+  });
+  document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
 }
 </script>
 
 </body>
-  </html>
+</html>
