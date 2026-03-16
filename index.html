@@ -24,19 +24,17 @@ top:0;
 z-index:1000;
 box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
-.logo-section{
-display:flex;
-align-items:center;
-}
+.logo-section{display:flex;align-items:center;}
 .logo-section img{height:60px;}
 .menu-toggle{
 display:none;
 flex-direction:column;
 cursor:pointer;
 gap:5px;
+z-index:1100;
 }
 .menu-toggle div{
-width:25px;
+width:30px;
 height:3px;
 background:#145214;
 border-radius:2px;
@@ -46,6 +44,7 @@ transition:0.3s;
 list-style:none;
 display:flex;
 gap:35px;
+transition:0.3s;
 }
 .nav-links li{position:relative;font-weight:600;}
 .nav-links li a{color:#145214;padding:8px 0;display:flex;align-items:center;transition:0.3s;}
@@ -185,7 +184,13 @@ margin:auto;
 #about p{font-size:16px;color:#555;line-height:1.7;margin-bottom:15px;}
 
 /* İletişim */
-#contact{display:flex;flex-direction:column;align-items:center;text-align:center;gap:15px;}
+#contact{
+display:flex;
+flex-direction:column;
+align-items:center;
+text-align:center;
+gap:15px;
+}
 .contact-info{
 display:flex;
 align-items:center;
@@ -193,10 +198,11 @@ gap:8px;
 margin-bottom:10px;
 color:#555;
 font-weight:500;
+font-size:16px;
 }
 .contact-icons{
 display:flex;
-gap:20px;
+gap:15px;
 justify-content:center;
 margin-top:10px;
 }
@@ -204,28 +210,33 @@ margin-top:10px;
 display:flex;
 align-items:center;
 justify-content:center;
-width:45px;height:45px;
-background:#145214;
-color:white;
+width:50px;
+height:50px;
 border-radius:50%;
 transition:0.3s;
 font-size:20px;
 text-decoration:none;
+color:white;
 }
-.contact-icons a:hover{background:#2e7d32;}
+.contact-icons a.web{background:#2e7d32;} /* yeşil web */
+.contact-icons a.instagram{
+background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+}
+.contact-icons a:hover{opacity:0.8;}
 .contact-whatsapp{
-margin-top:15px;
-width:60px;
-height:60px;
+margin-top:20px;
+padding:12px 20px;
+background:#25D366;
+color:white;
+border-radius:12px;
+font-size:22px;
+font-weight:600;
+text-decoration:none;
+transition:0.3s;
 display:flex;
 align-items:center;
 justify-content:center;
-border-radius:50%;
-background:#25D366;
-color:white;
-font-size:26px;
-text-decoration:none;
-transition:0.3s;
+gap:10px;
 }
 .contact-whatsapp:hover{background:#128C7E;}
 
@@ -257,22 +268,20 @@ border-radius:10px;
 
 /* Responsive */
 @media(max-width:768px){
-nav{
-flex-direction:row;
-justify-content:space-between;
-padding:0 3%;
-}
+nav{flex-direction:row;justify-content:space-between;padding:0 3%;}
 .nav-links{
 position:fixed;
-top:0;left:-250px;
+top:0;left:-280px;
 flex-direction:column;
 background:#fff;
-width:250px;
+width:280px;
 height:100%;
 padding-top:80px;
 transition:0.3s;
-gap:20px;
+gap:25px;
 z-index:1500;
+box-shadow:2px 0 12px rgba(0,0,0,0.2);
+padding-left:20px;
 }
 .nav-links.show{left:0;}
 .menu-toggle{display:flex;}
@@ -398,16 +407,15 @@ Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçlar�
 
 <section class="section" id="contact">
 <div class="section-title">İletişim</div>
-
 <div class="contact-info">📍 İstanbul</div>
 <a href="tel:+905359301670" class="btn" style="margin-bottom:15px;">📞 0535 930 16 70</a>
 
 <div class="contact-icons">
-<a href="https://zyrapeyzaj.com" target="_blank" title="Web">🌐</a>
-<a href="https://www.instagram.com/zyragrup/" target="_blank" title="Instagram">📷</a>
+<a href="https://zyrapeyzaj.com" target="_blank" class="web" title="Web">🌐</a>
+<a href="https://www.instagram.com/zyragrup/" target="_blank" class="instagram" title="Instagram">📷</a>
 </div>
 
-<a href="https://wa.me/905359301670" target="_blank" class="contact-whatsapp" title="WhatsApp">💬</a>
+<a href="https://wa.me/905359301670" target="_blank" class="contact-whatsapp">💬 WhatsApp</a>
 
 </section>
 
@@ -432,7 +440,6 @@ lightbox.querySelector('img').src=img.src;
 lightbox.style.display='flex';
 });
 });
-
 document.getElementById('lightbox').addEventListener('click',()=>{
 document.getElementById('lightbox').style.display='none';
 });
@@ -451,4 +458,4 @@ document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.a
 </script>
 
 </body>
-  </html>
+            </html>
