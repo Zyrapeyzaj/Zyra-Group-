@@ -143,17 +143,25 @@ nav{
 .service p{font-size:14px;color:#555;}
 
 /* Projeler */
-.project-section{display:flex;flex-direction:column;gap:40px;}
-.project{
-  padding:20px;
-  border-radius:12px;
-  background:#fff;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-.project h2{
-  color:#145214;
+.project-section{display:flex;flex-direction:column;gap:20px;}
+.project-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
   margin-bottom:20px;
-  text-align:center;
+}
+.project-buttons button{
+  padding:10px 20px;
+  border:none;
+  background:#145214;
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  border-radius:8px;
+  transition:0.3s;
+}
+.project-buttons button.active, .project-buttons button:hover{
+  background:#2e7d32;
 }
 .gallery{
   display:flex;
@@ -167,6 +175,7 @@ nav{
   transition:0.3s;
 }
 .gallery img:hover{transform:scale(1.05);}
+.project-gallery{display:none;}
 
 /* Footer */
 footer{
@@ -242,40 +251,35 @@ footer p{margin:5px 0;}
 <!-- Projeler -->
 <section class="section" id="projects">
   <div class="section-title">Projelerimiz</div>
-
-  <!-- Göl Konakları -->
   <div class="project-section">
-    <div class="project">
-      <h2>Göl Konakları</h2>
-      <div class="gallery">
-        <img src="1761356716505.jpg" alt="Göl Konakları">
-        <img src="1761356719775.jpg" alt="Göl Konakları">
-        <img src="1769466753897.png" alt="Göl Konakları">
-        <img src="1769466788289.png" alt="Göl Konakları">
-        <img src="1769466937815.png" alt="Göl Konakları">
-        <img src="1769466962645.png" alt="Göl Konakları">
-        <img src="1769466995948.png" alt="Göl Konakları">
-      </div>
+    <div class="project-buttons">
+      <button class="active" onclick="showGallery('gol-konaklari')">Göl Konakları</button>
+      <button onclick="showGallery('cesme-villa')">Çeşme-Villa Project</button>
+    </div>
+    
+    <!-- Göl Konakları Gallery -->
+    <div id="gol-konaklari" class="project-gallery" style="display:flex;">
+      <img src="1761356716505.jpg" alt="Göl Konakları">
+      <img src="1761356719775.jpg" alt="Göl Konakları">
+      <img src="1769466753897.png" alt="Göl Konakları">
+      <img src="1769466788289.png" alt="Göl Konakları">
+      <img src="1769466937815.png" alt="Göl Konakları">
+      <img src="1769466962645.png" alt="Göl Konakları">
+      <img src="1769466995948.png" alt="Göl Konakları">
+    </div>
+    
+    <!-- Çeşme Villa Gallery -->
+    <div id="cesme-villa" class="project-gallery">
+      <img src="1773488129274.png" alt="Çeşme Villa">
+      <img src="1773487409782.png" alt="Çeşme Villa">
+      <img src="1773487355136.png" alt="Çeşme Villa">
+      <img src="1773487283900.png" alt="Çeşme Villa">
+      <img src="1773487163704.png" alt="Çeşme Villa">
+      <img src="1773487096078.png" alt="Çeşme Villa">
+      <img src="1773486965307.png" alt="Çeşme Villa">
+      <img src="1773487049305.png" alt="Çeşme Villa">
     </div>
   </div>
-
-  <!-- Çeşme-Villa Project -->
-  <div class="project-section">
-    <div class="project">
-      <h2>Çeşme-Villa Project</h2>
-      <div class="gallery">
-        <img src="1773488129274.png" alt="Çeşme-Villa Project">
-        <img src="1773487409782.png" alt="Çeşme-Villa Project">
-        <img src="1773487355136.png" alt="Çeşme-Villa Project">
-        <img src="1773487283900.png" alt="Çeşme-Villa Project">
-        <img src="1773487163704.png" alt="Çeşme-Villa Project">
-        <img src="1773487096078.png" alt="Çeşme-Villa Project">
-        <img src="1773486965307.png" alt="Çeşme-Villa Project">
-        <img src="1773487049305.png" alt="Çeşme-Villa Project">
-      </div>
-    </div>
-  </div>
-
 </section>
 
 <!-- Hakkımızda -->
@@ -303,7 +307,9 @@ footer p{margin:5px 0;}
 
 <!-- Lightbox -->
 <div id="lightbox"><img src="" alt="Proje"></div>
+
 <script>
+// Lightbox
 document.querySelectorAll('.gallery img').forEach(img=>{
   img.addEventListener('click',()=>{
     const lightbox=document.getElementById('lightbox');
@@ -312,7 +318,15 @@ document.querySelectorAll('.gallery img').forEach(img=>{
   });
 });
 document.getElementById('lightbox').addEventListener('click',()=>{document.getElementById('lightbox').style.display='none';});
+
+// Proje geçişleri
+function showGallery(id){
+  document.querySelectorAll('.project-gallery').forEach(g=>g.style.display='none');
+  document.getElementById(id).style.display='flex';
+  document.querySelectorAll('.project-buttons button').forEach(b=>b.classList.remove('active'));
+  document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
+}
 </script>
 
 </body>
-  </html>
+</html>
