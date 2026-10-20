@@ -1,741 +1,484 @@
-
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MarQen Group | Doğanın Mimarı</title>
-  <meta name="description" content="MarQen Group - Modern villa bahçeleri, peyzaj tasarımı ve profesyonel bahçe uygulamaları.">
-  <meta name="theme-color" content="#ffffff">
-
-  <style>
-    :root {
-      --green: #123B2A;
-      --green-dark: #123B2A;
-      --white: #FFFFFF;
-      --border: #DCE5DF;
-      --muted: #496457;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#145214">
+<title>MarQen Group | Doğanın Mimarı</title>
+<meta name="description" content="MarQen Group ile modern peyzaj tasarımı, lüks villa bahçeleri, bahçe düzenleme ve profesyonel dış mekân çözümleri.">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
+}
+a {
+    text-decoration: none;
+    color: inherit;
+}
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+/* NAVBAR */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background: #fff;
+    height: 80px;
+    padding: 0 5%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+.logo-section img {
+    height: 60px;
+    width: auto;
+    max-width: 210px;
+    object-fit: contain;
+    cursor: pointer;
+}
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+    border: 0;
+    background: transparent;
+    padding: 8px;
+}
+.menu-toggle div {
+    width: 25px;
+    height: 3px;
+    background: #145214;
+    border-radius: 2px;
+}
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.nav-links li {
+    position: relative;
+    font-weight: 600;
+}
+.nav-links li a {
+    color: #145214;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+.nav-links li a::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: #145214;
+    margin-right: 8px;
+    border-radius: 2px;
+}
+.nav-links li:hover a {
+    color: #2e7d32;
+}
+.nav-links li:hover a::before {
+    background: #81c784;
+}
+/* HERO */
+.hero {
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 80px;
+    position: relative;
+    background:
+        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+        url("1761356719775.jpg") center/cover no-repeat;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    max-width: 850px;
+}
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInDown 1s;
+}
+.hero p {
+    font-size: 20px;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    animation: fadeIn 1.2s;
+}
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #2e7d32;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+    text-shadow: none;
+}
+.btn:hover {
+    background: #145214;
+    transform: translateY(-2px);
+}
+/* GENEL BÖLÜMLER */
+section {
+    padding: 70px 8%;
+}
+.section-title {
+    text-align: center;
+    color: #145214;
+    font-size: 32px;
+    margin-bottom: 18px;
+}
+.section-description {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+    line-height: 1.8;
+    color: #555;
+}
+/* HAKKIMIZDA */
+.about {
+    background: #fff;
+    text-align: center;
+}
+.about-text {
+    max-width: 850px;
+    margin: auto;
+    line-height: 1.9;
+    font-size: 17px;
+}
+/* HİZMETLER */
+.services {
+    background: #f5f5f5;
+}
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+.service-card {
+    background: #fff;
+    padding: 30px 24px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+    transition: 0.3s;
+}
+.service-card:hover {
+    transform: translateY(-5px);
+}
+.service-card i {
+    font-size: 35px;
+    color: #2e7d32;
+    margin-bottom: 18px;
+}
+.service-card h3 {
+    color: #145214;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+.service-card p {
+    color: #555;
+    line-height: 1.7;
+}
+/* INSTAGRAM */
+.instagram-section {
+    text-align: center;
+    background: #fff;
+}
+.instagram-section p {
+    line-height: 1.8;
+    margin: 15px 0 25px;
+}
+.instagram-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 25px;
+    color: #fff;
+    background: #145214;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.instagram-btn:hover {
+    background: #2e7d32;
+}
+/* İLETİŞİM */
+.contact {
+    text-align: center;
+    background: #f5f5f5;
+}
+.contact p {
+    line-height: 1.8;
+    margin: 15px 0 25px;
+}
+/* FOOTER */
+footer {
+    background: #145214;
+    color: #fff;
+    padding: 30px 5%;
+    text-align: center;
+    line-height: 1.8;
+}
+footer a {
+    color: #fff;
+}
+.footer-instagram {
+    display: inline-block;
+    margin-top: 10px;
+}
+footer .copyright {
+    margin-top: 12px;
+    font-size: 13px;
+    opacity: 0.85;
+}
+/* ANİMASYONLAR */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #FFFFFF;
-      color: #123B2A;
-      line-height: 1.7;
-    }
-
-    a {
-      color: #123B2A;
-      text-decoration: none;
-    }
-
-    img {
-      display: block;
-      max-width: 100%;
-    }
-
-    .container {
-      width: min(1160px, 90%);
-      margin: auto;
-    }
-
-    header {
-      background: #FFFFFF;
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-
-    .navbar {
-      min-height: 88px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .brand {
-      font-size: 25px;
-      font-weight: 800;
-      letter-spacing: 1px;
-      line-height: 1.2;
-      color: var(--green);
-    }
-
-    .brand span {
-      display: block;
-      margin-top: 7px;
-      font-size: 10px;
-      letter-spacing: 4px;
-      font-weight: 600;
-    }
-
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+/* MOBİL UYUMLULUK */
+@media (max-width: 768px) {
     nav {
-      display: flex;
-      align-items: center;
-      gap: 27px;
-      flex-wrap: wrap;
+        height: 70px;
+        padding: 0 5%;
     }
-
-    nav a {
-      font-size: 13px;
-      font-weight: 700;
-      transition: opacity .2s;
+    .logo-section img {
+        height: 52px;
+        max-width: 180px;
     }
-
-    nav a:hover {
-      opacity: .65;
+    .menu-toggle {
+        display: flex;
     }
-
-    .outline-button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      padding: 12px 22px;
-      border: 1px solid var(--green);
-      background: #FFFFFF;
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 700;
-      transition: .2s;
-    }
-
-    .outline-button:hover {
-      background: var(--green);
-      color: #FFFFFF;
-    }
-
-    .hero {
-      min-height: 660px;
-      display: flex;
-      align-items: center;
-      background: #FFFFFF;
-      padding: 80px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 55px;
-    }
-
-    .eyebrow {
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      margin-bottom: 22px;
-      color: var(--green);
-    }
-
-    h1 {
-      font-size: clamp(43px, 5.5vw, 72px);
-      line-height: 1.08;
-      letter-spacing: -2px;
-      margin-bottom: 25px;
-      color: var(--green);
-    }
-
-    .hero p {
-      max-width: 490px;
-      font-size: 16px;
-      color: var(--muted);
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .hero-image {
-      height: 490px;
-      width: 100%;
-      object-fit: cover;
-      border: 1px solid var(--border);
-    }
-
-    section {
-      padding: 95px 0;
-      background: #FFFFFF;
-    }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 45px;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(31px, 4vw, 46px);
-      line-height: 1.2;
-      margin-bottom: 16px;
-      color: var(--green);
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      font-size: 15px;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 55px;
-      align-items: center;
-    }
-
-    .about-image {
-      width: 100%;
-      height: 420px;
-      object-fit: cover;
-      border: 1px solid var(--border);
-    }
-
-    .about-copy h3 {
-      font-size: 29px;
-      line-height: 1.3;
-      margin-bottom: 20px;
-      color: var(--green);
-    }
-
-    .about-copy p {
-      margin-bottom: 18px;
-      color: var(--muted);
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .service-card {
-      border: 1px solid var(--border);
-      padding: 30px;
-      background: #FFFFFF;
-      transition: .25s;
-    }
-
-    .service-card:hover {
-      border-color: var(--green);
-      transform: translateY(-4px);
-    }
-
-    .service-number {
-      display: inline-block;
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-      margin-bottom: 24px;
-      color: var(--green);
-    }
-
-    .service-card h3 {
-      font-size: 21px;
-      margin-bottom: 12px;
-      color: var(--green);
-    }
-
-    .service-card p {
-      font-size: 14px;
-      color: var(--muted);
-    }
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .project-card {
-      border: 1px solid var(--border);
-      background: #FFFFFF;
-      overflow: hidden;
-    }
-
-    .project-card img {
-      width: 100%;
-      height: 270px;
-      object-fit: cover;
-      transition: transform .4s;
-    }
-
-    .project-card:hover img {
-      transform: scale(1.035);
-    }
-
-    .project-info {
-      padding: 22px;
-      background: #FFFFFF;
-    }
-
-    .project-info h3 {
-      font-size: 19px;
-      margin-bottom: 7px;
-      color: var(--green);
-    }
-
-    .project-info p {
-      font-size: 13px;
-      color: var(--muted);
-    }
-
-    .statement {
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      text-align: center;
-      padding: 85px 20px;
-      background: #FFFFFF;
-    }
-
-    .statement p {
-      max-width: 850px;
-      margin: auto;
-      font-size: clamp(28px, 4vw, 48px);
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--green);
-    }
-
-    .statement span {
-      display: block;
-      margin-top: 20px;
-      font-size: 12px;
-      letter-spacing: 4px;
-      font-weight: 700;
-      color: var(--green);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 50px;
-    }
-
-    .contact-grid h2 {
-      font-size: clamp(32px, 4vw, 46px);
-      line-height: 1.2;
-      margin-bottom: 20px;
-      color: var(--green);
-    }
-
-    .contact-grid p {
-      color: var(--muted);
-      margin-bottom: 22px;
-    }
-
-    .contact-details {
-      border-top: 1px solid var(--border);
-    }
-
-    .contact-item {
-      padding: 18px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contact-item strong {
-      display: block;
-      font-size: 11px;
-      letter-spacing: 2px;
-      margin-bottom: 5px;
-      color: var(--green);
-    }
-
-    .contact-item a,
-    .contact-item span {
-      overflow-wrap: anywhere;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 28px 0;
-      background: #FFFFFF;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    footer p {
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-brand {
-      font-weight: 800;
-      letter-spacing: 1px;
-      color: var(--green);
-    }
-
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 99;
-      padding: 13px 18px;
-      border: 1px solid var(--green);
-      background: #FFFFFF;
-      color: var(--green);
-      font-size: 13px;
-      font-weight: 800;
-      box-shadow: 0 5px 22px rgba(18,59,42,.12);
-    }
-
-    @media (max-width: 850px) {
-      .navbar {
-        padding: 18px 0;
-        align-items: flex-start;
+    .nav-links {
+        display: none;
         flex-direction: column;
-      }
-
-      nav {
-        gap: 15px;
-      }
-
-      .hero {
-        min-height: auto;
-        padding: 55px 0;
-      }
-
-      .hero-grid,
-      .about-grid,
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .hero-image {
-        height: 350px;
-      }
-
-      .services-grid,
-      .projects-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      section {
-        padding: 70px 0;
-      }
+        align-items: flex-start;
+        gap: 18px;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 25px 7%;
+        background: #fff;
+        box-shadow: 0 5px 8px rgba(0,0,0,0.12);
     }
-
-    @media (max-width: 540px) {
-      .services-grid,
-      .projects-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .brand {
-        font-size: 22px;
-      }
-
-      nav {
-        gap: 12px;
-      }
-
-      nav a {
-        font-size: 12px;
-      }
-
-      .hero-image,
-      .about-image {
-        height: 300px;
-      }
-
-      .service-card {
-        padding: 25px;
-      }
+    .nav-links.active {
+        display: flex;
     }
-  </style>
+    .hero {
+        margin-top: 70px;
+        min-height: 65vh;
+    }
+    .hero h1 {
+        font-size: 34px;
+    }
+    .hero p {
+        font-size: 17px;
+    }
+    section {
+        padding: 50px 6%;
+    }
+    .section-title {
+        font-size: 27px;
+    }
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+</style>
 </head>
-
 <body>
-
-<header>
-  <div class="container navbar">
-    <a href="#anasayfa" class="brand">
-      MarQen Group
-      <span>DOĞANIN MİMARI</span>
+<!-- ÜST MENÜ -->
+<nav>
+    <a href="#anasayfa" class="logo-section" aria-label="MarQen Group ana sayfa">
+        <img src="IMG_0213.jpeg" alt="MarQen Group Logo">
     </a>
-
-    <nav aria-label="Ana menü">
-      <a href="#anasayfa">Ana Sayfa</a>
-      <a href="#hakkimizda">Hakkımızda</a>
-      <a href="#hizmetler">Hizmetler</a>
-      <a href="#projeler">Projeler</a>
-      <a href="#iletisim">İletişim</a>
-    </nav>
-  </div>
+    <button class="menu-toggle" id="menuToggle"
+            aria-label="Menüyü aç veya kapat"
+            aria-expanded="false"
+            aria-controls="navLinks">
+        <div></div>
+        <div></div>
+        <div></div>
+    </button>
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#anasayfa">Ana Sayfa</a></li>
+        <li><a href="#hakkimizda">Hakkımızda</a></li>
+        <li><a href="#hizmetler">Hizmetlerimiz</a></li>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#iletisim">İletişim</a></li>
+    </ul>
+</nav>
+<!-- ANA GÖRSEL -->
+<header class="hero" id="anasayfa">
+    <div class="hero-content">
+        <h1>MarQen Group</h1>
+        <p>
+            Doğanın Mimarı<br>
+            Modern tasarım, doğal güzellik ve ayrıcalıklı yaşam alanları.
+        </p>
+        <a href="#iletisim" class="btn">Projenizi Birlikte Tasarlayalım</a>
+    </div>
 </header>
-
-<main>
-
-  <section class="hero" id="anasayfa">
-    <div class="container hero-grid">
-      <div>
-        <div class="eyebrow">MarQen Group · Doğanın Mimarı</div>
-        <h1>Yaşam alanlarınıza doğanın imzası.</h1>
+<!-- HAKKIMIZDA -->
+<section class="about" id="hakkimizda">
+    <h2 class="section-title">Doğaya Değer Katıyoruz</h2>
+    <p class="section-description">
+        Estetik, işlevsellik ve doğayı bir araya getiriyoruz.
+    </p>
+    <div class="about-text">
         <p>
-          Modern tasarım anlayışını doğanın eşsiz dokusuyla birleştiriyor,
-          estetik ve işlevsel dış mekânlar tasarlıyoruz.
+            <strong>MarQen Group</strong> olarak modern peyzaj tasarımı,
+            villa bahçeleri ve dış mekân düzenlemelerinde özgün çözümler
+            sunuyoruz. Her alanı, mimari çizgilerle doğanın güzelliğini
+            buluşturan özel bir yaşam alanına dönüştürmeyi hedefliyoruz.
         </p>
-        <div class="hero-buttons">
-          <a href="#projeler" class="outline-button">Projelerimizi Keşfedin</a>
-          <a href="#iletisim" class="outline-button">Bizimle İletişime Geçin</a>
-        </div>
-      </div>
-
-      <div>
-        <img class="hero-image"
-          src="1761356719775.jpg"
-          alt="Modern villa bahçesi ve peyzaj tasarımı"
-          onerror="this.style.display='none'">
-      </div>
+        <p style="margin-top:18px; color:#145214; font-weight:bold;">
+            MarQen Group — Doğanın Mimarı
+        </p>
     </div>
-  </section>
-
-  <section id="hakkimizda">
-    <div class="container about-grid">
-      <div>
-        <img class="about-image"
-          src="1761356764550.jpg"
-          alt="Doğayla bütünleşen peyzaj tasarımı"
-          onerror="this.style.display='none'">
-      </div>
-
-      <div class="about-copy">
-        <div class="eyebrow">Hakkımızda</div>
-        <h3>Doğayı tasarımla buluşturuyoruz.</h3>
-        <p>
-          MarQen Group olarak bahçeleri yalnızca dış mekânlar olarak değil,
-          yaşamın bir parçası olarak ele alıyoruz.
-        </p>
-        <p>
-          Her projede mimari çizgileri, doğal dokuları ve alanın ihtiyaçlarını
-          bir araya getirerek özgün çözümler geliştiriyoruz.
-        </p>
-        <p>
-          Hedefimiz; estetik, kullanışlı ve bulunduğu mekâna değer katan
-          yaşam alanları oluşturmak.
-        </p>
-        <a href="#iletisim" class="outline-button">Projenizi Konuşalım</a>
-      </div>
+</section>
+<!-- HİZMETLER -->
+<section class="services" id="hizmetler">
+    <h2 class="section-title">Hizmetlerimiz</h2>
+    <p class="section-description">
+        Yaşam alanlarınıza özel, modern ve estetik peyzaj çözümleri.
+    </p>
+    <div class="service-grid">
+        <article class="service-card">
+            <i class="fa-solid fa-house"></i>
+            <h3>Villa Bahçeleri</h3>
+            <p>
+                Modern ve lüks villa bahçeleri için mekâna özel
+                peyzaj tasarımı ve düzenleme çözümleri.
+            </p>
+        </article>
+        <article class="service-card">
+            <i class="fa-solid fa-seedling"></i>
+            <h3>Peyzaj Tasarımı</h3>
+            <p>
+                Bitkilendirme, yeşil alan planlaması ve estetik
+                dış mekân tasarımı.
+            </p>
+        </article>
+        <article class="service-card">
+            <i class="fa-solid fa-tree"></i>
+            <h3>Bahçe Düzenleme</h3>
+            <p>
+                Bahçelerin karakterine ve ihtiyaçlarına uygun
+                uygulama ve düzenleme hizmetleri.
+            </p>
+        </article>
     </div>
-  </section>
-
-  <section id="hizmetler">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Hizmetlerimiz</div>
-        <h2>Hayalinizdeki alanı birlikte tasarlayalım.</h2>
-        <p>
-          İhtiyacınıza ve mekânınıza özel, estetik ve işlevsel peyzaj çözümleri.
-        </p>
-      </div>
-
-      <div class="services-grid">
-        <article class="service-card">
-          <span class="service-number">01 / TASARIM</span>
-          <h3>Peyzaj Tasarımı</h3>
-          <p>Alana, mimariye ve kullanım ihtiyaçlarına özel konsept tasarımlar.</p>
-        </article>
-
-        <article class="service-card">
-          <span class="service-number">02 / VİLLA</span>
-          <h3>Villa Bahçeleri</h3>
-          <p>Modern, sade ve lüks yaşam alanlarını tamamlayan bahçeler.</p>
-        </article>
-
-        <article class="service-card">
-          <span class="service-number">03 / UYGULAMA</span>
-          <h3>Peyzaj Uygulaması</h3>
-          <p>Tasarımın sahada planlı ve özenli bir şekilde hayata geçirilmesi.</p>
-        </article>
-
-        <article class="service-card">
-          <span class="service-number">04 / BİTKİ</span>
-          <h3>Bitkilendirme</h3>
-          <p>Mekâna uygun bitki seçimi ve dengeli bitkisel kompozisyonlar.</p>
-        </article>
-
-        <article class="service-card">
-          <span class="service-number">05 / SERT ZEMİN</span>
-          <h3>Bahçe Düzenleme</h3>
-          <p>Yürüyüş yolları, oturma alanları ve dış mekân düzenlemeleri.</p>
-        </article>
-
-        <article class="service-card">
-          <span class="service-number">06 / DANIŞMANLIK</span>
-          <h3>Proje Danışmanlığı</h3>
-          <p>Bahçenizin potansiyelini değerlendiren planlama ve tasarım desteği.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="projeler">
-    <div class="container">
-      <div class="section-heading">
-        <div class="eyebrow">Seçili Çalışmalar</div>
-        <h2>Doğadan ilham alan tasarımlar.</h2>
-        <p>
-          Her mekâna kendi karakterini kazandıran tasarım fikirleri.
-        </p>
-      </div>
-
-      <div class="projects-grid">
-        <article class="project-card">
-          <img src="1761356716505.jpg"
-            alt="Modern villa bahçesi projesi"
-            loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="project-info">
-            <h3>Modern Villa Bahçesi</h3>
-            <p>Modern çizgiler ve doğal dokular.</p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="1761356774286.jpg"
-            alt="Çağdaş dış mekân tasarımı"
-            loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="project-info">
-            <h3>Çağdaş Dış Mekân</h3>
-            <p>Mimariyle uyumlu peyzaj yaklaşımı.</p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="1761356778199.jpg"
-            alt="Özel bahçe düzenlemesi"
-            loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="project-info">
-            <h3>Özel Bahçe Tasarımı</h3>
-            <p>İhtiyaca göre şekillenen yaşam alanı.</p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="1761356790816.jpg"
-            alt="Bitkisel peyzaj uygulaması"
-            loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="project-info">
-            <h3>Doğal Bitkilendirme</h3>
-            <p>Bitkilerle güçlenen mekân karakteri.</p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="1761356796622.jpg"
-            alt="Lüks bahçe peyzajı"
-            loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="project-info">
-            <h3>Lüks Peyzaj</h3>
-            <p>Sade ve dengeli dış mekân estetiği.</p>
-          </div>
-        </article>
-
-        <article class="project-card">
-          <img src="1761356802125.jpg"
-            alt="Peyzaj proje ve uygulama çalışması"
-            loading="lazy" onerror="this.parentElement.style.display='none'">
-          <div class="project-info">
-            <h3>Yaşam Alanları</h3>
-            <p>Konfor ve estetiği bir araya getiren çözümler.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <div class="statement">
-    <p>“İyi tasarım, doğayla kurulan doğru ilişkinin sonucudur.”</p>
-    <span>MARQEN GROUP</span>
-  </div>
-
-  <section id="iletisim">
-    <div class="container contact-grid">
-      <div>
-        <div class="eyebrow">İletişim</div>
-        <h2>Birlikte güzel bir alan tasarlayalım.</h2>
-        <p>
-          Villa bahçeniz, peyzaj projeniz veya dış mekân düzenlemeniz için
-          bizimle iletişime geçin.
-        </p>
-        <a class="outline-button"
-          href="https://wa.me/905359301670"
-          target="_blank" rel="noopener">
-          WhatsApp Üzerinden İletişim
-        </a>
-      </div>
-
-      <div class="contact-details">
-        <div class="contact-item">
-          <strong>MARKA</strong>
-          <span>MarQen Group</span>
-        </div>
-
-        <div class="contact-item">
-          <strong>TELEFON / WHATSAPP</strong>
-          <a href="https://wa.me/905359301670" target="_blank" rel="noopener">
-            +90 535 930 16 70
-          </a>
-        </div>
-
-        <div class="contact-item">
-          <strong>INSTAGRAM</strong>
-          <a href="https://www.instagram.com/marqengroup/"
-            target="_blank" rel="noopener">
-            @marqengroup
-          </a>
-        </div>
-
-        <div class="contact-item">
-          <strong>WEB SİTESİ</strong>
-          <a href="https://zyrapeyzaj.com" target="_blank" rel="noopener">
-            zyrapeyzaj.com
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</main>
-
+</section>
+<!-- INSTAGRAM -->
+<section class="instagram-section" id="instagram">
+    <h2 class="section-title">Bizi Instagram'da Takip Edin</h2>
+    <p>
+        Projelerimizi, tasarım fikirlerimizi ve doğadan ilham alan
+        çalışmalarımızı keşfedin.
+    </p>
+    <a class="instagram-btn"
+       href="https://www.instagram.com/marqengroup/"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram"></i>
+        @marqengroup
+    </a>
+</section>
+<!-- İLETİŞİM -->
+<section class="contact" id="iletisim">
+    <h2 class="section-title">Projeniz İçin İletişime Geçin</h2>
+    <p>
+        Hayalinizdeki bahçeyi birlikte tasarlayalım.
+        Projeniz hakkında görüşmek için Instagram üzerinden bize ulaşın.
+    </p>
+    <a class="btn"
+       href="https://www.instagram.com/marqengroup/"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram"></i>
+        Bize Ulaşın
+    </a>
+</section>
+<!-- ALT BİLGİ -->
 <footer>
-  <div class="container footer-inner">
-    <div class="footer-brand">MarQen Group</div>
+    <h3>MarQen Group</h3>
     <p>Doğanın Mimarı</p>
-    <p>© <span id="year"></span> MarQen Group. Tüm hakları saklıdır.</p>
-  </div>
+    <a class="footer-instagram"
+       href="https://www.instagram.com/marqengroup/"
+       target="_blank"
+       rel="noopener noreferrer">
+        <i class="fa-brands fa-instagram"></i>
+        @marqengroup
+    </a>
+    <p class="copyright">
+        © <span id="year"></span> MarQen Group. Tüm hakları saklıdır.
+    </p>
 </footer>
-
-<a class="whatsapp"
-  href="https://wa.me/905359301670"
-  target="_blank" rel="noopener"
-  aria-label="WhatsApp üzerinden iletişim">
-  WhatsApp
-</a>
-
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+menuToggle.addEventListener("click", function () {
+    const isOpen = navLinks.classList.toggle("active");
+    menuToggle.setAttribute("aria-expanded", String(isOpen));
+});
+document.querySelectorAll(".nav-links a").forEach(function (link) {
+    link.addEventListener("click", function () {
+        navLinks.classList.remove("active");
+        menuToggle.setAttribute("aria-expanded", "false");
+    });
+});
+document.getElementById("year").textContent = new Date().getFullYear();
 </script>
-
 </body>
 </html>
