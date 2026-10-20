@@ -4,30 +4,36 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MarQen Group | Doğanın Mimarı</title>
+
 <style>
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
+
 body {
     font-family: Arial, sans-serif;
     background: #f5f5f5;
     color: #333;
 }
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
 img {
     max-width: 100%;
     display: block;
     border-radius: 8px;
 }
-/* ÜST MENÜ — ESKİ DÜZEN */
+
+/* ÜST MENÜ */
 nav {
     background: #145214;
     padding: 12px 5%;
@@ -39,28 +45,84 @@ nav {
     top: 0;
     z-index: 1000;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    gap: 25px;
 }
+
+/* GENİŞ BEYAZ LOGO ALANI */
+.brand-area {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+    gap: 22px;
+}
+
+nav .logo {
+    width: 300px;
+    height: 100px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
 nav .logo img {
-    height: 80px;
-    width: auto;
+    width: 100%;
+    height: 100%;
     object-fit: contain;
+    border-radius: 0;
 }
+
+/* FİRMA ADI LOGONUN SAĞINDA */
+.brand-name {
+    min-width: 220px;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-name span {
+    font-size: 29px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    white-space: nowrap;
+}
+
+.brand-name small {
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-top: 7px;
+    color: #81c784;
+    white-space: nowrap;
+}
+
+/* MENÜ LİNKLERİ */
 .nav-links {
     list-style: none;
     display: flex;
-    gap: 35px;
-    margin-left: 50px;
+    gap: 25px;
+    margin-left: auto;
+    align-items: center;
 }
+
 .nav-links li {
     position: relative;
     font-weight: 600;
 }
+
 .nav-links li a {
     color: white;
     padding: 8px 0;
     display: block;
     transition: 0.3s;
+    white-space: nowrap;
 }
+
 .nav-links li::after {
     content: "";
     position: absolute;
@@ -72,10 +134,12 @@ nav .logo img {
     transition: 0.3s;
     border-radius: 2px;
 }
+
 .nav-links li:hover::after {
     width: 100%;
 }
-/* ANA GÖRSEL — ESKİ DÜZEN */
+
+/* ANA SAYFA */
 .hero {
     min-height: 60vh;
     max-height: 80vh;
@@ -85,23 +149,27 @@ nav .logo img {
     align-items: center;
     text-align: center;
     padding: 60px 20px;
-    margin-top: 100px;
+    margin-top: 124px;
     overflow: hidden;
 }
+
 .hero div {
     position: relative;
     z-index: 2;
     color: white;
     text-shadow: 0 2px 6px rgba(0,0,0,0.5);
 }
+
 .hero h1 {
     font-size: 48px;
     margin-bottom: 20px;
 }
+
 .hero p {
     font-size: 20px;
     margin-bottom: 25px;
 }
+
 .hero .btn {
     display: inline-block;
     padding: 12px 30px;
@@ -110,13 +178,16 @@ nav .logo img {
     color: white;
     font-weight: 600;
 }
+
 .hero .btn:hover {
     background: #145214;
 }
-/* BÖLÜMLER — ESKİ DÜZEN */
+
+/* BÖLÜMLER */
 .section {
     padding: 80px 5%;
 }
+
 .section-title {
     text-align: left;
     font-size: 36px;
@@ -125,6 +196,7 @@ nav .logo img {
     font-weight: 700;
     position: relative;
 }
+
 .section-title::before,
 .section-title::after {
     content: "";
@@ -135,13 +207,15 @@ nav .logo img {
     margin: 0 10px;
     vertical-align: middle;
 }
-/* HİZMET KARTLARI — ESKİ DÜZEN */
+
+/* HİZMETLER */
 .services {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
+
 .service {
     background: #fff;
     padding: 20px;
@@ -151,11 +225,13 @@ nav .logo img {
     text-align: center;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 .service h3 {
     color: #145214;
     font-weight: 600;
     margin-bottom: 12px;
 }
+
 .service h3::after {
     content: "";
     width: 40px;
@@ -165,43 +241,51 @@ nav .logo img {
     margin: 6px auto 0 auto;
     border-radius: 2px;
 }
+
 .service p {
     font-size: 14px;
     color: #555;
 }
-/* PROJELER — ESKİ DÜZEN */
+
+/* PROJELER */
 .project-section {
     display: flex;
     flex-direction: column;
     gap: 40px;
 }
+
 .project {
     padding: 20px;
     border-radius: 12px;
     background: #fff;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
+
 .project h2 {
     color: #145214;
     margin-bottom: 20px;
     text-align: center;
 }
+
 .gallery {
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
     justify-content: center;
 }
+
 .gallery img {
     width: 250px;
     height: auto;
     cursor: pointer;
     transition: 0.3s;
 }
+
 .gallery img:hover {
     transform: scale(1.05);
 }
-/* GÖRSEL BÜYÜTME */
+
+/* BÜYÜTÜLEN GÖRSEL */
 #lightbox {
     display: none;
     position: fixed;
@@ -213,12 +297,14 @@ nav .logo img {
     padding: 20px;
     cursor: zoom-out;
 }
+
 #lightbox img {
     max-width: 95%;
     max-height: 90vh;
     object-fit: contain;
     border-radius: 5px;
 }
+
 /* ALT BİLGİ */
 footer {
     background: #145214;
@@ -227,79 +313,176 @@ footer {
     padding: 30px;
     border-radius: 12px;
 }
+
 footer p {
     margin: 5px 0;
 }
+
 .contact-links a {
-    color: inherit;
     text-decoration: underline;
 }
-/* TELEFON UYUMLULUĞU */
-@media(max-width: 768px) {
+
+/* TABLET VE TELEFON */
+@media(max-width: 1100px) {
     nav {
-        flex-direction: row;
-        align-items: center;
-        padding: 12px 3%;
-    }
-    nav .logo img {
-        height: 60px;
-    }
-    .nav-links {
-        flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px;
-        margin-left: 20px;
+        gap: 12px;
     }
+
+    .brand-area {
+        gap: 12px;
+    }
+
+    nav .logo {
+        width: 220px;
+        height: 80px;
+    }
+
+    .brand-name {
+        min-width: 180px;
+    }
+
+    .brand-name span {
+        font-size: 23px;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 18px;
+    }
+
+    .hero {
+        margin-top: 150px;
+    }
+}
+
+@media(max-width: 600px) {
+    nav {
+        padding: 8px 10px;
+        gap: 8px;
+    }
+
+    .brand-area {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    nav .logo {
+        width: 145px;
+        height: 65px;
+        padding: 5px 8px;
+    }
+
+    .brand-name {
+        min-width: 0;
+        flex: 1;
+        max-width: 190px;
+    }
+
+    .brand-name span {
+        font-size: 20px;
+        letter-spacing: 0;
+    }
+
+    .brand-name small {
+        font-size: 8px;
+        letter-spacing: 2px;
+        margin-top: 5px;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 10px 16px;
+        margin: 0;
+    }
+
+    .nav-links li a {
+        font-size: 12px;
+    }
+
     .nav-links li::after {
         bottom: -4px;
     }
+
+    .hero {
+        padding: 40px 15px;
+        min-height: 50vh;
+        max-height: none;
+        margin-top: 125px;
+        background-position: center;
+    }
+
     .hero h1 {
         font-size: 28px;
         text-align: left;
     }
+
     .hero p {
         font-size: 16px;
         text-align: left;
     }
+
     .hero div {
         width: 100%;
         padding: 0 15px;
     }
-    .hero {
-        padding: 40px 15px;
-        min-height: 50vh;
-        margin-top: 60px;
-        background-position: center -60px;
-    }
+
     .hero .btn {
         padding: 10px 20px;
         font-size: 14px;
     }
+
+    .section {
+        padding: 55px 5%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .section-title::before,
+    .section-title::after {
+        width: 25px;
+        margin: 0 5px;
+    }
+
     .service {
         width: 90%;
         max-width: 300px;
     }
+
     .gallery img {
         width: 90%;
         max-width: 300px;
     }
+
     #about p {
         text-align: left;
         margin-left: 15px;
     }
-    .section-title {
-        font-size: 28px;
-    }
 }
 </style>
 </head>
+
 <body>
-<!-- ÜST MENÜ -->
+
+<!-- ÜST MENÜ VE LOGO -->
 <nav>
-    <div class="logo">
-        <img src="IMG_0213.jpeg" alt="MarQen Group Logo">
+    <div class="brand-area">
+        <div class="logo">
+            <img src="IMG_0213.jpeg" alt="MarQen Group Logo">
+        </div>
+
+        <div class="brand-name">
+            <span>MarQen Group</span>
+            <small>DOĞANIN MİMARI</small>
+        </div>
     </div>
+
     <ul class="nav-links">
         <li><a href="#hero">Ana Sayfa</a></li>
         <li><a href="#services">Hizmetler</a></li>
@@ -308,42 +491,51 @@ footer p {
         <li><a href="#contact">İletişim</a></li>
     </ul>
 </nav>
+
 <!-- ANA SAYFA -->
 <section class="hero" id="hero">
     <div>
         <h1>Modern &amp; Prestijli Peyzaj Tasarımları</h1>
-        <p>MarQen Group — Doğanın Mimarı</p>
+        <p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
         <a href="#projects" class="btn">Projeleri İncele</a>
     </div>
 </section>
+
 <!-- HİZMETLER -->
 <section class="section" id="services">
     <div class="section-title">Hizmetlerimiz</div>
+
     <div class="services">
         <div class="service">
             <h3>Peyzaj Tasarım</h3>
             <p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p>
         </div>
+
         <div class="service">
             <h3>Peyzaj Uygulama</h3>
             <p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p>
         </div>
+
         <div class="service">
             <h3>Bakım &amp; Sürdürülebilirlik</h3>
             <p>Yeşil alanların korunması ve bakımı.</p>
         </div>
+
         <div class="service">
             <h3>Konut &amp; Ticari Projeler</h3>
             <p>Konut ve ticari alanlar için peyzaj çözümleri.</p>
         </div>
     </div>
 </section>
-<!-- TÜM ESKİ PROJELER -->
+
+<!-- ESKİ PROJELERİN TAMAMI -->
 <section class="section" id="projects">
     <div class="section-title">Projelerimiz</div>
+
     <div class="project-section">
         <div class="project">
             <h2>Proje Galerisi</h2>
+
             <div class="gallery">
                 <img src="1761356716505.jpg" alt="Peyzaj Projesi 1" loading="lazy">
                 <img src="1761356719775.jpg" alt="Peyzaj Projesi 2" loading="lazy">
@@ -374,9 +566,11 @@ footer p {
         </div>
     </div>
 </section>
+
 <!-- HAKKIMIZDA -->
 <section class="section" id="about">
     <div class="section-title">Hakkımızda</div>
+
     <p>
         MarQen Group; estetik, fonksiyonellik ve sürdürülebilirliği
         bir araya getirerek yaşam alanlarına değer katan peyzaj tasarım
@@ -385,26 +579,33 @@ footer p {
         <strong>MarQen Group — Doğanın Mimarı.</strong>
     </p>
 </section>
+
 <!-- İLETİŞİM -->
 <section class="section" id="contact">
     <div class="section-title">İletişim</div>
+
     <p style="text-align:center;color:#555;line-height:2;">
         📞 <a href="tel:+905359301670">0535 930 16 70</a><br>
         ✉ <a href="mailto:marqengroup@gmail.com">marqengroup@gmail.com</a><br>
         📍 İstanbul<br>
-        📷 <a href="https://www.instagram.com/marqengroup/" target="_blank" rel="noopener">Instagram: @marqengroup</a><br>
-        <a href="https://wa.me/905359301670" target="_blank" rel="noopener">WhatsApp üzerinden iletişim</a>
+        📷 <a href="https://www.instagram.com/marqengroup/"
+              target="_blank" rel="noopener">Instagram: @marqengroup</a><br>
+        <a href="https://wa.me/905359301670"
+           target="_blank" rel="noopener">WhatsApp üzerinden iletişim</a>
     </p>
 </section>
+
 <!-- ALT BİLGİ -->
 <footer>
     <p>© 2026 MarQen Group | Tüm Hakları Saklıdır</p>
     <p>Doğanın Mimarı</p>
 </footer>
+
 <!-- GÖRSEL BÜYÜTME -->
 <div id="lightbox">
     <img src="" alt="Büyütülmüş peyzaj projesi">
 </div>
+
 <script>
 document.querySelectorAll('.gallery img').forEach(function(img) {
     img.addEventListener('click', function() {
@@ -413,9 +614,11 @@ document.querySelectorAll('.gallery img').forEach(function(img) {
         lightbox.style.display = 'flex';
     });
 });
+
 document.getElementById('lightbox').addEventListener('click', function() {
     this.style.display = 'none';
 });
 </script>
+
 </body>
 </html>
