@@ -3,509 +3,419 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>MarQen Group | Doğanın Mimarı</title>
-<meta name="description" content="MarQen Group; peyzaj tasarımı, peyzaj uygulama, villa bahçeleri ve yeşil alan çözümleri. İstanbul.">
-<meta name="theme-color" content="#145214">
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{font-family:Arial,sans-serif;background:#f5f5f5;color:#333}
-a{text-decoration:none;color:inherit}
-img{max-width:100%;display:block;border-radius:8px}
-
-/* NAVBAR */
-nav{
-  background:#145214;
-  padding:12px 5%;
-  display:flex;
-  justify-content:flex-start;
-  align-items:center;
-  position:fixed;
-  width:100%;
-  top:0;
-  left:0;
-  z-index:1000;
-  box-shadow:0 2px 8px rgba(0,0,0,.2);
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-nav .logo img{
-  height:80px;
-  width:auto;
-  max-width:220px;
-  object-fit:contain;
+html {
+    scroll-behavior: smooth;
 }
-.nav-links{
-  list-style:none;
-  display:flex;
-  gap:35px;
-  margin-left:50px;
+body {
+    font-family: Arial, sans-serif;
+    background: #f5f5f5;
+    color: #333;
 }
-.nav-links li{position:relative;font-weight:600}
-.nav-links li a{
-  color:white;
-  padding:8px 0;
-  display:block;
-  transition:.3s;
+a {
+    text-decoration: none;
+    color: inherit;
 }
-.nav-links li::after{
-  content:"";
-  position:absolute;
-  bottom:-6px;
-  left:0;
-  width:0;
-  height:3px;
-  background:#81c784;
-  transition:.3s;
-  border-radius:2px;
+img {
+    max-width: 100%;
+    display: block;
+    border-radius: 8px;
 }
-.nav-links li:hover::after{width:100%}
-
-/* HERO */
-.hero{
-  min-height:60vh;
-  max-height:80vh;
-  background:
-    linear-gradient(rgba(0,0,0,.20),rgba(0,0,0,.20)),
-    url("1761356719775.jpg") center top/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:60px 20px;
-  margin-top:104px;
-  overflow:hidden;
+/* ÜST MENÜ — ESKİ DÜZEN */
+nav {
+    background: #145214;
+    padding: 12px 5%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
-.hero-content{
-  position:relative;
-  z-index:2;
-  color:white;
-  text-shadow:0 2px 6px rgba(0,0,0,.5);
+nav .logo img {
+    height: 80px;
+    width: auto;
+    object-fit: contain;
 }
-.hero h1{font-size:48px;margin-bottom:20px}
-.hero p{font-size:20px;line-height:1.7;margin-bottom:25px}
-.hero .btn{
-  display:inline-block;
-  padding:12px 30px;
-  background:#2e7d32;
-  border-radius:30px;
-  color:white;
-  font-weight:600;
-  transition:.3s;
-  text-shadow:none;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+    margin-left: 50px;
 }
-.hero .btn:hover{background:#145214}
-
-/* BÖLÜMLER */
-.section{padding:80px 5%}
-.section-title{
-  text-align:left;
-  font-size:36px;
-  margin-bottom:40px;
-  color:#145214;
-  font-weight:700;
-  position:relative;
+.nav-links li {
+    position: relative;
+    font-weight: 600;
+}
+.nav-links li a {
+    color: white;
+    padding: 8px 0;
+    display: block;
+    transition: 0.3s;
+}
+.nav-links li::after {
+    content: "";
+    position: absolute;
+    bottom: -6px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: #81c784;
+    transition: 0.3s;
+    border-radius: 2px;
+}
+.nav-links li:hover::after {
+    width: 100%;
+}
+/* ANA GÖRSEL — ESKİ DÜZEN */
+.hero {
+    min-height: 60vh;
+    max-height: 80vh;
+    background: url("1761356719775.jpg") center top / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    margin-top: 100px;
+    overflow: hidden;
+}
+.hero div {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+.hero .btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #2e7d32;
+    border-radius: 30px;
+    color: white;
+    font-weight: 600;
+}
+.hero .btn:hover {
+    background: #145214;
+}
+/* BÖLÜMLER — ESKİ DÜZEN */
+.section {
+    padding: 80px 5%;
+}
+.section-title {
+    text-align: left;
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #145214;
+    font-weight: 700;
+    position: relative;
 }
 .section-title::before,
-.section-title::after{
-  content:"";
-  display:inline-block;
-  width:50px;
-  height:4px;
-  background:#81c784;
-  margin:0 10px;
-  vertical-align:middle;
+.section-title::after {
+    content: "";
+    display: inline-block;
+    width: 50px;
+    height: 4px;
+    background: #81c784;
+    margin: 0 10px;
+    vertical-align: middle;
 }
-
-/* HİZMETLER */
-.services{
-  display:flex;
-  flex-wrap:wrap;
-  gap:20px;
-  justify-content:center;
+/* HİZMET KARTLARI — ESKİ DÜZEN */
+.services {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
 }
-.service{
-  background:#fff;
-  padding:20px;
-  border-radius:12px;
-  width:220px;
-  border:1px solid #ddd;
-  text-align:center;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
-  transition:.3s;
+.service {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 220px;
+    border: 1px solid #ddd;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.service:hover{transform:translateY(-4px)}
-.service h3{
-  color:#145214;
-  font-weight:600;
-  margin-bottom:12px;
+.service h3 {
+    color: #145214;
+    font-weight: 600;
+    margin-bottom: 12px;
 }
-.service h3::after{
-  content:"";
-  width:40px;
-  height:3px;
-  background:#2e7d32;
-  display:block;
-  margin:6px auto 0;
-  border-radius:2px;
+.service h3::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background: #2e7d32;
+    display: block;
+    margin: 6px auto 0 auto;
+    border-radius: 2px;
 }
-.service p{font-size:14px;color:#555;line-height:1.6}
-
-/* PROJELER */
-.project-section{display:flex;flex-direction:column;gap:40px}
-.project{
-  padding:20px;
-  border-radius:12px;
-  background:#fff;
-  box-shadow:0 4px 12px rgba(0,0,0,.1);
+.service p {
+    font-size: 14px;
+    color: #555;
 }
-.project h2{
-  color:#145214;
-  margin-bottom:20px;
-  text-align:center;
+/* PROJELER — ESKİ DÜZEN */
+.project-section {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
-.project-description{
-  color:#555;
-  line-height:1.8;
-  text-align:center;
-  margin:-5px auto 25px;
-  max-width:750px;
+.project {
+    padding: 20px;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
-.gallery{
-  display:flex;
-  flex-wrap:wrap;
-  gap:15px;
-  justify-content:center;
+.project h2 {
+    color: #145214;
+    margin-bottom: 20px;
+    text-align: center;
 }
-.gallery img{
-  width:250px;
-  height:190px;
-  object-fit:cover;
-  cursor:pointer;
-  transition:transform .3s;
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
 }
-.gallery img:hover{transform:scale(1.04)}
-
-/* HAKKIMIZDA */
-#about{background:#fff}
-#about p{
-  line-height:1.9;
-  font-size:17px;
-  max-width:1000px;
+.gallery img {
+    width: 250px;
+    height: auto;
+    cursor: pointer;
+    transition: 0.3s;
 }
-
-/* İLETİŞİM */
-#contact{text-align:center}
-#contact .section-title{text-align:left}
-.contact-info{
-  text-align:center;
-  color:#555;
-  line-height:2.2;
-  overflow-wrap:anywhere;
+.gallery img:hover {
+    transform: scale(1.05);
 }
-.contact-info a{transition:.3s}
-.contact-info a:hover{color:#145214}
-.contact-buttons{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:12px;
-  margin-top:25px;
+/* GÖRSEL BÜYÜTME */
+#lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    cursor: zoom-out;
 }
-.contact-btn{
-  display:inline-flex;
-  align-items:center;
-  gap:9px;
-  background:#145214;
-  color:#fff;
-  padding:12px 20px;
-  border-radius:30px;
-  transition:.3s;
+#lightbox img {
+    max-width: 95%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 5px;
 }
-.contact-btn:hover{background:#2e7d32}
-
-/* FOOTER */
-footer{
-  background:#145214;
-  color:white;
-  text-align:center;
-  padding:30px;
+/* ALT BİLGİ */
+footer {
+    background: #145214;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    border-radius: 12px;
 }
-footer p{margin:7px 0;line-height:1.7}
-footer a:hover{color:#c8e6c9}
-
-/* FOTOĞRAF LIGHTBOX */
-#lightbox{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.92);
-  z-index:2000;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  cursor:zoom-out;
+footer p {
+    margin: 5px 0;
 }
-#lightbox img{
-  max-width:95%;
-  max-height:90vh;
-  object-fit:contain;
-  border-radius:6px;
+.contact-links a {
+    color: inherit;
+    text-decoration: underline;
 }
-#lightbox .close-lightbox{
-  position:absolute;
-  top:20px;
-  right:25px;
-  color:white;
-  font-size:36px;
-  cursor:pointer;
-  background:transparent;
-  border:0;
-}
-
-/* MOBİL */
-@media(max-width:768px){
-  nav{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:8px 4%;
-  }
-  nav .logo img{height:55px}
-  .nav-links{
-    width:100%;
-    flex-direction:row;
-    flex-wrap:wrap;
-    justify-content:flex-start;
-    gap:8px 16px;
-    margin:5px 0 0;
-    padding-bottom:5px;
-  }
-  .nav-links li a{font-size:12px;padding:5px 0}
-  .nav-links li::after{bottom:0}
-  .hero{
-    margin-top:105px;
-    min-height:50vh;
-    max-height:none;
-    padding:40px 15px;
-    background-position:center center;
-  }
-  .hero h1{font-size:29px}
-  .hero p{font-size:16px}
-  .hero-content{width:100%;padding:0 8px}
-  .hero .btn{padding:10px 20px;font-size:14px}
-  .section{padding:55px 5%}
-  .section-title{font-size:27px;margin-bottom:30px}
-  .section-title::before,.section-title::after{width:22px}
-  .service{width:90%;max-width:350px}
-  .gallery{gap:12px}
-  .gallery img{width:100%;max-width:350px;height:auto;max-height:280px;object-fit:cover}
-  .project{padding:15px}
-  #about p{text-align:left}
-  .contact-btn{font-size:14px}
-}
-
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{transition:none!important}
+/* TELEFON UYUMLULUĞU */
+@media(max-width: 768px) {
+    nav {
+        flex-direction: row;
+        align-items: center;
+        padding: 12px 3%;
+    }
+    nav .logo img {
+        height: 60px;
+    }
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-left: 20px;
+    }
+    .nav-links li::after {
+        bottom: -4px;
+    }
+    .hero h1 {
+        font-size: 28px;
+        text-align: left;
+    }
+    .hero p {
+        font-size: 16px;
+        text-align: left;
+    }
+    .hero div {
+        width: 100%;
+        padding: 0 15px;
+    }
+    .hero {
+        padding: 40px 15px;
+        min-height: 50vh;
+        margin-top: 60px;
+        background-position: center -60px;
+    }
+    .hero .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    .service {
+        width: 90%;
+        max-width: 300px;
+    }
+    .gallery img {
+        width: 90%;
+        max-width: 300px;
+    }
+    #about p {
+        text-align: left;
+        margin-left: 15px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
 }
 </style>
 </head>
-
 <body>
-
 <!-- ÜST MENÜ -->
 <nav>
-  <div class="logo">
-    <a href="#hero" aria-label="MarQen Group ana sayfa">
-      <img src="IMG_0213.jpeg" alt="MarQen Group Logo">
-    </a>
-  </div>
-
-  <ul class="nav-links">
-    <li><a href="#hero">Ana Sayfa</a></li>
-    <li><a href="#services">Hizmetler</a></li>
-    <li><a href="#projects">Projeler</a></li>
-    <li><a href="#about">Hakkımızda</a></li>
-    <li><a href="#contact">İletişim</a></li>
-  </ul>
+    <div class="logo">
+        <img src="IMG_0213.jpeg" alt="MarQen Group Logo">
+    </div>
+    <ul class="nav-links">
+        <li><a href="#hero">Ana Sayfa</a></li>
+        <li><a href="#services">Hizmetler</a></li>
+        <li><a href="#projects">Projeler</a></li>
+        <li><a href="#about">Hakkımızda</a></li>
+        <li><a href="#contact">İletişim</a></li>
+    </ul>
 </nav>
-
-<!-- ANA GÖRSEL -->
+<!-- ANA SAYFA -->
 <section class="hero" id="hero">
-  <div class="hero-content">
-    <h1>MarQen Group</h1>
-    <p>
-      Doğanın Mimarı<br>
-      Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri
-    </p>
-    <a href="#projects" class="btn">Projelerimizi İnceleyin</a>
-  </div>
+    <div>
+        <h1>Modern &amp; Prestijli Peyzaj Tasarımları</h1>
+        <p>MarQen Group — Doğanın Mimarı</p>
+        <a href="#projects" class="btn">Projeleri İncele</a>
+    </div>
 </section>
-
 <!-- HİZMETLER -->
 <section class="section" id="services">
-  <div class="section-title">Hizmetlerimiz</div>
-
-  <div class="services">
-    <div class="service">
-      <h3>Peyzaj Tasarımı</h3>
-      <p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p>
+    <div class="section-title">Hizmetlerimiz</div>
+    <div class="services">
+        <div class="service">
+            <h3>Peyzaj Tasarım</h3>
+            <p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p>
+        </div>
+        <div class="service">
+            <h3>Peyzaj Uygulama</h3>
+            <p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p>
+        </div>
+        <div class="service">
+            <h3>Bakım &amp; Sürdürülebilirlik</h3>
+            <p>Yeşil alanların korunması ve bakımı.</p>
+        </div>
+        <div class="service">
+            <h3>Konut &amp; Ticari Projeler</h3>
+            <p>Konut ve ticari alanlar için peyzaj çözümleri.</p>
+        </div>
     </div>
-
-    <div class="service">
-      <h3>Peyzaj Uygulama</h3>
-      <p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p>
-    </div>
-
-    <div class="service">
-      <h3>Bakım &amp; Sürdürülebilirlik</h3>
-      <p>Yeşil alanların korunması ve bakımı.</p>
-    </div>
-
-    <div class="service">
-      <h3>Konut &amp; Ticari Projeler</h3>
-      <p>Konut ve ticari alanlar için peyzaj çözümleri.</p>
-    </div>
-  </div>
 </section>
-
-<!-- PROJELER: ESKİ FOTOĞRAF DOSYALARI KORUNDU -->
+<!-- TÜM ESKİ PROJELER -->
 <section class="section" id="projects">
-  <div class="section-title">Projelerimiz</div>
-
-  <div class="project-section">
-    <div class="project">
-      <h2>Göl Konakları</h2>
-
-      <p class="project-description">
-        Göl Konakları projesinden peyzaj ve dış mekân görselleri.
-      </p>
-
-      <div class="gallery">
-        <img src="1761356716505.jpg" alt="Göl Konakları proje görseli" loading="lazy">
-        <img src="1761356719775.jpg" alt="Göl Konakları peyzaj görseli" loading="lazy">
-        <img src="1769466753897.png" alt="Göl Konakları tasarım görseli" loading="lazy">
-        <img src="1769466788289.png" alt="Göl Konakları proje detayı" loading="lazy">
-        <img src="1769466937815.png" alt="Göl Konakları dış mekân tasarımı" loading="lazy">
-        <img src="1769466962645.png" alt="Göl Konakları peyzaj detayı" loading="lazy">
-        <img src="1769466995948.png" alt="Göl Konakları proje çalışması" loading="lazy">
-      </div>
+    <div class="section-title">Projelerimiz</div>
+    <div class="project-section">
+        <div class="project">
+            <h2>Proje Galerisi</h2>
+            <div class="gallery">
+                <img src="1761356716505.jpg" alt="Peyzaj Projesi 1" loading="lazy">
+                <img src="1761356719775.jpg" alt="Peyzaj Projesi 2" loading="lazy">
+                <img src="1761356764550.jpg" alt="Peyzaj Projesi 3" loading="lazy">
+                <img src="1761356774286.jpg" alt="Peyzaj Projesi 4" loading="lazy">
+                <img src="1761356778199.jpg" alt="Peyzaj Projesi 5" loading="lazy">
+                <img src="1761356790816.jpg" alt="Peyzaj Projesi 6" loading="lazy">
+                <img src="1761356796622.jpg" alt="Peyzaj Projesi 7" loading="lazy">
+                <img src="1761356802125.jpg" alt="Peyzaj Projesi 8" loading="lazy">
+                <img src="1761356813553.jpg" alt="Peyzaj Projesi 9" loading="lazy">
+                <img src="1761356818280.jpg" alt="Peyzaj Projesi 10" loading="lazy">
+                <img src="1761356823965.jpg" alt="Peyzaj Projesi 11" loading="lazy">
+                <img src="1761357535350.jpg" alt="Peyzaj Projesi 12" loading="lazy">
+                <img src="1769466753897.png" alt="Peyzaj Projesi 13" loading="lazy">
+                <img src="1769466788289.png" alt="Peyzaj Projesi 14" loading="lazy">
+                <img src="1769466937815.png" alt="Peyzaj Projesi 15" loading="lazy">
+                <img src="1769466962645.png" alt="Peyzaj Projesi 16" loading="lazy">
+                <img src="1769466995948.png" alt="Peyzaj Projesi 17" loading="lazy">
+                <img src="1773486965307.png" alt="Peyzaj Projesi 18" loading="lazy">
+                <img src="1773487049305.png" alt="Peyzaj Projesi 19" loading="lazy">
+                <img src="1773487096078.png" alt="Peyzaj Projesi 20" loading="lazy">
+                <img src="1773487163704.png" alt="Peyzaj Projesi 21" loading="lazy">
+                <img src="1773487283900.png" alt="Peyzaj Projesi 22" loading="lazy">
+                <img src="1773487355136.png" alt="Peyzaj Projesi 23" loading="lazy">
+                <img src="1773487409782.png" alt="Peyzaj Projesi 24" loading="lazy">
+                <img src="1773488129274.png" alt="Peyzaj Projesi 25" loading="lazy">
+            </div>
+        </div>
     </div>
-  </div>
 </section>
-
 <!-- HAKKIMIZDA -->
 <section class="section" id="about">
-  <div class="section-title">Hakkımızda</div>
-
-  <p>
-    MarQen Group, estetik, fonksiyonellik ve sürdürülebilirliği
-    bir araya getiren peyzaj tasarımı ve uygulama çözümleri sunar.
-    Villa bahçelerinden konut ve ticari alanlara kadar her projede
-    mimari yaklaşımı doğanın güzelliğiyle buluşturmayı hedefler.
-    <br><br>
-    <strong style="color:#145214">MarQen Group — Doğanın Mimarı</strong>
-  </p>
+    <div class="section-title">Hakkımızda</div>
+    <p>
+        MarQen Group; estetik, fonksiyonellik ve sürdürülebilirliği
+        bir araya getirerek yaşam alanlarına değer katan peyzaj tasarım
+        ve uygulama çözümleri sunar.
+        <br><br>
+        <strong>MarQen Group — Doğanın Mimarı.</strong>
+    </p>
 </section>
-
 <!-- İLETİŞİM -->
 <section class="section" id="contact">
-  <div class="section-title">İletişim</div>
-
-  <div class="contact-info">
-    <p>
-      <i class="fa-solid fa-phone"></i>
-      <a href="tel:+905359301670">0535 930 16 70</a>
+    <div class="section-title">İletişim</div>
+    <p style="text-align:center;color:#555;line-height:2;">
+        📞 <a href="tel:+905359301670">0535 930 16 70</a><br>
+        ✉ <a href="mailto:marqengroup@gmail.com">marqengroup@gmail.com</a><br>
+        📍 İstanbul<br>
+        📷 <a href="https://www.instagram.com/marqengroup/" target="_blank" rel="noopener">Instagram: @marqengroup</a><br>
+        <a href="https://wa.me/905359301670" target="_blank" rel="noopener">WhatsApp üzerinden iletişim</a>
     </p>
-
-    <p>
-      <i class="fa-solid fa-envelope"></i>
-      <a href="mailto:marqengroup@gmail.com">marqengroup@gmail.com</a>
-    </p>
-
-    <p>
-      <i class="fa-solid fa-location-dot"></i>
-      İstanbul
-    </p>
-
-    <div class="contact-buttons">
-      <a class="contact-btn" href="tel:+905359301670">
-        <i class="fa-solid fa-phone"></i> Hemen Ara
-      </a>
-
-      <a class="contact-btn"
-         href="https://wa.me/905359301670"
-         target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-whatsapp"></i> WhatsApp
-      </a>
-
-      <a class="contact-btn"
-         href="https://www.instagram.com/marqengroup/"
-         target="_blank" rel="noopener noreferrer">
-        <i class="fa-brands fa-instagram"></i> @marqengroup
-      </a>
-    </div>
-  </div>
 </section>
-
 <!-- ALT BİLGİ -->
 <footer>
-  <p><strong>MarQen Group</strong></p>
-  <p>Doğanın Mimarı</p>
-  <p>
-    <a href="tel:+905359301670">0535 930 16 70</a>
-    &nbsp;|&nbsp;
-    <a href="mailto:marqengroup@gmail.com">marqengroup@gmail.com</a>
-  </p>
-  <p>
-    <a href="https://www.instagram.com/marqengroup/"
-       target="_blank" rel="noopener noreferrer">
-      <i class="fa-brands fa-instagram"></i> @marqengroup
-    </a>
-  </p>
-  <p>© 2026 MarQen Group | Tüm Hakları Saklıdır</p>
+    <p>© 2026 MarQen Group | Tüm Hakları Saklıdır</p>
+    <p>Doğanın Mimarı</p>
 </footer>
-
-<!-- FOTOĞRAFI BÜYÜTME -->
-<div id="lightbox" role="dialog" aria-label="Büyütülmüş proje fotoğrafı">
-  <button class="close-lightbox" aria-label="Kapat">&times;</button>
-  <img src="" alt="Büyütülmüş proje fotoğrafı">
+<!-- GÖRSEL BÜYÜTME -->
+<div id="lightbox">
+    <img src="" alt="Büyütülmüş peyzaj projesi">
 </div>
-
 <script>
-const lightbox = document.getElementById("lightbox");
-const lightboxImage = lightbox.querySelector("img");
-const closeButton = lightbox.querySelector(".close-lightbox");
-
-document.querySelectorAll(".gallery img").forEach(function(img){
-  img.addEventListener("click",function(){
-    lightboxImage.src = img.src;
-    lightboxImage.alt = img.alt;
-    lightbox.style.display = "flex";
-  });
+document.querySelectorAll('.gallery img').forEach(function(img) {
+    img.addEventListener('click', function() {
+        const lightbox = document.getElementById('lightbox');
+        lightbox.querySelector('img').src = img.src;
+        lightbox.style.display = 'flex';
+    });
 });
-
-function closeLightbox(){
-  lightbox.style.display = "none";
-  lightboxImage.src = "";
-}
-
-lightbox.addEventListener("click",function(event){
-  if(event.target === lightbox){
-    closeLightbox();
-  }
-});
-
-closeButton.addEventListener("click",closeLightbox);
-
-document.addEventListener("keydown",function(event){
-  if(event.key === "Escape"){
-    closeLightbox();
-  }
+document.getElementById('lightbox').addEventListener('click', function() {
+    this.style.display = 'none';
 });
 </script>
-
 </body>
 </html>
