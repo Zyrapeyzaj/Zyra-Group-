@@ -1,244 +1,741 @@
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Zyra Peyzaj</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:Arial,sans-serif;background:#f5f5f5;color:#333;scroll-behavior:smooth;}
-a{text-decoration:none;color:inherit;}
-img{max-width:100%;display:block;border-radius:8px;transition:0.3s;}
-img:hover{transform:scale(1.05);}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarQen Group | Doğanın Mimarı</title>
+  <meta name="description" content="MarQen Group - Modern villa bahçeleri, peyzaj tasarımı ve profesyonel bahçe uygulamaları.">
+  <meta name="theme-color" content="#ffffff">
 
-/* Navbar */
-nav{
-display:flex;align-items:center;justify-content:space-between;
-width:100%;background:#fff;height:80px;
-padding:0 5%;position:fixed;top:0;z-index:1000;
-box-shadow:0 2px 8px rgba(0,0,0,0.15);
-}
-.logo-section img{height:60px;cursor:pointer;}
-.menu-toggle{display:none;flex-direction:column;cursor:pointer;gap:5px;}
-.menu-toggle div{width:25px;height:3px;background:#145214;border-radius:2px;transition:0.3s;}
-.nav-links{list-style:none;display:flex;gap:35px;}
-.nav-links li{position:relative;font-weight:600;}
-.nav-links li a{color:#145214;padding:8px 0;display:flex;align-items:center;transition:0.3s;}
-.nav-links li a::before{content:"";display:inline-block;width:4px;height:20px;background:#145214;margin-right:8px;border-radius:2px;}
-.nav-links li:hover a::before{background:#81c784;}
+  <style>
+    :root {
+      --green: #123B2A;
+      --green-dark: #123B2A;
+      --white: #FFFFFF;
+      --border: #DCE5DF;
+      --muted: #496457;
+    }
 
-/* Hero */
-.hero{
-min-height:70vh;display:flex;justify-content:center;align-items:center;text-align:center;
-padding:60px 20px;margin-top:80px;position:relative;
-background:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url("1761356719775.jpg") center/cover no-repeat;
-}
-.hero div{position:relative;z-index:2;color:white;text-shadow:0 2px 6px rgba(0,0,0,0.5);}
-.hero h1{font-size:48px;margin-bottom:20px;animation:fadeInDown 1s;}
-.hero p{font-size:20px;margin-bottom:25px;animation:fadeIn 1.2s;}
-.hero .btn{
-padding:12px 30px;background:#2e7d32;border-radius:30px;color:white;font-weight:600;transition:0.3s;
-}
-.hero .btn:hover{background:#145214;transform:scale(1.05);}
-@keyframes fadeInDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
-@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Sections */
-.section{padding:80px 5%;}
-.section-title{
-text-align:left;font-size:36px;margin-bottom:40px;color:#145214;font-weight:700;position:relative;
-}
-.section-title::before{content:"";display:inline-block;width:6px;height:36px;background:#81c784;margin-right:15px;vertical-align:middle;border-radius:3px;}
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
 
-/* Hizmetler */
-.services{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;}
-.service{
-background:#fff;padding:20px;border-radius:12px;width:220px;border:1px solid #ddd;text-align:center;
-box-shadow:0 4px 12px rgba(0,0,0,0.1);transition:0.3s;
-}
-.service:hover{transform:translateY(-5px);box-shadow:0 6px 18px rgba(0,0,0,0.15);}
-.service h3{color:#145214;font-weight:600;margin-bottom:12px;}
-.service h3::after{content:"";width:40px;height:3px;background:#2e7d32;display:block;margin:6px auto 0 auto;border-radius:2px;}
-.service p{font-size:14px;color:#555;line-height:1.6;}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #FFFFFF;
+      color: #123B2A;
+      line-height: 1.7;
+    }
 
-/* Projeler */
-.project-section{display:flex;flex-direction:column;gap:20px;}
-.project-buttons{display:flex;justify-content:center;gap:15px;margin-bottom:20px;flex-wrap:wrap;}
-.project-buttons button{
-padding:10px 20px;border:none;background:#145214;color:white;font-weight:600;cursor:pointer;border-radius:8px;transition:0.3s;
-}
-.project-buttons button.active,
-.project-buttons button:hover{background:#2e7d32;}
-.gallery{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;max-width:1200px;margin:auto;}
-.gallery img{width:250px;cursor:pointer;}
-.project-gallery{display:none;}
+    a {
+      color: #123B2A;
+      text-decoration: none;
+    }
 
-/* Hakkımızda */
-#about p{font-size:16px;color:#555;line-height:1.8;margin-bottom:20px;}
+    img {
+      display: block;
+      max-width: 100%;
+    }
 
-/* İletişim */
-#contact{display:flex;flex-direction:column;align-items:center;gap:15px;text-align:center;padding-bottom:30px;}
-.contact-info{display:flex;align-items:center;gap:10px;font-size:16px;color:#555;margin-bottom:15px;}
-.contact-info i{color:#145214;}
-.contact-icons{
-display:flex;gap:20px;justify-content:center;margin-bottom:20px;
-}
-.contact-icons a{
-display:flex;align-items:center;justify-content:center;width:45px;height:45px;
-background:#145214;color:white;border-radius:50%;transition:0.3s;font-size:20px;
-}
-.contact-icons a:hover{background:#2e7d32;}
-#whatsapp-btn{
-background:#25D366;color:white;border-radius:8px;padding:12px 20px;font-weight:600;font-size:18px;display:flex;align-items:center;gap:10px;transition:0.3s;text-decoration:none;margin-top:10px;}
-#whatsapp-btn:hover{background:#1ebe57;transform:scale(1.05);}
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
 
-/* Footer */
-footer{background:#145214;color:white;text-align:center;padding:30px;border-radius:12px;}
-footer p{margin:5px 0;}
+    header {
+      background: #FFFFFF;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-/* Lightbox */
-#lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.8);justify-content:center;align-items:center;z-index:2000;}
-#lightbox img{max-width:90%;max-height:90%;border-radius:10px;}
+    .navbar {
+      min-height: 88px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
 
-/* Responsive */
-@media(max-width:768px){
-.menu-toggle{display:flex;}
-.nav-links{
-position:fixed;top:0;left:-250px;flex-direction:column;background:#fff;width:250px;height:100%;
-padding-top:80px;transition:0.3s;gap:20px;z-index:1500;
-}
-.nav-links.show{left:0;}
-.hero h1{font-size:28px;text-align:left;}
-.hero p{font-size:16px;text-align:left;}
-.hero div{width:100%;padding:0 15px;}
-.hero{padding:40px 15px; min-height:50vh; margin-top:60px;}
-.hero .btn{padding:10px 20px;font-size:14px;}
-.service{width:90%;max-width:300px;}
-.gallery img{width:90%;max-width:300px;}
-#about p{text-align:left;margin-left:15px;}
-}
+    .brand {
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 1px;
+      line-height: 1.2;
+      color: var(--green);
+    }
 
-</style>
+    .brand span {
+      display: block;
+      margin-top: 7px;
+      font-size: 10px;
+      letter-spacing: 4px;
+      font-weight: 600;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      font-size: 13px;
+      font-weight: 700;
+      transition: opacity .2s;
+    }
+
+    nav a:hover {
+      opacity: .65;
+    }
+
+    .outline-button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 22px;
+      border: 1px solid var(--green);
+      background: #FFFFFF;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .outline-button:hover {
+      background: var(--green);
+      color: #FFFFFF;
+    }
+
+    .hero {
+      min-height: 660px;
+      display: flex;
+      align-items: center;
+      background: #FFFFFF;
+      padding: 80px 0;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+      color: var(--green);
+    }
+
+    h1 {
+      font-size: clamp(43px, 5.5vw, 72px);
+      line-height: 1.08;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+      color: var(--green);
+    }
+
+    .hero p {
+      max-width: 490px;
+      font-size: 16px;
+      color: var(--muted);
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .hero-image {
+      height: 490px;
+      width: 100%;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    section {
+      padding: 95px 0;
+      background: #FFFFFF;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(31px, 4vw, 46px);
+      line-height: 1.2;
+      margin-bottom: 16px;
+      color: var(--green);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image {
+      width: 100%;
+      height: 420px;
+      object-fit: cover;
+      border: 1px solid var(--border);
+    }
+
+    .about-copy h3 {
+      font-size: 29px;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      color: var(--green);
+    }
+
+    .about-copy p {
+      margin-bottom: 18px;
+      color: var(--muted);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      padding: 30px;
+      background: #FFFFFF;
+      transition: .25s;
+    }
+
+    .service-card:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+    }
+
+    .service-number {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      margin-bottom: 24px;
+      color: var(--green);
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      margin-bottom: 12px;
+      color: var(--green);
+    }
+
+    .service-card p {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .project-card {
+      border: 1px solid var(--border);
+      background: #FFFFFF;
+      overflow: hidden;
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      transition: transform .4s;
+    }
+
+    .project-card:hover img {
+      transform: scale(1.035);
+    }
+
+    .project-info {
+      padding: 22px;
+      background: #FFFFFF;
+    }
+
+    .project-info h3 {
+      font-size: 19px;
+      margin-bottom: 7px;
+      color: var(--green);
+    }
+
+    .project-info p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .statement {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      text-align: center;
+      padding: 85px 20px;
+      background: #FFFFFF;
+    }
+
+    .statement p {
+      max-width: 850px;
+      margin: auto;
+      font-size: clamp(28px, 4vw, 48px);
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--green);
+    }
+
+    .statement span {
+      display: block;
+      margin-top: 20px;
+      font-size: 12px;
+      letter-spacing: 4px;
+      font-weight: 700;
+      color: var(--green);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .contact-grid h2 {
+      font-size: clamp(32px, 4vw, 46px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: var(--green);
+    }
+
+    .contact-grid p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .contact-details {
+      border-top: 1px solid var(--border);
+    }
+
+    .contact-item {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+      color: var(--green);
+    }
+
+    .contact-item a,
+    .contact-item span {
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+      background: #FFFFFF;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-brand {
+      font-weight: 800;
+      letter-spacing: 1px;
+      color: var(--green);
+    }
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 99;
+      padding: 13px 18px;
+      border: 1px solid var(--green);
+      background: #FFFFFF;
+      color: var(--green);
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 5px 22px rgba(18,59,42,.12);
+    }
+
+    @media (max-width: 850px) {
+      .navbar {
+        padding: 18px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 55px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .hero-image {
+        height: 350px;
+      }
+
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      section {
+        padding: 70px 0;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .services-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .brand {
+        font-size: 22px;
+      }
+
+      nav {
+        gap: 12px;
+      }
+
+      nav a {
+        font-size: 12px;
+      }
+
+      .hero-image,
+      .about-image {
+        height: 300px;
+      }
+
+      .service-card {
+        padding: 25px;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<nav>
-<div class="logo-section"><img src="1771426838111.png" alt="Zyra Peyzaj Logo"></div>
-<div class="menu-toggle" onclick="toggleMenu()"><div></div><div></div><div></div></div>
-<ul class="nav-links">
-<li><a href="#hero">Ana Sayfa</a></li>
-<li><a href="#services">Hizmetler</a></li>
-<li><a href="#projects">Projeler</a></li>
-<li><a href="#about">Hakkımızda</a></li>
-<li><a href="#contact">İletişim</a></li>
-</ul>
-</nav>
+<header>
+  <div class="container navbar">
+    <a href="#anasayfa" class="brand">
+      MarQen Group
+      <span>DOĞANIN MİMARI</span>
+    </a>
 
-<section class="hero" id="hero">
-<div>
-<h1>Modern & Prestijli Peyzaj Tasarımları</h1>
-<p>Estetik, sürdürülebilir ve profesyonel dış mekân çözümleri</p>
-<a href="#contact" class="btn">Bizlere Ulaşın</a>
-</div>
-</section>
+    <nav aria-label="Ana menü">
+      <a href="#anasayfa">Ana Sayfa</a>
+      <a href="#hakkimizda">Hakkımızda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#projeler">Projeler</a>
+      <a href="#iletisim">İletişim</a>
+    </nav>
+  </div>
+</header>
 
-<section class="section" id="services">
-<div class="section-title">Hizmetlerimiz</div>
-<div class="services">
-<div class="service"><h3>Peyzaj Tasarım</h3><p>Estetik ve fonksiyonel peyzaj tasarım çözümleri.</p></div>
-<div class="service"><h3>Peyzaj Uygulama</h3><p>Projelerinizi profesyonel ekiplerle uyguluyoruz.</p></div>
-<div class="service"><h3>Bakım & Sürdürülebilirlik</h3><p>Yeşil alanların korunması ve bakımı.</p></div>
-<div class="service"><h3>Konut & Ticari Projeler</h3><p>Konut ve ticari alanlar için peyzaj çözümleri.</p></div>
-</div>
-</section>
+<main>
 
-<section class="section" id="projects">
-<div class="section-title">Projelerimiz</div>
-<div class="project-section">
-<div class="project-buttons">
-<button class="active" onclick="showGallery('gol-konaklari')">Göl Konakları</button>
-<button onclick="showGallery('cesme-villa')">Çeşme-Villa Project</button>
-<button onclick="showGallery('silivri-villa')">Silivri Villa Project</button>
-<button onclick="showGallery('mesa-nurol')">Mesa Nurol Project</button>
-</div>
-<div id="gol-konaklari" class="project-gallery gallery" style="display:flex;">
-<img src="1761356716505.jpg">
-<img src="1761356719775.jpg">
-<img src="1769466753897.png">
-<img src="1769466788289.png">
-</div>
-<div id="cesme-villa" class="project-gallery gallery">
-<img src="1773488129274.png">
-<img src="1773487409782.png">
-<img src="1773487355136.png">
-</div>
-<div id="silivri-villa" class="project-gallery gallery">
-<img src="1762939733833.jpg">
-<img src="1762940170849.jpg">
-</div>
-<div id="mesa-nurol" class="project-gallery gallery">
-<img src="1761356774286.jpg">
-<img src="1761356764550.jpg">
-</div>
-</div>
-</section>
+  <section class="hero" id="anasayfa">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">MarQen Group · Doğanın Mimarı</div>
+        <h1>Yaşam alanlarınıza doğanın imzası.</h1>
+        <p>
+          Modern tasarım anlayışını doğanın eşsiz dokusuyla birleştiriyor,
+          estetik ve işlevsel dış mekânlar tasarlıyoruz.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projeler" class="outline-button">Projelerimizi Keşfedin</a>
+          <a href="#iletisim" class="outline-button">Bizimle İletişime Geçin</a>
+        </div>
+      </div>
 
-<section class="section" id="about">
-<div class="section-title">Hakkımızda</div>
-<p>Zyra Peyzaj, estetik, fonksiyonellik ve sürdürülebilir peyzaj çözümleri sunan bir firmadır.  
-Kurucumuz <strong>Peyzaj Mimarı M. Aras Kan</strong> liderliğinde, her proje özenle tasarlanır ve uygulanır; modern peyzaj trendleri ile yenilikçi teknikler bir araya getirilir.  
-Konut veya ticari fark etmeksizin, mekânlara değer katan özgün ve fonksiyonel tasarımlar üretiriz.</p>
+      <div>
+        <img class="hero-image"
+          src="1761356719775.jpg"
+          alt="Modern villa bahçesi ve peyzaj tasarımı"
+          onerror="this.style.display='none'">
+      </div>
+    </div>
+  </section>
 
-<p>Her projemizde yaratıcılık, detaycılık ve müşteri memnuniyeti önceliğimizdir.  
-Zyra Peyzaj ile çalışan herkes, profesyonel yaklaşım ve kusursuz sonuçların keyfini yaşar.</p>
+  <section id="hakkimizda">
+    <div class="container about-grid">
+      <div>
+        <img class="about-image"
+          src="1761356764550.jpg"
+          alt="Doğayla bütünleşen peyzaj tasarımı"
+          onerror="this.style.display='none'">
+      </div>
 
-<p><strong>Vizyonumuz:</strong> Türkiye’de peyzaj tasarımında sürdürülebilir, modern ve estetik çözümleriyle öncü firma olmak.</p>
-<p><strong>Misyonumuz:</strong> Müşteri odaklı, yenilikçi ve çevreye duyarlı projelerle yaşam alanlarını değerli ve işlevsel hâle getirmek.</p>
-</section>
+      <div class="about-copy">
+        <div class="eyebrow">Hakkımızda</div>
+        <h3>Doğayı tasarımla buluşturuyoruz.</h3>
+        <p>
+          MarQen Group olarak bahçeleri yalnızca dış mekânlar olarak değil,
+          yaşamın bir parçası olarak ele alıyoruz.
+        </p>
+        <p>
+          Her projede mimari çizgileri, doğal dokuları ve alanın ihtiyaçlarını
+          bir araya getirerek özgün çözümler geliştiriyoruz.
+        </p>
+        <p>
+          Hedefimiz; estetik, kullanışlı ve bulunduğu mekâna değer katan
+          yaşam alanları oluşturmak.
+        </p>
+        <a href="#iletisim" class="outline-button">Projenizi Konuşalım</a>
+      </div>
+    </div>
+  </section>
 
-<section class="section" id="contact">
-<div class="section-title">İletişim</div>
+  <section id="hizmetler">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Hizmetlerimiz</div>
+        <h2>Hayalinizdeki alanı birlikte tasarlayalım.</h2>
+        <p>
+          İhtiyacınıza ve mekânınıza özel, estetik ve işlevsel peyzaj çözümleri.
+        </p>
+      </div>
 
-<div class="contact-info"><i class="fas fa-map-pin"></i> İstanbul</div>
-<a href="tel:+905359301670" class="btn">📞 0535 930 16 70</a>
+      <div class="services-grid">
+        <article class="service-card">
+          <span class="service-number">01 / TASARIM</span>
+          <h3>Peyzaj Tasarımı</h3>
+          <p>Alana, mimariye ve kullanım ihtiyaçlarına özel konsept tasarımlar.</p>
+        </article>
 
-<div class="contact-icons">
-<a href="https://zyrapeyzaj.com" target="_blank" title="Web"><i class="fas fa-globe"></i></a>
-<a href="https://www.instagram.com/zyragrup/" target="_blank" title="Instagram"><i class="fab fa-instagram" style="color:#E1306C;"></i></a>
-</div>
+        <article class="service-card">
+          <span class="service-number">02 / VİLLA</span>
+          <h3>Villa Bahçeleri</h3>
+          <p>Modern, sade ve lüks yaşam alanlarını tamamlayan bahçeler.</p>
+        </article>
 
-<a href="https://wa.me/905359301670" target="_blank" id="whatsapp-btn"><i class="fab fa-whatsapp"></i> WhatsApp ile Ulaşın</a>
+        <article class="service-card">
+          <span class="service-number">03 / UYGULAMA</span>
+          <h3>Peyzaj Uygulaması</h3>
+          <p>Tasarımın sahada planlı ve özenli bir şekilde hayata geçirilmesi.</p>
+        </article>
 
-</section>
+        <article class="service-card">
+          <span class="service-number">04 / BİTKİ</span>
+          <h3>Bitkilendirme</h3>
+          <p>Mekâna uygun bitki seçimi ve dengeli bitkisel kompozisyonlar.</p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">05 / SERT ZEMİN</span>
+          <h3>Bahçe Düzenleme</h3>
+          <p>Yürüyüş yolları, oturma alanları ve dış mekân düzenlemeleri.</p>
+        </article>
+
+        <article class="service-card">
+          <span class="service-number">06 / DANIŞMANLIK</span>
+          <h3>Proje Danışmanlığı</h3>
+          <p>Bahçenizin potansiyelini değerlendiren planlama ve tasarım desteği.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projeler">
+    <div class="container">
+      <div class="section-heading">
+        <div class="eyebrow">Seçili Çalışmalar</div>
+        <h2>Doğadan ilham alan tasarımlar.</h2>
+        <p>
+          Her mekâna kendi karakterini kazandıran tasarım fikirleri.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+        <article class="project-card">
+          <img src="1761356716505.jpg"
+            alt="Modern villa bahçesi projesi"
+            loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="project-info">
+            <h3>Modern Villa Bahçesi</h3>
+            <p>Modern çizgiler ve doğal dokular.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="1761356774286.jpg"
+            alt="Çağdaş dış mekân tasarımı"
+            loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="project-info">
+            <h3>Çağdaş Dış Mekân</h3>
+            <p>Mimariyle uyumlu peyzaj yaklaşımı.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="1761356778199.jpg"
+            alt="Özel bahçe düzenlemesi"
+            loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="project-info">
+            <h3>Özel Bahçe Tasarımı</h3>
+            <p>İhtiyaca göre şekillenen yaşam alanı.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="1761356790816.jpg"
+            alt="Bitkisel peyzaj uygulaması"
+            loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="project-info">
+            <h3>Doğal Bitkilendirme</h3>
+            <p>Bitkilerle güçlenen mekân karakteri.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="1761356796622.jpg"
+            alt="Lüks bahçe peyzajı"
+            loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="project-info">
+            <h3>Lüks Peyzaj</h3>
+            <p>Sade ve dengeli dış mekân estetiği.</p>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <img src="1761356802125.jpg"
+            alt="Peyzaj proje ve uygulama çalışması"
+            loading="lazy" onerror="this.parentElement.style.display='none'">
+          <div class="project-info">
+            <h3>Yaşam Alanları</h3>
+            <p>Konfor ve estetiği bir araya getiren çözümler.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <div class="statement">
+    <p>“İyi tasarım, doğayla kurulan doğru ilişkinin sonucudur.”</p>
+    <span>MARQEN GROUP</span>
+  </div>
+
+  <section id="iletisim">
+    <div class="container contact-grid">
+      <div>
+        <div class="eyebrow">İletişim</div>
+        <h2>Birlikte güzel bir alan tasarlayalım.</h2>
+        <p>
+          Villa bahçeniz, peyzaj projeniz veya dış mekân düzenlemeniz için
+          bizimle iletişime geçin.
+        </p>
+        <a class="outline-button"
+          href="https://wa.me/905359301670"
+          target="_blank" rel="noopener">
+          WhatsApp Üzerinden İletişim
+        </a>
+      </div>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <strong>MARKA</strong>
+          <span>MarQen Group</span>
+        </div>
+
+        <div class="contact-item">
+          <strong>TELEFON / WHATSAPP</strong>
+          <a href="https://wa.me/905359301670" target="_blank" rel="noopener">
+            +90 535 930 16 70
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>INSTAGRAM</strong>
+          <a href="https://www.instagram.com/marqengroup/"
+            target="_blank" rel="noopener">
+            @marqengroup
+          </a>
+        </div>
+
+        <div class="contact-item">
+          <strong>WEB SİTESİ</strong>
+          <a href="https://zyrapeyzaj.com" target="_blank" rel="noopener">
+            zyrapeyzaj.com
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
 
 <footer>
-<p>© 2026 Zyra Peyzaj | Tüm Hakları Saklıdır</p>
+  <div class="container footer-inner">
+    <div class="footer-brand">MarQen Group</div>
+    <p>Doğanın Mimarı</p>
+    <p>© <span id="year"></span> MarQen Group. Tüm hakları saklıdır.</p>
+  </div>
 </footer>
 
-<div id="lightbox"><img src=""></div>
+<a class="whatsapp"
+  href="https://wa.me/905359301670"
+  target="_blank" rel="noopener"
+  aria-label="WhatsApp üzerinden iletişim">
+  WhatsApp
+</a>
 
 <script>
-function toggleMenu(){document.querySelector('.nav-links').classList.toggle('show');}
-
-// Lightbox
-document.querySelectorAll('.gallery img').forEach(img=>{
-img.addEventListener('click',()=>{
-const lightbox=document.getElementById('lightbox');
-lightbox.querySelector('img').src=img.src;
-lightbox.style.display='flex';
-});
-});
-document.getElementById('lightbox').addEventListener('click',()=>{document.getElementById('lightbox').style.display='none';});
-
-// Proje geçişleri
-function showGallery(id){
-document.querySelectorAll('.project-gallery').forEach(g=>{g.style.display='none';});
-document.getElementById(id).style.display='flex';
-document.querySelectorAll('.project-buttons button').forEach(b=>{b.classList.remove('active');});
-document.querySelector('.project-buttons button[onclick*="'+id+'"]').classList.add('active');
-}
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
-  </html>
+</html>
