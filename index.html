@@ -5,478 +5,293 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#145214">
 <title>MarQen Group | Doğanın Mimarı</title>
-<meta name="description" content="MarQen Group ile modern peyzaj tasarımı, lüks villa bahçeleri, bahçe düzenleme ve profesyonel dış mekân çözümleri.">
+<meta name="description" content="MarQen Group. Modern villa bahçeleri, peyzaj tasarımı ve bahçe düzenleme hizmetleri. Doğanın Mimarı.">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 90px;
-}
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-    color: #333;
-}
-a {
-    text-decoration: none;
-    color: inherit;
-}
-img {
-    max-width: 100%;
-    display: block;
-    border-radius: 8px;
-    transition: 0.3s;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{font-family:Arial,sans-serif;background:#f5f5f5;color:#333}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block;border-radius:8px;transition:.3s}
 /* NAVBAR */
-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 100%;
-    background: #fff;
-    height: 80px;
-    padding: 0 5%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+nav{
+display:flex;align-items:center;justify-content:space-between;
+width:100%;background:#fff;height:80px;padding:0 5%;
+position:fixed;top:0;left:0;z-index:1000;
+box-shadow:0 2px 8px rgba(0,0,0,.15)
 }
-.logo-section img {
-    height: 60px;
-    width: auto;
-    max-width: 210px;
-    object-fit: contain;
-    cursor: pointer;
+.logo-section img{height:60px;width:auto;max-width:210px;object-fit:contain}
+.menu-toggle{
+display:none;flex-direction:column;cursor:pointer;gap:5px;
+border:0;background:transparent;padding:8px
 }
-.menu-toggle {
-    display: none;
-    flex-direction: column;
-    cursor: pointer;
-    gap: 5px;
-    border: 0;
-    background: transparent;
-    padding: 8px;
+.menu-toggle div{width:25px;height:3px;background:#145214;border-radius:2px}
+.nav-links{list-style:none;display:flex;align-items:center;gap:30px}
+.nav-links li{font-weight:600}
+.nav-links li a{
+color:#145214;padding:8px 0;display:flex;align-items:center;transition:.3s
 }
-.menu-toggle div {
-    width: 25px;
-    height: 3px;
-    background: #145214;
-    border-radius: 2px;
+.nav-links li a::before{
+content:"";display:inline-block;width:4px;height:20px;
+background:#145214;margin-right:8px;border-radius:2px
 }
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 30px;
+.nav-links li:hover a{color:#2e7d32}
+.nav-links li:hover a::before{background:#81c784}
+/* ANA GÖRSEL */
+.hero{
+min-height:70vh;display:flex;justify-content:center;align-items:center;
+text-align:center;padding:60px 20px;margin-top:80px;position:relative;
+background:
+linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+url("1761356719775.jpg") center/cover no-repeat
 }
-.nav-links li {
-    position: relative;
-    font-weight: 600;
+.hero-content{
+position:relative;z-index:2;color:#fff;
+text-shadow:0 2px 6px rgba(0,0,0,.5);max-width:850px
 }
-.nav-links li a {
-    color: #145214;
-    padding: 8px 0;
-    display: flex;
-    align-items: center;
-    transition: 0.3s;
+.hero h1{font-size:48px;margin-bottom:20px;animation:fadeInDown 1s}
+.hero p{font-size:20px;line-height:1.7;margin-bottom:25px;animation:fadeIn 1.2s}
+.btn{
+display:inline-block;padding:12px 30px;background:#2e7d32;
+border-radius:30px;color:#fff;font-weight:600;transition:.3s;
+text-shadow:none
 }
-.nav-links li a::before {
-    content: "";
-    display: inline-block;
-    width: 4px;
-    height: 20px;
-    background: #145214;
-    margin-right: 8px;
-    border-radius: 2px;
-}
-.nav-links li:hover a {
-    color: #2e7d32;
-}
-.nav-links li:hover a::before {
-    background: #81c784;
-}
-/* HERO */
-.hero {
-    min-height: 70vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 60px 20px;
-    margin-top: 80px;
-    position: relative;
-    background:
-        linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-        url("1761356719775.jpg") center/cover no-repeat;
-}
-.hero-content {
-    position: relative;
-    z-index: 2;
-    color: white;
-    text-shadow: 0 2px 6px rgba(0,0,0,0.5);
-    max-width: 850px;
-}
-.hero h1 {
-    font-size: 48px;
-    margin-bottom: 20px;
-    animation: fadeInDown 1s;
-}
-.hero p {
-    font-size: 20px;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    animation: fadeIn 1.2s;
-}
-.btn {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #2e7d32;
-    border-radius: 30px;
-    color: white;
-    font-weight: 600;
-    transition: 0.3s;
-    text-shadow: none;
-}
-.btn:hover {
-    background: #145214;
-    transform: translateY(-2px);
-}
+.btn:hover{background:#145214;transform:translateY(-2px)}
 /* GENEL BÖLÜMLER */
-section {
-    padding: 70px 8%;
-}
-.section-title {
-    text-align: center;
-    color: #145214;
-    font-size: 32px;
-    margin-bottom: 18px;
-}
-.section-description {
-    text-align: center;
-    max-width: 750px;
-    margin: 0 auto 40px;
-    line-height: 1.8;
-    color: #555;
+section{padding:70px 8%}
+.section-title{text-align:center;color:#145214;font-size:32px;margin-bottom:18px}
+.section-description{
+text-align:center;max-width:750px;margin:0 auto 40px;
+line-height:1.8;color:#555
 }
 /* HAKKIMIZDA */
-.about {
-    background: #fff;
-    text-align: center;
-}
-.about-text {
-    max-width: 850px;
-    margin: auto;
-    line-height: 1.9;
-    font-size: 17px;
-}
+.about{background:#fff;text-align:center}
+.about-text{max-width:850px;margin:auto;line-height:1.9;font-size:17px}
 /* HİZMETLER */
-.services {
-    background: #f5f5f5;
+.services{background:#f5f5f5}
+.service-grid{
+display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:25px
 }
-.service-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 25px;
+.service-card{
+background:#fff;padding:30px 24px;border-radius:8px;text-align:center;
+box-shadow:0 3px 12px rgba(0,0,0,.07);transition:.3s
 }
-.service-card {
-    background: #fff;
-    padding: 30px 24px;
-    border-radius: 8px;
-    text-align: center;
-    box-shadow: 0 3px 12px rgba(0,0,0,0.07);
-    transition: 0.3s;
-}
-.service-card:hover {
-    transform: translateY(-5px);
-}
-.service-card i {
-    font-size: 35px;
-    color: #2e7d32;
-    margin-bottom: 18px;
-}
-.service-card h3 {
-    color: #145214;
-    margin-bottom: 12px;
-    font-size: 20px;
-}
-.service-card p {
-    color: #555;
-    line-height: 1.7;
-}
+.service-card:hover{transform:translateY(-5px)}
+.service-card i{font-size:35px;color:#2e7d32;margin-bottom:18px}
+.service-card h3{color:#145214;margin-bottom:12px;font-size:20px}
+.service-card p{color:#555;line-height:1.7}
 /* INSTAGRAM */
-.instagram-section {
-    text-align: center;
-    background: #fff;
+.instagram-section{text-align:center;background:#fff}
+.instagram-section p{line-height:1.8;margin:15px 0 25px}
+.instagram-btn{
+display:inline-flex;align-items:center;gap:10px;padding:12px 25px;
+color:#fff;background:#145214;border-radius:30px;font-weight:bold;transition:.3s
 }
-.instagram-section p {
-    line-height: 1.8;
-    margin: 15px 0 25px;
-}
-.instagram-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    padding: 12px 25px;
-    color: #fff;
-    background: #145214;
-    border-radius: 30px;
-    font-weight: bold;
-    transition: 0.3s;
-}
-.instagram-btn:hover {
-    background: #2e7d32;
-}
+.instagram-btn:hover{background:#2e7d32}
 /* İLETİŞİM */
-.contact {
-    text-align: center;
-    background: #f5f5f5;
+.contact{text-align:center;background:#f5f5f5}
+.contact p{line-height:1.8;margin:15px 0 25px}
+.contact-links{
+display:flex;justify-content:center;align-items:center;
+flex-wrap:wrap;gap:15px;margin-top:25px
 }
-.contact p {
-    line-height: 1.8;
-    margin: 15px 0 25px;
+.contact-item{
+display:inline-flex;align-items:center;gap:10px;
+padding:12px 20px;border-radius:30px;background:#fff;
+color:#145214;border:1px solid #e2e2e2;transition:.3s
 }
+.contact-item:hover{background:#eaf2e9}
 /* FOOTER */
-footer {
-    background: #145214;
-    color: #fff;
-    padding: 30px 5%;
-    text-align: center;
-    line-height: 1.8;
+footer{
+background:#145214;color:#fff;padding:30px 5%;
+text-align:center;line-height:1.8
 }
-footer a {
-    color: #fff;
+footer a{color:#fff}
+.footer-instagram{display:inline-block;margin-top:10px}
+footer .copyright{margin-top:12px;font-size:13px;opacity:.85}
+/* ANİMASYON */
+@keyframes fadeInDown{
+from{opacity:0;transform:translateY(-20px)}
+to{opacity:1;transform:translateY(0)}
 }
-.footer-instagram {
-    display: inline-block;
-    margin-top: 10px;
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+/* MOBİL */
+@media(max-width:768px){
+nav{height:70px;padding:0 5%}
+.logo-section img{height:52px;max-width:180px}
+.menu-toggle{display:flex}
+.nav-links{
+display:none;flex-direction:column;align-items:flex-start;gap:18px;
+position:absolute;top:70px;left:0;width:100%;padding:25px 7%;
+background:#fff;box-shadow:0 5px 8px rgba(0,0,0,.12)
 }
-footer .copyright {
-    margin-top: 12px;
-    font-size: 13px;
-    opacity: 0.85;
+.nav-links.active{display:flex}
+.hero{margin-top:70px;min-height:65vh}
+.hero h1{font-size:34px}
+.hero p{font-size:17px}
+section{padding:50px 6%}
+.section-title{font-size:27px}
+.service-grid{grid-template-columns:1fr}
 }
-/* ANİMASYONLAR */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-/* MOBİL UYUMLULUK */
-@media (max-width: 768px) {
-    nav {
-        height: 70px;
-        padding: 0 5%;
-    }
-    .logo-section img {
-        height: 52px;
-        max-width: 180px;
-    }
-    .menu-toggle {
-        display: flex;
-    }
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 18px;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        padding: 25px 7%;
-        background: #fff;
-        box-shadow: 0 5px 8px rgba(0,0,0,0.12);
-    }
-    .nav-links.active {
-        display: flex;
-    }
-    .hero {
-        margin-top: 70px;
-        min-height: 65vh;
-    }
-    .hero h1 {
-        font-size: 34px;
-    }
-    .hero p {
-        font-size: 17px;
-    }
-    section {
-        padding: 50px 6%;
-    }
-    .section-title {
-        font-size: 27px;
-    }
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-}
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
-    *, *::before, *::after {
-        animation: none !important;
-        transition: none !important;
-    }
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+*,*::before,*::after{animation:none!important;transition:none!important}
 }
 </style>
 </head>
 <body>
 <!-- ÜST MENÜ -->
 <nav>
-    <a href="#anasayfa" class="logo-section" aria-label="MarQen Group ana sayfa">
-        <img src="IMG_0213.jpeg" alt="MarQen Group Logo">
-    </a>
-    <button class="menu-toggle" id="menuToggle"
-            aria-label="Menüyü aç veya kapat"
-            aria-expanded="false"
-            aria-controls="navLinks">
-        <div></div>
-        <div></div>
-        <div></div>
-    </button>
-    <ul class="nav-links" id="navLinks">
-        <li><a href="#anasayfa">Ana Sayfa</a></li>
-        <li><a href="#hakkimizda">Hakkımızda</a></li>
-        <li><a href="#hizmetler">Hizmetlerimiz</a></li>
-        <li><a href="#instagram">Instagram</a></li>
-        <li><a href="#iletisim">İletişim</a></li>
-    </ul>
+<a href="#anasayfa" class="logo-section" aria-label="MarQen Group ana sayfa">
+<img src="IMG_0213.jpeg" alt="MarQen Group Logo">
+</a>
+<button class="menu-toggle" id="menuToggle"
+aria-label="Menüyü aç veya kapat"
+aria-expanded="false" aria-controls="navLinks">
+<div></div><div></div><div></div>
+</button>
+<ul class="nav-links" id="navLinks">
+<li><a href="#anasayfa">Ana Sayfa</a></li>
+<li><a href="#hakkimizda">Hakkımızda</a></li>
+<li><a href="#hizmetler">Hizmetlerimiz</a></li>
+<li><a href="#instagram">Instagram</a></li>
+<li><a href="#iletisim">İletişim</a></li>
+</ul>
 </nav>
-<!-- ANA GÖRSEL -->
+<!-- ANA SAYFA -->
 <header class="hero" id="anasayfa">
-    <div class="hero-content">
-        <h1>MarQen Group</h1>
-        <p>
-            Doğanın Mimarı<br>
-            Modern tasarım, doğal güzellik ve ayrıcalıklı yaşam alanları.
-        </p>
-        <a href="#iletisim" class="btn">Projenizi Birlikte Tasarlayalım</a>
-    </div>
+<div class="hero-content">
+<h1>MarQen Group</h1>
+<p>
+Doğanın Mimarı<br>
+Modern tasarım, doğal güzellik ve ayrıcalıklı yaşam alanları.
+</p>
+<a href="#iletisim" class="btn">Projenizi Birlikte Tasarlayalım</a>
+</div>
 </header>
 <!-- HAKKIMIZDA -->
 <section class="about" id="hakkimizda">
-    <h2 class="section-title">Doğaya Değer Katıyoruz</h2>
-    <p class="section-description">
-        Estetik, işlevsellik ve doğayı bir araya getiriyoruz.
-    </p>
-    <div class="about-text">
-        <p>
-            <strong>MarQen Group</strong> olarak modern peyzaj tasarımı,
-            villa bahçeleri ve dış mekân düzenlemelerinde özgün çözümler
-            sunuyoruz. Her alanı, mimari çizgilerle doğanın güzelliğini
-            buluşturan özel bir yaşam alanına dönüştürmeyi hedefliyoruz.
-        </p>
-        <p style="margin-top:18px; color:#145214; font-weight:bold;">
-            MarQen Group — Doğanın Mimarı
-        </p>
-    </div>
+<h2 class="section-title">Doğaya Değer Katıyoruz</h2>
+<p class="section-description">
+Estetik, işlevsellik ve doğayı bir araya getiriyoruz.
+</p>
+<div class="about-text">
+<p>
+<strong>MarQen Group</strong> olarak modern peyzaj tasarımı,
+villa bahçeleri ve dış mekân düzenlemelerinde özgün çözümler
+sunuyoruz. Her alanı, mimari çizgilerle doğanın güzelliğini
+buluşturan özel bir yaşam alanına dönüştürmeyi hedefliyoruz.
+</p>
+<p style="margin-top:18px;color:#145214;font-weight:bold">
+MarQen Group — Doğanın Mimarı
+</p>
+</div>
 </section>
 <!-- HİZMETLER -->
 <section class="services" id="hizmetler">
-    <h2 class="section-title">Hizmetlerimiz</h2>
-    <p class="section-description">
-        Yaşam alanlarınıza özel, modern ve estetik peyzaj çözümleri.
-    </p>
-    <div class="service-grid">
-        <article class="service-card">
-            <i class="fa-solid fa-house"></i>
-            <h3>Villa Bahçeleri</h3>
-            <p>
-                Modern ve lüks villa bahçeleri için mekâna özel
-                peyzaj tasarımı ve düzenleme çözümleri.
-            </p>
-        </article>
-        <article class="service-card">
-            <i class="fa-solid fa-seedling"></i>
-            <h3>Peyzaj Tasarımı</h3>
-            <p>
-                Bitkilendirme, yeşil alan planlaması ve estetik
-                dış mekân tasarımı.
-            </p>
-        </article>
-        <article class="service-card">
-            <i class="fa-solid fa-tree"></i>
-            <h3>Bahçe Düzenleme</h3>
-            <p>
-                Bahçelerin karakterine ve ihtiyaçlarına uygun
-                uygulama ve düzenleme hizmetleri.
-            </p>
-        </article>
-    </div>
+<h2 class="section-title">Hizmetlerimiz</h2>
+<p class="section-description">
+Yaşam alanlarınıza özel, modern ve estetik peyzaj çözümleri.
+</p>
+<div class="service-grid">
+<article class="service-card">
+<i class="fa-solid fa-house"></i>
+<h3>Villa Bahçeleri</h3>
+<p>
+Modern ve lüks villa bahçeleri için mekâna özel
+peyzaj tasarımı ve düzenleme çözümleri.
+</p>
+</article>
+<article class="service-card">
+<i class="fa-solid fa-seedling"></i>
+<h3>Peyzaj Tasarımı</h3>
+<p>
+Bitkilendirme, yeşil alan planlaması ve estetik
+dış mekân tasarımı.
+</p>
+</article>
+<article class="service-card">
+<i class="fa-solid fa-tree"></i>
+<h3>Bahçe Düzenleme</h3>
+<p>
+Bahçelerin karakterine ve ihtiyaçlarına uygun
+uygulama ve düzenleme hizmetleri.
+</p>
+</article>
+</div>
 </section>
 <!-- INSTAGRAM -->
 <section class="instagram-section" id="instagram">
-    <h2 class="section-title">Bizi Instagram'da Takip Edin</h2>
-    <p>
-        Projelerimizi, tasarım fikirlerimizi ve doğadan ilham alan
-        çalışmalarımızı keşfedin.
-    </p>
-    <a class="instagram-btn"
-       href="https://www.instagram.com/marqengroup/"
-       target="_blank"
-       rel="noopener noreferrer">
-        <i class="fa-brands fa-instagram"></i>
-        @marqengroup
-    </a>
+<h2 class="section-title">Bizi Instagram'da Takip Edin</h2>
+<p>
+Projelerimizi, tasarım fikirlerimizi ve doğadan ilham alan
+çalışmalarımızı keşfedin.
+</p>
+<a class="instagram-btn"
+href="https://www.instagram.com/marqengroup/"
+target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-instagram"></i>
+@marqengroup
+</a>
 </section>
 <!-- İLETİŞİM -->
 <section class="contact" id="iletisim">
-    <h2 class="section-title">Projeniz İçin İletişime Geçin</h2>
-    <p>
-        Hayalinizdeki bahçeyi birlikte tasarlayalım.
-        Projeniz hakkında görüşmek için Instagram üzerinden bize ulaşın.
-    </p>
-    <a class="btn"
-       href="https://www.instagram.com/marqengroup/"
-       target="_blank"
-       rel="noopener noreferrer">
-        <i class="fa-brands fa-instagram"></i>
-        Bize Ulaşın
-    </a>
+<h2 class="section-title">Projeniz İçin İletişime Geçin</h2>
+<p>
+Hayalinizdeki bahçeyi birlikte tasarlayalım.
+Bize telefon veya e-posta yoluyla ulaşabilirsiniz.
+</p>
+<div class="contact-links">
+<!-- TELEFON NUMARANI AŞAĞIDAKİ İKİ ALANA YAZ -->
+<a class="contact-item" href="tel:TELEFON_NUMARANIZ">
+<i class="fa-solid fa-phone"></i>
+Telefonla İletişim
+</a>
+<a class="contact-item" href="mailto:marqengroup@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+marqengroup@gmail.com
+</a>
+<a class="contact-item"
+href="https://www.instagram.com/marqengroup/"
+target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-instagram"></i>
+Instagram
+</a>
+</div>
 </section>
 <!-- ALT BİLGİ -->
 <footer>
-    <h3>MarQen Group</h3>
-    <p>Doğanın Mimarı</p>
-    <a class="footer-instagram"
-       href="https://www.instagram.com/marqengroup/"
-       target="_blank"
-       rel="noopener noreferrer">
-        <i class="fa-brands fa-instagram"></i>
-        @marqengroup
-    </a>
-    <p class="copyright">
-        © <span id="year"></span> MarQen Group. Tüm hakları saklıdır.
-    </p>
+<h3>MarQen Group</h3>
+<p>Doğanın Mimarı</p>
+<p>
+<a href="mailto:marqengroup@gmail.com">
+<i class="fa-solid fa-envelope"></i>
+marqengroup@gmail.com
+</a>
+</p>
+<p>
+<a href="https://www.instagram.com/marqengroup/"
+target="_blank" rel="noopener noreferrer">
+<i class="fa-brands fa-instagram"></i>
+@marqengroup
+</a>
+</p>
+<p class="copyright">
+© <span id="year"></span> MarQen Group. Tüm hakları saklıdır.
+</p>
 </footer>
 <script>
 const menuToggle = document.getElementById("menuToggle");
 const navLinks = document.getElementById("navLinks");
-menuToggle.addEventListener("click", function () {
-    const isOpen = navLinks.classList.toggle("active");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
+menuToggle.addEventListener("click", function(){
+const isOpen = navLinks.classList.toggle("active");
+menuToggle.setAttribute("aria-expanded", String(isOpen));
 });
-document.querySelectorAll(".nav-links a").forEach(function (link) {
-    link.addEventListener("click", function () {
-        navLinks.classList.remove("active");
-        menuToggle.setAttribute("aria-expanded", "false");
-    });
+document.querySelectorAll(".nav-links a").forEach(function(link){
+link.addEventListener("click", function(){
+navLinks.classList.remove("active");
+menuToggle.setAttribute("aria-expanded", "false");
+});
 });
 document.getElementById("year").textContent = new Date().getFullYear();
 </script>
